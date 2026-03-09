@@ -1,0 +1,11 @@
+{
+  "name": "wmbtcm-43",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "slidev build --base /"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.49.0",
+    "@slidev/theme-default": "latest"
+  }
+}
