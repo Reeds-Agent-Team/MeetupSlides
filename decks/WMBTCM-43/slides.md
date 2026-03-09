@@ -3,184 +3,54 @@ theme: default
 background: '#000000'
 class: text-center
 highlighter: shiki
-lineNumbers: false
-drawings:
-  persist: false
+fonts:
+  sans: 'Inter'
+transition: slide-left
 ---
 
-<div class="flex flex-col items-center justify-center h-full">
-  <img src="/WMBTCM.png" class="meetup-logo" />
-  <div class="meetup-number">#43</div>
-  <div class="meetup-date">Mar. 2026</div>
+<div class="flex flex-col items-center justify-center h-full gap-8">
+  <img src="./WMBTCM.png" class="w-2/3 max-w-2xl" />
+  <p class="text-2xl font-semibold tracking-widest text-white">Western Mass Bitcoin Meetup #43</p>
+  <p class="text-xl font-semibold" style="color: #F7931A;">Mar. 2026</p>
 </div>
-
-<style>
-.meetup-logo {
-  max-width: 600px;
-  width: 80%;
-  margin-bottom: 2rem;
-}
-.meetup-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: white;
-  font-family: Arial, sans-serif;
-  margin-bottom: 0.3rem;
-}
-.meetup-date {
-  font-size: 2rem;
-  font-weight: 400;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-</style>
 
 ---
 background: '#000000'
 ---
 
-<div class="slide2">
+<div class="flex h-full gap-8 px-8 py-6 items-start">
 
-  <!-- LEFT: cover art + QRs stacked -->
-  <div class="left-col">
-    <img src="/bugle-weekly-cover.jpg" class="cover-art" />
-    <div class="qr-row">
-      <div class="qr-block">
-        <img src="/qr-fountain.png" class="qr-code" />
-        <div class="qr-label">Fountain</div>
-      </div>
-      <div class="qr-block">
-        <img src="/qr-website.png" class="qr-code" />
-        <div class="qr-label">bugle.news</div>
-      </div>
+  <!-- Left column: cover art + QR codes -->
+  <div class="flex flex-col items-center gap-6 w-1/3 pt-4">
+    <img src="https://feeds.fountain.fm/R8scBF2Wiykm0YVldsHQ/files/COVER_ART---DEFAULT---2ac47830-f82a-44aa-b3cb-b5c885519901.jpg" class="w-48 h-48 rounded-xl shadow-lg" />
+    <div class="flex flex-col items-center gap-1">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://fountain.fm/show/lxGTDDEMKkUGn2EN3YRi&bgcolor=000000&color=F7931A" class="w-28 h-28 rounded" />
+      <p class="text-xs" style="color: #F7931A;">Listen on Fountain</p>
+    </div>
+    <div class="flex flex-col items-center gap-1">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://bugle.news&bgcolor=000000&color=F7931A" class="w-28 h-28 rounded" />
+      <p class="text-xs" style="color: #F7931A;">bugle.news</p>
     </div>
   </div>
 
-  <!-- RIGHT: title, hosts, bullets, quote -->
-  <div class="right-col">
-    <div class="show-title">The Bugle Weekly</div>
-    <div class="show-hosts">Richard Greaser &amp; Rod Palmer</div>
-
-    <ul class="bullets">
-      <li>Launched in January 2023 — a satirical news outlet that, in a parallel dimension, is the world's premiere news agency rivaling the NYT and WSJ</li>
-      <li>Stories are real where they come from; here they just appear absurd — a glitch in the matrix lets you catch glimpses</li>
-      <li>No corporate sponsorships — the audience is the customer, not the product</li>
-      <li>Paired with a Bitcoin podcast covering the thermodynamics of sound money</li>
-    </ul>
-
-    <div class="quote">
-      "It's like the 753rd funniest account on Twitter"
-      <span class="quote-attr">— @udiwertheimer</span>
+  <!-- Right column: text content -->
+  <div class="flex flex-col justify-start w-2/3 pt-2 gap-4">
+    <div>
+      <p class="text-xs font-bold tracking-widest uppercase mb-1" style="color: #F7931A;">Podcast Spotlight</p>
+      <h1 class="text-4xl font-bold text-white leading-tight">The Bugle Weekly</h1>
+      <p class="text-lg mt-1" style="color: #F7931A;">Richard Greaser & Rod Palmer</p>
     </div>
+
+    <blockquote class="border-l-4 pl-4 italic text-white text-sm" style="border-color: #F7931A;">
+      "It's like the 753rd funniest account on Twitter" — @udiwertheimer
+    </blockquote>
+
+    <ul class="text-sm text-white space-y-3 list-none">
+      <li style="color: #F7931A;">▸ <span class="text-white">Launched in January 2023 by Richard Greaser — in a parallel dimension where the Bugle is the world's premier news agency, rivaling the NYT and WSJ. A glitch in the matrix lets you glimpse it.</span></li>
+      <li style="color: #F7931A;">▸ <span class="text-white">In your dimension, the stories appear absurd. In theirs, they're front-page news. Satirical here, stone-cold journalism there.</span></li>
+      <li style="color: #F7931A;">▸ <span class="text-white">Zero corporate sponsorships — by design. When you take sponsor money, the audience becomes the product. The Bugle refuses that deal.</span></li>
+      <li style="color: #F7931A;">▸ <span class="text-white">The world's most thermodynamically sound Bitcoin podcast — hosted by credentialed journalists who chain smoke and binge 40 hours of Bitcoin pods a week.</span></li>
+    </ul>
   </div>
 
 </div>
-
-<style>
-.slide2 {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  height: 100%;
-  width: 100%;
-  padding: 2rem 2.5rem;
-  box-sizing: border-box;
-  gap: 2.5rem;
-}
-.left-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-  gap: 1.2rem;
-}
-.cover-art {
-  width: 200px;
-  height: 200px;
-  border-radius: 14px;
-  object-fit: cover;
-}
-.qr-row {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: center;
-}
-.qr-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-.qr-code {
-  width: 110px;
-  height: 110px;
-  border: 2px solid white;
-  border-radius: 6px;
-}
-.qr-label {
-  font-size: 0.85rem;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-.right-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  flex: 1;
-  gap: 0.8rem;
-}
-.show-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #f7931a;
-  font-family: Arial, sans-serif;
-  line-height: 1.1;
-}
-.show-hosts {
-  font-size: 1.1rem;
-  color: #aaaaaa;
-  font-family: Arial, sans-serif;
-}
-.bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0.4rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-.bullets li {
-  font-size: 0.95rem;
-  color: #dddddd;
-  font-family: Arial, sans-serif;
-  line-height: 1.4;
-  padding-left: 1.2rem;
-  position: relative;
-}
-.bullets li::before {
-  content: "▸";
-  color: #f7931a;
-  position: absolute;
-  left: 0;
-}
-.quote {
-  font-size: 1rem;
-  color: #aaaaaa;
-  font-family: Georgia, serif;
-  font-style: italic;
-  border-left: 3px solid #f7931a;
-  padding-left: 0.8rem;
-  margin-top: 0.4rem;
-  line-height: 1.5;
-}
-.quote-attr {
-  display: block;
-  font-size: 0.85rem;
-  color: #777777;
-  font-style: normal;
-  margin-top: 0.2rem;
-}
-</style>
