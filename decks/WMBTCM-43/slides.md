@@ -8,7 +8,7 @@ fonts:
 transition: slide-left
 ---
 
-<div class="flex flex-col items-center justify-center h-full gap-8" style="background:#000000;">
+<div class="flex flex-col items-center justify-center h-full gap-8" style="background:#000000; position:absolute; inset:0;">
   <img src="./WMBTCM.png" class="w-2/3 max-w-2xl" />
   <p class="text-2xl font-semibold tracking-widest text-white">Western Mass Bitcoin Meetup #43</p>
   <p class="text-xl font-semibold" style="color: #F7931A;">Mar. 2026</p>
@@ -16,10 +16,13 @@ transition: slide-left
 
 ---
 layout: none
+class: 'p-0'
 ---
 
 <style>
-.podcast-slide {
+.slide2-wrap {
+  position: absolute;
+  inset: 0;
   background: #000000;
   display: flex;
   height: 100%;
@@ -107,7 +110,7 @@ layout: none
 }
 </style>
 
-<div class="podcast-slide">
+<div class="slide2-wrap">
   <div class="podcast-left">
     <img class="cover" src="https://feeds.fountain.fm/R8scBF2Wiykm0YVldsHQ/files/COVER_ART---DEFAULT---2ac47830-f82a-44aa-b3cb-b5c885519901.jpg" />
     <div style="display:flex;flex-direction:column;align-items:center;">
@@ -139,23 +142,23 @@ layout: none
 
 ---
 layout: none
+class: 'p-0'
 ---
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Oswald:wght@700&display=swap');
 
 .s3 {
+  position: absolute;
+  inset: 0;
   background: #0a0a0a;
   color: #f7931a;
   font-family: 'Space Mono', monospace;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 .s3::before {
   content: '';
@@ -182,27 +185,26 @@ layout: none
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
-  padding: 36px 60px;
+  padding: 28px 50px 48px;
   z-index: 1;
+  gap: 0;
 }
 .s3 .title-block {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 .s3 .eyebrow {
-  font-family: 'Space Mono', monospace;
-  font-size: 14px;
+  font-size: 11px;
   letter-spacing: 0.35em;
   color: rgba(247,147,26,0.55);
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .s3 .headline {
   font-family: 'Oswald', sans-serif;
-  font-size: 56px;
+  font-size: 38px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   color: #f7931a;
   text-transform: uppercase;
@@ -210,35 +212,35 @@ layout: none
 .s3 .headline span { color: #fff; }
 .s3 .main-row {
   display: flex;
-  align-items: center;
-  gap: 48px;
+  align-items: flex-start;
+  gap: 36px;
   width: 100%;
+  flex: 1;
+  min-height: 0;
 }
 .s3 .halving-chain {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
   flex-shrink: 0;
 }
 .s3 .era-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 .s3 .era-dot {
-  width: 11px;
-  height: 11px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: #f7931a;
   flex-shrink: 0;
-  box-shadow: 0 0 8px #f7931a88;
+  box-shadow: 0 0 6px #f7931a88;
 }
 .s3 .era-dot.dim { background: rgba(247,147,26,0.25); box-shadow: none; }
 .s3 .era-dot.dead { background: #333; box-shadow: none; }
 .s3 .era-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 13px;
+  font-size: 11px;
   color: #f7931a;
   white-space: nowrap;
   line-height: 1;
@@ -247,38 +249,38 @@ layout: none
 .s3 .era-label.dead { color: #444; }
 .s3 .era-connector {
   width: 2px;
-  height: 16px;
+  height: 12px;
   background: linear-gradient(to bottom, rgba(247,147,26,0.5), rgba(247,147,26,0.15));
-  margin-left: 4px;
+  margin-left: 3px;
 }
 .s3 .chart-area {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 0;
 }
 .s3 .chart-label {
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0.2em;
   color: rgba(247,147,26,0.5);
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .s3 svg.bar-chart {
   width: 100%;
-  max-width: 680px;
-  height: 260px;
+  height: 220px;
 }
 .s3 .truth-panel {
   flex-shrink: 0;
-  width: 320px;
+  width: 280px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
 }
 .s3 .myth-box, .s3 .truth-box {
   border: 1px solid;
-  padding: 16px 20px;
+  padding: 12px 16px;
   border-radius: 4px;
 }
 .s3 .myth-box {
@@ -288,26 +290,26 @@ layout: none
 .s3 .truth-box {
   border-color: #f7931a;
   background: rgba(247,147,26,0.1);
-  box-shadow: 0 0 30px rgba(247,147,26,0.15), inset 0 0 20px rgba(247,147,26,0.05);
+  box-shadow: 0 0 20px rgba(247,147,26,0.15), inset 0 0 15px rgba(247,147,26,0.05);
 }
 .s3 .box-tag {
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .s3 .myth-box .box-tag { color: rgba(247,147,26,0.4); }
 .s3 .truth-box .box-tag { color: #f7931a; }
 .s3 .box-value {
   font-family: 'Oswald', sans-serif;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.1;
 }
 .s3 .myth-box .box-value { color: rgba(247,147,26,0.3); text-decoration: line-through; text-decoration-color: rgba(247,147,26,0.5); }
 .s3 .truth-box .box-value { color: #fff; }
 .s3 .box-sub {
-  font-size: 11px;
+  font-size: 10px;
   color: rgba(247,147,26,0.5);
   margin-top: 4px;
   line-height: 1.5;
@@ -315,11 +317,11 @@ layout: none
 .s3 .truth-box .box-sub { color: rgba(255,255,255,0.55); }
 .s3 .missing-btc {
   text-align: center;
-  padding: 12px;
+  padding: 10px;
   border-top: 1px solid rgba(247,147,26,0.2);
 }
 .s3 .missing-label {
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.2em;
   color: rgba(247,147,26,0.5);
   text-transform: uppercase;
@@ -327,28 +329,28 @@ layout: none
 }
 .s3 .missing-value {
   font-family: 'Oswald', sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   color: rgba(247,147,26,0.7);
 }
 .s3 .footer {
   position: absolute;
-  bottom: 20px;
-  left: 60px;
-  right: 60px;
+  bottom: 14px;
+  left: 50px;
+  right: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgba(247,147,26,0.12);
-  padding-top: 10px;
+  padding-top: 8px;
 }
 .s3 .footer-note {
-  font-size: 11px;
+  font-size: 10px;
   color: rgba(247,147,26,0.35);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 .s3 .btc-symbol {
   font-family: 'Oswald', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   color: rgba(247,147,26,0.25);
   letter-spacing: 0.1em;
 }
@@ -430,7 +432,7 @@ layout: none
         </div>
         <div class="truth-box">
           <div class="box-tag">↳ The actual maximum</div>
-          <div class="box-value">20,999,999.976<span style="font-size:22px;opacity:0.7">9</span></div>
+          <div class="box-value">20,999,999.976<span style="font-size:18px;opacity:0.7">9</span></div>
           <div class="box-sub">BTC ever mineable — because<br>integer halving truncates remainders</div>
         </div>
         <div class="missing-btc">
