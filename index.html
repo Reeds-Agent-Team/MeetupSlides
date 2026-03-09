@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Western Mass Bitcoin Meetup — Slide Decks</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Oswald:wght@700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0a;
+      color: #f7931a;
+      font-family: 'Space Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    header img {
+      width: 260px;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      color: rgba(247,147,26,0.5);
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(247,147,26,0.4);
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(247,147,26,0.12);
+      padding-bottom: 10px;
+    }
+
+    .deck-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .deck-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid rgba(247,147,26,0.2);
+      background: rgba(247,147,26,0.04);
+      padding: 20px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .deck-card:hover {
+      border-color: #f7931a;
+      background: rgba(247,147,26,0.08);
+    }
+
+    .deck-info .number {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: rgba(247,147,26,0.4);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .deck-info .title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      color: #ffffff;
+    }
+
+    .deck-info .date {
+      font-size: 11px;
+      color: rgba(247,147,26,0.5);
+      margin-top: 4px;
+    }
+
+    .deck-arrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      color: rgba(247,147,26,0.3);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 11px;
+      color: rgba(247,147,26,0.2);
+      letter-spacing: 0.15em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <img src="meetup-43/WMBTCM.png" alt="Western Mass Bitcoin Meetup" />
+      <p>Slide Deck Archive</p>
+    </header>
+
+    <h2>All Meetups</h2>
+
+    <div class="deck-list">
+      <a class="deck-card" href="meetup-43/">
+        <div class="deck-info">
+          <div class="number">Meetup #43</div>
+          <div class="title">Western Mass Bitcoin Meetup</div>
+          <div class="date">Mar. 2026</div>
+        </div>
+        <div class="deck-arrow">→</div>
+      </a>
+      <!-- Add future meetups above this line -->
+    </div>
+
+    <footer>Western Mass Bitcoin Meetup · Chicopee, MA</footer>
+  </div>
+</body>
+</html>
