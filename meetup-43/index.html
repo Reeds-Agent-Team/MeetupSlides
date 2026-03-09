@@ -647,12 +647,11 @@
     .s5-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 1vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
 
     /* ════════════════════════════════
-       SLIDE 6 — Post-Taproot History
+       SLIDE 6 — Post-Taproot History (v2)
     ════════════════════════════════ */
     .s6 {
       position: relative;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       background: #0a0a0a;
       overflow: hidden;
       display: flex;
@@ -663,8 +662,7 @@
     }
     .s6::before {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-image:
         linear-gradient(rgba(247,147,26,0.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(247,147,26,0.035) 1px, transparent 1px);
@@ -673,289 +671,281 @@
     }
     .s6::after {
       content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 55%, rgba(247,147,26,0.055) 0%, transparent 65%);
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 45%, rgba(247,147,26,0.055) 0%, transparent 65%);
       pointer-events: none;
     }
     .s6-inner {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      gap: 1.4vh;
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      height: 100%; gap: 1.4vh;
     }
     .s6-header { flex-shrink: 0; }
     .s6-eyebrow {
       font-family: 'Space Mono', monospace;
-      font-size: 0.72vw;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #f7931a;
+      font-size: 0.72vw; letter-spacing: 0.28em;
+      text-transform: uppercase; color: #f7931a;
       margin-bottom: 0.4vh;
     }
     .s6-headline {
       font-family: 'Oswald', sans-serif;
-      font-size: 3.4vw;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #fff;
-      line-height: 1;
+      font-size: 3.2vw; font-weight: 700;
+      text-transform: uppercase; color: #fff; line-height: 1;
     }
     .s6-headline span { color: #f7931a; }
 
-    /* ── main grid: left col | right col ── */
-    .s6-grid {
-      display: flex;
-      gap: 2vw;
-      flex: 1;
-      min-height: 0;
+    /* ── promised vs reality row ── */
+    .s6-pvr {
+      display: flex; gap: 1.5vw; flex-shrink: 0; align-items: stretch;
     }
-    .s6-left  { display: flex; flex-direction: column; gap: 1.2vh; flex: 1.05; }
-    .s6-right { display: flex; flex-direction: column; gap: 1.2vh; flex: 0.95; }
-
-    /* ── section label ── */
-    .sec-label {
+    .pvr-box {
+      flex: 1;
+      border-radius: 0.5vw;
+      padding: 1.1vh 1.2vw;
+      display: flex; flex-direction: column; gap: 0.6vh;
+      position: relative; overflow: hidden;
+    }
+    .pvr-box.promised {
+      background: rgba(247,147,26,0.06);
+      border: 1px solid rgba(247,147,26,0.25);
+    }
+    .pvr-box.reality {
+      background: rgba(180,30,30,0.08);
+      border: 1px solid rgba(220,60,60,0.3);
+    }
+    .pvr-box::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .pvr-box.promised::before { background: linear-gradient(90deg, #f7931a, rgba(247,147,26,0.15)); }
+    .pvr-box.reality::before  { background: linear-gradient(90deg, #c0392b, rgba(192,57,43,0.15)); }
+    .pvr-label {
       font-family: 'Space Mono', monospace;
-      font-size: 0.65vw;
-      letter-spacing: 0.22em;
+      font-size: 0.62vw; letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #f7931a;
-      opacity: 0.85;
+    }
+    .pvr-box.promised .pvr-label { color: #f7931a; }
+    .pvr-box.reality  .pvr-label { color: #e74c3c; }
+    .pvr-pills { display: flex; flex-wrap: wrap; gap: 0.5vw; }
+    .pvr-pill {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05vw; font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.3vh 0.8vw;
+      border-radius: 3px;
+    }
+    .pvr-box.promised .pvr-pill {
+      background: rgba(247,147,26,0.15); color: #f7931a;
+    }
+    .pvr-box.reality  .pvr-pill {
+      background: rgba(192,57,43,0.15); color: #e74c3c;
+    }
+    .pvr-arrow {
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2vw; color: rgba(247,147,26,0.3);
+      flex-shrink: 0; padding: 0 0.3vw;
     }
 
-    /* ── adoption timeline strip ── */
-    .adopt-strip {
-      background: rgba(247,147,26,0.04);
-      border: 1px solid rgba(247,147,26,0.14);
-      border-radius: 0.5vw;
-      padding: 1.1vh 1.1vw;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7vh;
+    /* ── main body: timeline left | ordinals right ── */
+    .s6-body {
+      display: flex; gap: 2vw; flex: 1; min-height: 0;
     }
-    .adopt-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8vw;
+
+    /* LEFT — adoption timeline infographic */
+    .s6-timeline-col {
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.8vh;
     }
-    .adopt-date {
+    .s6-col-label {
       font-family: 'Space Mono', monospace;
-      font-size: 0.6vw;
-      color: #f7931a;
-      min-width: 6vw;
-      flex-shrink: 0;
-      padding-top: 0.15vh;
+      font-size: 0.65vw; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #f7931a; opacity: 0.8;
     }
-    .adopt-bar-wrap {
+    .tl2-wrap {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.2vh;
-    }
-    .adopt-event {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72vw;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.4;
-    }
-    .adopt-event em {
-      color: rgba(247,147,26,0.75);
-      font-style: normal;
-    }
-    .adopt-dot-line {
-      display: flex;
-      align-items: center;
-      gap: 0.4vw;
-    }
-    .adopt-dot {
-      width: 0.5vw; height: 0.5vw;
-      border-radius: 50%;
-      background: #f7931a;
-      flex-shrink: 0;
-    }
-    .adopt-dot.dim { background: rgba(247,147,26,0.3); }
-    .adopt-vline {
-      width: 1px;
-      background: rgba(247,147,26,0.2);
-      align-self: stretch;
-      margin-left: 0.22vw;
-    }
-
-    /* ── ordinals/inscriptions card ── */
-    .ord-card {
-      background: rgba(247,147,26,0.05);
-      border: 1px solid rgba(247,147,26,0.22);
-      border-radius: 0.5vw;
-      padding: 1.2vh 1.2vw;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.9vh;
+      display: flex; flex-direction: column;
+      gap: 0;
       position: relative;
-      overflow: hidden;
     }
-    .ord-card::before {
+    /* vertical spine */
+    .tl2-wrap::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, #f7931a, rgba(247,147,26,0.15));
+      left: 4.5vw; top: 0.6vw; bottom: 0.6vw;
+      width: 1px;
+      background: linear-gradient(180deg,
+        rgba(247,147,26,0.5) 0%,
+        rgba(247,147,26,0.15) 60%,
+        rgba(247,147,26,0.05) 100%);
     }
-    .ord-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.55vw;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #fff;
+    .tl2-item {
+      display: flex; align-items: flex-start;
+      gap: 0; flex: 1;
+      position: relative;
     }
-    .ord-title span { color: #f7931a; }
-    .ord-meta {
-      display: flex;
-      gap: 1vw;
-      flex-wrap: wrap;
+    .tl2-date-col {
+      width: 4.5vw; flex-shrink: 0;
+      display: flex; flex-direction: column;
+      align-items: flex-end;
+      padding-right: 0.7vw;
+      padding-top: 0.15vh;
     }
-    .ord-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1vh;
-    }
-    .ord-stat-val {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.6vw;
-      color: #f7931a;
-      line-height: 1;
-    }
-    .ord-stat-lbl {
+    .tl2-date {
       font-family: 'Space Mono', monospace;
-      font-size: 0.55vw;
-      color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      font-size: 0.6vw; color: #f7931a;
+      white-space: nowrap; line-height: 1.3;
     }
-    .ord-divider {
-      width: 1px; background: rgba(247,147,26,0.18); align-self: stretch;
-    }
-    .ord-body {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75vw;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.6;
-    }
-    .ord-body strong { color: rgba(247,147,26,0.85); font-weight: 600; }
-    .ord-chain {
-      display: flex;
-      gap: 0.5vw;
+    .tl2-dot-col {
+      display: flex; flex-direction: column;
       align-items: center;
-      flex-wrap: wrap;
-    }
-    .ord-chip {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.58vw;
-      padding: 0.25vh 0.55vw;
-      border-radius: 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-    .chip-orange { background: rgba(247,147,26,0.18); color: #f7931a; }
-    .chip-dim    { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.4); }
-    .chip-arrow  { color: rgba(247,147,26,0.4); font-size: 0.7vw; }
-
-    /* ── debate cards ── */
-    .debate-strip {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1vh;
-    }
-    .dcard {
-      background: rgba(247,147,26,0.04);
-      border: 1px solid rgba(247,147,26,0.13);
-      border-radius: 0.5vw;
-      padding: 1vh 1.1vw;
-      flex: 1;
-    }
-    .dcard.hot {
-      border-color: rgba(247,147,26,0.38);
-      background: rgba(247,147,26,0.07);
-    }
-    .dcard-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.2vw;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #f7931a;
-      margin-bottom: 0.4vh;
-    }
-    .dcard-body {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.73vw;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.55;
-    }
-    .dcard-body strong { color: rgba(247,147,26,0.8); font-weight: 600; }
-    .dcard-quote {
-      border-left: 2px solid rgba(247,147,26,0.4);
-      padding-left: 0.7vw;
-      margin-top: 0.5vh;
-      font-style: italic;
-      font-size: 0.68vw;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-    }
-
-    /* ── identity bar at bottom ── */
-    .s6-identity {
       flex-shrink: 0;
-      display: flex;
-      align-items: stretch;
-      border: 1px solid rgba(247,147,26,0.18);
-      border-radius: 0.4vw;
-      overflow: hidden;
+      z-index: 1;
     }
-    .ident-side {
+    .tl2-dot {
+      width: 0.9vw; height: 0.9vw;
+      border-radius: 50%;
+      border: 2px solid;
+      flex-shrink: 0;
+      margin-top: 0.1vh;
+    }
+    .dot-live    { background: #f7931a; border-color: #f7931a; box-shadow: 0 0 8px rgba(247,147,26,0.7); }
+    .dot-partial { background: rgba(247,147,26,0.35); border-color: rgba(247,147,26,0.6); }
+    .dot-dim     { background: rgba(247,147,26,0.1); border-color: rgba(247,147,26,0.3); }
+    .dot-green   { background: #27ae60; border-color: #2ecc71; box-shadow: 0 0 6px rgba(46,204,113,0.5); }
+    .tl2-content {
       flex: 1;
-      padding: 0.8vh 1.1vw;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3vh;
+      padding: 0 0 0 0.8vw;
+      display: flex; flex-direction: column; gap: 0.25vh;
     }
-    .ident-side.left  { background: rgba(247,147,26,0.07); border-right: 1px solid rgba(247,147,26,0.18); }
-    .ident-side.right { background: rgba(255,255,255,0.02); }
-    .ident-label {
+    .tl2-event {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95vw; font-weight: 700;
+      text-transform: uppercase; line-height: 1.1;
+    }
+    .tl2-event.live    { color: #fff; }
+    .tl2-event.partial { color: rgba(255,255,255,0.65); }
+    .tl2-event.dim     { color: rgba(255,255,255,0.35); }
+    .tl2-event.good    { color: #2ecc71; }
+    .tl2-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7vw; line-height: 1.45;
+    }
+    .tl2-desc.live    { color: rgba(255,255,255,0.6); }
+    .tl2-desc.partial { color: rgba(255,255,255,0.4); }
+    .tl2-desc.dim     { color: rgba(255,255,255,0.25); }
+    .tl2-desc.good    { color: rgba(46,204,113,0.7); }
+    .tl2-tags {
+      display: flex; flex-wrap: wrap; gap: 0.3vw; margin-top: 0.2vh;
+    }
+    .tl2-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.52vw; padding: 0.15vh 0.45vw;
+      border-radius: 2px; text-transform: uppercase;
+    }
+    .tag-yes { background: rgba(247,147,26,0.18); color: #f7931a; }
+    .tag-no  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.3); }
+    .tag-new { background: rgba(46,204,113,0.15); color: #2ecc71; }
+
+    /* RIGHT — ordinals/fee impact */
+    .s6-ord-col {
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.9vh;
+    }
+    .ord2-header {
+      background: rgba(192,57,43,0.08);
+      border: 1px solid rgba(192,57,43,0.3);
+      border-radius: 0.5vw;
+      padding: 1vh 1.2vw;
+      position: relative; overflow: hidden;
+    }
+    .ord2-header::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #c0392b, rgba(192,57,43,0.1));
+    }
+    .ord2-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6vw; font-weight: 700;
+      text-transform: uppercase; color: #e74c3c;
+      margin-bottom: 0.5vh;
+    }
+    .ord2-stats {
+      display: flex; gap: 0.8vw; align-items: center;
+    }
+    .ord2-stat {
+      display: flex; flex-direction: column; gap: 0.1vh;
+    }
+    .ord2-val {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.9vw; color: #e74c3c; line-height: 1;
+    }
+    .ord2-lbl {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.52vw; color: rgba(255,255,255,0.35);
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .ord2-divider { width: 1px; background: rgba(192,57,43,0.2); align-self: stretch; }
+
+    /* fee chart */
+    .fee-chart-wrap {
+      background: rgba(247,147,26,0.03);
+      border: 1px solid rgba(247,147,26,0.12);
+      border-radius: 0.5vw;
+      padding: 1vh 1.2vw 0.8vh;
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.6vh;
+    }
+    .fee-chart-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw; color: #f7931a;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .fee-svg { flex: 1; }
+
+    /* block size visual */
+    .block-compare {
+      background: rgba(247,147,26,0.03);
+      border: 1px solid rgba(247,147,26,0.12);
+      border-radius: 0.5vw;
+      padding: 0.9vh 1.2vw;
+      display: flex; align-items: center; gap: 1.5vw;
+    }
+    .bc-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw; color: rgba(247,147,26,0.7);
+      text-transform: uppercase; letter-spacing: 0.15em;
+      flex-shrink: 0;
+    }
+    .bc-bars {
+      flex: 1; display: flex; align-items: flex-end; gap: 0.5vw;
+    }
+    .bc-bar-item { display: flex; flex-direction: column; align-items: center; gap: 0.2vh; flex: 1; }
+    .bc-bar {
+      width: 100%; border-radius: 2px 2px 0 0;
+      position: relative; min-height: 4px;
+    }
+    .bc-bar-label { font-family: 'Space Mono', monospace; font-size: 0.55vw; text-align: center; }
+    .bc-bar-val   { font-family: 'Oswald', sans-serif;    font-size: 0.8vw;  color: #f7931a; }
+
+    /* footnote */
+    .s6-footnote {
+      flex-shrink: 0;
       font-family: 'Space Mono', monospace;
       font-size: 0.6vw;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #f7931a;
-      opacity: 0.8;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      border-top: 1px solid rgba(247,147,26,0.1);
+      padding-top: 0.6vh;
     }
-    .ident-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72vw;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.45;
-    }
-    .ident-vs {
-      width: 3vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.2vw;
-      color: rgba(247,147,26,0.4);
-      background: rgba(247,147,26,0.04);
-      border-right: 1px solid rgba(247,147,26,0.18);
-    }
+    .s6-footnote span { color: rgba(247,147,26,0.4); }
 
     .s6-footer {
       flex-shrink: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       border-top: 1px solid rgba(247,147,26,0.1);
-      padding-top: 0.6vh;
-      margin-top: 0.3vh;
+      padding-top: 0.5vh;
     }
     .s6-footer-note { font-family: 'Space Mono', monospace; font-size: 0.58vw; color: rgba(247,147,26,0.35); letter-spacing: 0.06em; }
     .s6-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 0.95vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
@@ -1360,186 +1350,260 @@
 
 
     <!-- ══════════════════════════════
-         SLIDE 6 — Post-Taproot History
+         SLIDE 6 — Post-Taproot History (v2)
     ══════════════════════════════ -->
     <section data-background-color="#0a0a0a">
       <div class="s6">
         <div class="s6-inner">
 
           <div class="s6-header">
-            <div class="s6-eyebrow">Bitcoin History · After Taproot</div>
-            <div class="s6-headline">The Promised Benefits, <span>The Unexpected Consequences</span></div>
+            <div class="s6-eyebrow">Bitcoin History · After Taproot Activated</div>
+            <div class="s6-headline">What Was <span>Promised</span> vs. What We <span>Actually Got</span></div>
           </div>
 
-          <div class="s6-grid">
+          <!-- Promised vs Reality strip -->
+          <div class="s6-pvr">
+            <div class="pvr-box promised">
+              <div class="pvr-label">✦ What was promised</div>
+              <div class="pvr-pills">
+                <span class="pvr-pill">Private Lightning Channels</span>
+                <span class="pvr-pill">Cheap Multisig</span>
+                <span class="pvr-pill">Taproot Multisig HW Wallets</span>
+                <span class="pvr-pill">LN indistinguishable from single-sig</span>
+                <span class="pvr-pill">PTLCs</span>
+                <span class="pvr-pill">Smaller Blocks</span>
+              </div>
+            </div>
+            <div class="pvr-arrow">→</div>
+            <div class="pvr-box reality">
+              <div class="pvr-label">✗ What we got first</div>
+              <div class="pvr-pills">
+                <span class="pvr-pill">Ordinals &amp; Inscriptions</span>
+                <span class="pvr-pill">BRC-20 Tokens</span>
+                <span class="pvr-pill">800 sat/vB Fee Spikes</span>
+                <span class="pvr-pill">Blocks Doubling in Size</span>
+                <span class="pvr-pill">UTXO Set Explosion</span>
+                <span class="pvr-pill">Binance Halting Withdrawals</span>
+              </div>
+            </div>
+          </div>
 
-            <!-- ── LEFT COLUMN ── -->
-            <div class="s6-left">
+          <!-- Body -->
+          <div class="s6-body">
 
-              <!-- Adoption slow-roll -->
-              <div class="sec-label">How long did it actually take?</div>
-              <div class="adopt-strip">
+            <!-- LEFT: Benefit adoption timeline -->
+            <div class="s6-timeline-col">
+              <div class="s6-col-label">When did the real benefits actually arrive?</div>
+              <div class="tl2-wrap">
 
-                <div class="adopt-row">
-                  <div class="adopt-date">Nov 2021</div>
-                  <div class="adopt-bar-wrap">
-                    <div class="adopt-dot-line">
-                      <div class="adopt-dot"></div>
-                      <div class="adopt-event">Taproot <em>activates</em> — but almost nothing uses it. Most wallets don't support bc1p addresses yet. The protocol is live; the ecosystem is not.</div>
-                    </div>
+                <div class="tl2-item">
+                  <div class="tl2-date-col"><div class="tl2-date">Nov<br>2021</div></div>
+                  <div class="tl2-dot-col"><div class="tl2-dot dot-live"></div></div>
+                  <div class="tl2-content">
+                    <div class="tl2-event live">Taproot Activates — Block 709,632</div>
+                    <div class="tl2-desc live">Protocol live. Almost no wallets support bc1p yet. Zero Taproot transactions in the wild.</div>
+                    <div class="tl2-tags"><span class="tl2-tag tag-no">No wallet support</span><span class="tl2-tag tag-no">No HW support</span><span class="tl2-tag tag-no">No LN support</span></div>
                   </div>
                 </div>
 
-                <div class="adopt-row">
-                  <div class="adopt-date">2022</div>
-                  <div class="adopt-bar-wrap">
-                    <div class="adopt-dot-line">
-                      <div class="adopt-dot"></div>
-                      <div class="adopt-event">Sparrow, BlueWallet, Ledger, Trezor add P2TR support. Hardware wallet signing <em>works</em> but multisig coordination (MuSig2) still months away. Same chicken-and-egg problem SegWit had.</div>
-                    </div>
+                <div class="tl2-item">
+                  <div class="tl2-date-col"><div class="tl2-date">2022</div></div>
+                  <div class="tl2-dot-col"><div class="tl2-dot dot-partial"></div></div>
+                  <div class="tl2-content">
+                    <div class="tl2-event partial">First Wallets Ship P2TR</div>
+                    <div class="tl2-desc partial">Sparrow, BlueWallet, Ledger, Trezor add bc1p addresses. Single-sig only. MuSig2 multisig still not ready. Lightning still uses P2WSH channels.</div>
+                    <div class="tl2-tags"><span class="tl2-tag tag-yes">Basic send/receive</span><span class="tl2-tag tag-no">No multisig</span><span class="tl2-tag tag-no">No LN</span></div>
                   </div>
                 </div>
 
-                <div class="adopt-row">
-                  <div class="adopt-date">2022–2023</div>
-                  <div class="adopt-bar-wrap">
-                    <div class="adopt-dot-line">
-                      <div class="adopt-dot dim"></div>
-                      <div class="adopt-event">Lightning Taproot channels (<em>P2TR channel opens</em>) spec'd in BOLT but not deployed. Promised privacy — LN channel opens indistinguishable from regular spends — still theoretical. PTLCs still not in production.</div>
-                    </div>
+                <div class="tl2-item">
+                  <div class="tl2-date-col"><div class="tl2-date">Jan<br>2023</div></div>
+                  <div class="tl2-dot-col"><div class="tl2-dot dot-dim"></div></div>
+                  <div class="tl2-content">
+                    <div class="tl2-event dim">Ordinals Launch — The Unintended Use</div>
+                    <div class="tl2-desc dim">Taproot witness discount + no size cap = JPEGs on-chain. Fees spike, blocks bloat, UTXO set explodes.</div>
+                    <div class="tl2-tags"><span class="tl2-tag tag-no">Not the plan</span></div>
                   </div>
                 </div>
 
-                <div class="adopt-row">
-                  <div class="adopt-date">Oct 2023</div>
-                  <div class="adopt-bar-wrap">
-                    <div class="adopt-dot-line">
-                      <div class="adopt-dot dim"></div>
-                      <div class="adopt-event">Lightning Labs ships <em>Taproot Assets</em> mainnet v1 — stablecoins &amp; tokens on Bitcoin/Lightning. First real deployment of advanced Taproot scripting in production.</div>
-                    </div>
+                <div class="tl2-item">
+                  <div class="tl2-date-col"><div class="tl2-date">Late<br>2023</div></div>
+                  <div class="tl2-dot-col"><div class="tl2-dot dot-partial"></div></div>
+                  <div class="tl2-content">
+                    <div class="tl2-event partial">Taproot Assets on Lightning Mainnet</div>
+                    <div class="tl2-desc partial">Lightning Labs ships Taproot Assets v1. First production use of advanced Taproot scripting. Stablecoins over Lightning become real.</div>
+                    <div class="tl2-tags"><span class="tl2-tag tag-yes">Advanced scripting</span><span class="tl2-tag tag-no">No P2TR channels yet</span></div>
                   </div>
                 </div>
 
-                <div class="adopt-row">
-                  <div class="adopt-date">2024–2025</div>
-                  <div class="adopt-bar-wrap">
-                    <div class="adopt-dot-line">
-                      <div class="adopt-dot dim"></div>
-                      <div class="adopt-event">MuSig2 Taproot multisig reaches hardware wallets. Taproot channel adoption on LN growing but <em>still a minority</em>. Privacy benefits depend on critical mass — not there yet.</div>
-                    </div>
+                <div class="tl2-item">
+                  <div class="tl2-date-col"><div class="tl2-date">2024</div></div>
+                  <div class="tl2-dot-col"><div class="tl2-dot dot-partial"></div></div>
+                  <div class="tl2-content">
+                    <div class="tl2-event partial">P2TR Lightning Channels — Eclair / Phoenix</div>
+                    <div class="tl2-desc partial">Phoenix Wallet (Eclair) ships Taproot channels. Channel opens finally look like regular spends. LND and CLN still using legacy channels.</div>
+                    <div class="tl2-tags"><span class="tl2-tag tag-yes">Phoenix / Eclair</span><span class="tl2-tag tag-no">LND: not yet</span><span class="tl2-tag tag-no">CLN: not yet</span></div>
                   </div>
                 </div>
 
-              </div><!-- adopt-strip -->
+                <div class="tl2-item">
+                  <div class="tl2-date-col"><div class="tl2-date">2024<br>–2025</div></div>
+                  <div class="tl2-dot-col"><div class="tl2-dot dot-green"></div></div>
+                  <div class="tl2-content">
+                    <div class="tl2-event good">MuSig2 Taproot Multisig — Hardware Wallets</div>
+                    <div class="tl2-desc good">Taproot multisig finally reaches Coldcard, Ledger, Trezor. 3+ years after activation. Still rare in practice.</div>
+                    <div class="tl2-tags"><span class="tl2-tag tag-new">Finally here</span><span class="tl2-tag tag-no">PTLCs still pending</span></div>
+                  </div>
+                </div>
 
-              <!-- Ordinals card -->
-              <div class="ord-card">
-                <div class="ord-title">Ordinals &amp; Inscriptions — <span>Jan. 2023</span></div>
-                <div class="ord-meta">
-                  <div class="ord-stat">
-                    <div class="ord-stat-val">~80M</div>
-                    <div class="ord-stat-lbl">inscriptions by late 2023</div>
+              </div>
+            </div>
+
+            <!-- RIGHT: Fee / block size impact -->
+            <div class="s6-ord-col">
+
+              <div class="ord2-header">
+                <div class="ord2-title">Ordinals &amp; Inscriptions — The Unintended Consequence</div>
+                <div class="ord2-stats">
+                  <div class="ord2-stat">
+                    <div class="ord2-val">~80M</div>
+                    <div class="ord2-lbl">Inscriptions by late 2023</div>
                   </div>
-                  <div class="ord-divider"></div>
-                  <div class="ord-stat">
-                    <div class="ord-stat-val">~800 sat/vB</div>
-                    <div class="ord-stat-lbl">peak BRC-20 fee spike</div>
+                  <div class="ord2-divider"></div>
+                  <div class="ord2-stat">
+                    <div class="ord2-val">~800</div>
+                    <div class="ord2-lbl">sat/vB peak BRC-20 fee</div>
                   </div>
-                  <div class="ord-divider"></div>
-                  <div class="ord-stat">
-                    <div class="ord-stat-val">3.9 MB</div>
-                    <div class="ord-stat-lbl">max inscription size</div>
+                  <div class="ord2-divider"></div>
+                  <div class="ord2-stat">
+                    <div class="ord2-val">156M</div>
+                    <div class="ord2-lbl">UTXOs by early 2024 (was 80M)</div>
                   </div>
-                </div>
-                <div class="ord-body">
-                  Casey Rodarmor's Ordinals protocol (Jan 2023) exploited the Taproot witness discount —
-                  intended for <strong>signatures</strong> — to inscribe images, text, even games onto individual sats.
-                  Taproot had removed SegWit's size cap on witness data. <strong>Rodarmor used the door
-                  exactly as it was built</strong>, even if that wasn't the intended purpose.
-                  UTXO set doubled from ~80M to ~156M by early 2024.
-                  Binance suspended withdrawals for hours during peak congestion in May 2023.
-                </div>
-                <div class="ord-chain">
-                  <span class="ord-chip chip-orange">Ordinals</span>
-                  <span class="chip-arrow">→</span>
-                  <span class="ord-chip chip-orange">BRC-20 tokens</span>
-                  <span class="chip-arrow">→</span>
-                  <span class="ord-chip chip-orange">Runes (Apr 2024)</span>
-                  <span class="chip-arrow">→</span>
-                  <span class="ord-chip chip-dim">Stamps / SRC-20</span>
-                  <span class="chip-arrow">→</span>
-                  <span class="ord-chip chip-dim">BitVM / Citrea</span>
+                  <div class="ord2-divider"></div>
+                  <div class="ord2-stat">
+                    <div class="ord2-val">3.9 MB</div>
+                    <div class="ord2-lbl">Max inscription size per block</div>
+                  </div>
                 </div>
               </div>
 
-            </div><!-- s6-left -->
+              <!-- Fee chart SVG -->
+              <div class="fee-chart-wrap">
+                <div class="fee-chart-label">Avg. on-chain fee (USD) — 2021 to 2024</div>
+                <svg class="fee-svg" viewBox="0 0 460 160" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="feeGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%"   stop-color="#f7931a" stop-opacity="0.7"/>
+                      <stop offset="100%" stop-color="#f7931a" stop-opacity="0.05"/>
+                    </linearGradient>
+                    <linearGradient id="feeGradRed" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%"   stop-color="#e74c3c" stop-opacity="0.85"/>
+                      <stop offset="100%" stop-color="#e74c3c" stop-opacity="0.1"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- grid lines -->
+                  <line x1="40" y1="20"  x2="450" y2="20"  stroke="rgba(247,147,26,0.07)" stroke-width="1"/>
+                  <line x1="40" y1="55"  x2="450" y2="55"  stroke="rgba(247,147,26,0.07)" stroke-width="1"/>
+                  <line x1="40" y1="90"  x2="450" y2="90"  stroke="rgba(247,147,26,0.07)" stroke-width="1"/>
+                  <line x1="40" y1="125" x2="450" y2="125" stroke="rgba(247,147,26,0.07)" stroke-width="1"/>
+                  <!-- y-axis labels -->
+                  <text x="36" y="23"  fill="rgba(247,147,26,0.4)" font-family="Space Mono,monospace" font-size="8" text-anchor="end">$60</text>
+                  <text x="36" y="58"  fill="rgba(247,147,26,0.4)" font-family="Space Mono,monospace" font-size="8" text-anchor="end">$40</text>
+                  <text x="36" y="93"  fill="rgba(247,147,26,0.4)" font-family="Space Mono,monospace" font-size="8" text-anchor="end">$20</text>
+                  <text x="36" y="128" fill="rgba(247,147,26,0.4)" font-family="Space Mono,monospace" font-size="8" text-anchor="end">$5</text>
+                  <!-- baseline -->
+                  <line x1="40" y1="140" x2="450" y2="140" stroke="rgba(247,147,26,0.15)" stroke-width="1"/>
 
-            <!-- ── RIGHT COLUMN ── -->
-            <div class="s6-right">
+                  <!-- fee area path: pre-taproot low → taproot activation → ordinals spike → BRC-20 madness → normalize -->
+                  <!-- Points: x from 45→445, y inverted (140=0, 20=max) -->
+                  <!-- Approx fee history:
+                       Jan2021: ~$20 → y=90
+                       Nov2021 (taproot): ~$4 → y=128
+                       Jan2022: ~$2 → y=133
+                       May2022: ~$1.5 → y=136
+                       Jan2023 (ordinals): ~$2 → y=133
+                       May2023 (binance): ~$30 → y=77
+                       Jul2023: ~$5 → y=128
+                       Dec2023 BRC-20: ~$45 → y=47
+                       Jan2024: ~$25 → y=82
+                       Apr2024 halving+runes: ~$55 → y=28
+                       Jun2024: ~$8 → y=122
+                       late2024: ~$5 → y=128
+                  -->
+                  <path d="M45,90 L90,128 L130,133 L175,136 L210,133 L240,77 L265,128 L300,47 L330,82 L365,28 L400,122 L445,128"
+                        stroke="#f7931a" stroke-width="1.5" fill="none"/>
+                  <path d="M45,90 L90,128 L130,133 L175,136 L210,133 L240,77 L265,128 L300,47 L330,82 L365,28 L400,122 L445,128 L445,140 L45,140 Z"
+                        fill="url(#feeGrad)" opacity="0.5"/>
 
-              <div class="sec-label">The Spam Wars — 2023 to Present</div>
+                  <!-- annotation: taproot activation -->
+                  <line x1="90" y1="20" x2="90" y2="140" stroke="rgba(247,147,26,0.25)" stroke-width="1" stroke-dasharray="3,2"/>
+                  <text x="92" y="35" fill="rgba(247,147,26,0.6)" font-family="Space Mono,monospace" font-size="7">TAPROOT</text>
+                  <text x="92" y="44" fill="rgba(247,147,26,0.6)" font-family="Space Mono,monospace" font-size="7">NOV 2021</text>
 
-              <div class="debate-strip">
+                  <!-- annotation: ordinals -->
+                  <line x1="210" y1="20" x2="210" y2="140" stroke="rgba(220,60,60,0.35)" stroke-width="1" stroke-dasharray="3,2"/>
+                  <text x="212" y="35" fill="rgba(220,60,60,0.75)" font-family="Space Mono,monospace" font-size="7">ORDINALS</text>
+                  <text x="212" y="44" fill="rgba(220,60,60,0.75)" font-family="Space Mono,monospace" font-size="7">JAN 2023</text>
 
-                <div class="dcard">
-                  <div class="dcard-title">Camp A — "Bitcoin is money. Full stop."</div>
-                  <div class="dcard-body">
-                    Ordinals and inscriptions are a <strong>spam attack</strong> on the network. Arbitrary data
-                    clogs block space, drives up fees for legitimate users, bloats the UTXO set,
-                    makes nodes more expensive to run, and degrades Bitcoin's core function as
-                    peer-to-peer electronic cash. The witness discount was a mistake to exploit.
-                    <strong>Fix the bug, don't embrace the abuse.</strong>
-                    <div class="dcard-quote">"Am I the only one left on this list who actually cares about Bitcoin's survival?" — Luke Dashjr</div>
+                  <!-- annotation: BRC-20 -->
+                  <line x1="300" y1="20" x2="300" y2="140" stroke="rgba(220,60,60,0.35)" stroke-width="1" stroke-dasharray="3,2"/>
+                  <text x="302" y="35" fill="rgba(220,60,60,0.75)" font-family="Space Mono,monospace" font-size="7">BRC-20</text>
+                  <text x="302" y="44" fill="rgba(220,60,60,0.75)" font-family="Space Mono,monospace" font-size="7">DEC 2023</text>
+
+                  <!-- annotation: halving + runes -->
+                  <line x1="365" y1="20" x2="365" y2="140" stroke="rgba(220,60,60,0.35)" stroke-width="1" stroke-dasharray="3,2"/>
+                  <text x="367" y="30" fill="rgba(220,60,60,0.75)" font-family="Space Mono,monospace" font-size="7">HALVING+</text>
+                  <text x="367" y="39" fill="rgba(220,60,60,0.75)" font-family="Space Mono,monospace" font-size="7">RUNES</text>
+                  <text x="367" y="48" fill="rgba(220,60,60,0.75)" font-family="Space Mono,monospace" font-size="7">APR 2024</text>
+
+                  <!-- x-axis labels -->
+                  <text x="45"  y="153" fill="rgba(247,147,26,0.35)" font-family="Space Mono,monospace" font-size="7.5" text-anchor="middle">2021</text>
+                  <text x="130" y="153" fill="rgba(247,147,26,0.35)" font-family="Space Mono,monospace" font-size="7.5" text-anchor="middle">2022</text>
+                  <text x="240" y="153" fill="rgba(247,147,26,0.35)" font-family="Space Mono,monospace" font-size="7.5" text-anchor="middle">2023</text>
+                  <text x="345" y="153" fill="rgba(247,147,26,0.35)" font-family="Space Mono,monospace" font-size="7.5" text-anchor="middle">2024</text>
+                  <text x="445" y="153" fill="rgba(247,147,26,0.35)" font-family="Space Mono,monospace" font-size="7.5" text-anchor="middle">2025</text>
+                </svg>
+              </div>
+
+              <!-- Block size bar chart -->
+              <div class="block-compare">
+                <div class="bc-label">Avg block<br>size shift</div>
+                <div class="bc-bars">
+                  <!-- Bars scale: pre-taproot ~0.9 MB avg, post-ordinals ~2.5 MB avg, halving peak ~3.7 MB -->
+                  <div class="bc-bar-item">
+                    <div class="bc-bar-val">0.9 MB</div>
+                    <div class="bc-bar" style="height:2.5vh; background: linear-gradient(180deg,rgba(247,147,26,0.55),rgba(247,147,26,0.15));"></div>
+                    <div class="bc-bar-label" style="color:rgba(255,255,255,0.4); font-size:0.55vw;">Pre-Taproot<br>avg 2021</div>
+                  </div>
+                  <div class="bc-bar-item">
+                    <div class="bc-bar-val">1.5 MB</div>
+                    <div class="bc-bar" style="height:4.2vh; background: linear-gradient(180deg,rgba(247,147,26,0.6),rgba(247,147,26,0.15));"></div>
+                    <div class="bc-bar-label" style="color:rgba(255,255,255,0.4); font-size:0.55vw;">Post-Taproot<br>avg 2022</div>
+                  </div>
+                  <div class="bc-bar-item">
+                    <div class="bc-bar-val" style="color:#e74c3c;">2.5 MB</div>
+                    <div class="bc-bar" style="height:7vh; background: linear-gradient(180deg,rgba(220,60,60,0.7),rgba(220,60,60,0.15));"></div>
+                    <div class="bc-bar-label" style="color:rgba(220,60,60,0.5); font-size:0.55vw;">Ordinals era<br>avg 2023</div>
+                  </div>
+                  <div class="bc-bar-item">
+                    <div class="bc-bar-val" style="color:#e74c3c;">3.7 MB</div>
+                    <div class="bc-bar" style="height:10.5vh; background: linear-gradient(180deg,rgba(220,60,60,0.85),rgba(220,60,60,0.15));"></div>
+                    <div class="bc-bar-label" style="color:rgba(220,60,60,0.6); font-size:0.55vw;">Halving + Runes<br>peak Apr 2024</div>
                   </div>
                 </div>
+              </div>
 
-                <div class="dcard">
-                  <div class="dcard-title">Camp B — "Bitcoin is permissionless blockspace."</div>
-                  <div class="dcard-body">
-                    You cannot and should not censor valid transactions. Filters push inscription
-                    traffic to <strong>private mempools</strong>, which centralizes mining and makes fees less
-                    predictable. Inscriptions provide <strong>fee revenue that will eventually replace the
-                    block subsidy</strong>. Bitcoin's anarchic governance means no one gets to define what
-                    blockspace is "for."
-                    <div class="dcard-quote">"The demand exists. Pushing it outside the relay network only causes greater harm." — Pieter Wuille</div>
-                  </div>
-                </div>
-
-                <div class="dcard hot">
-                  <div class="dcard-title">⚡ The Filter Soft Fork — Late 2025</div>
-                  <div class="dcard-body">
-                    After Bitcoin Core v30 <strong>removed the 80-byte OP_RETURN data limit</strong> and
-                    deprecated the -datacarrier filter flag — over fierce community objection —
-                    an anonymous mailing list post proposed a <strong>soft fork to enforce data limits
-                    at the consensus level</strong>. Meanwhile Bitcoin Knots (the filter-supporting
-                    alternative client) grew from 69 nodes in Jan 2024 to over 4,200 by late 2025.
-                    Samson Mow: <em style="color:rgba(247,147,26,0.75)">"I will not be running Bitcoin Core v30."</em>
-                    The fight over Bitcoin's identity is very much ongoing.
-                  </div>
-                </div>
-
-              </div><!-- debate-strip -->
-
-            </div><!-- s6-right -->
-
-          </div><!-- s6-grid -->
-
-          <!-- Identity bar -->
-          <div class="s6-identity">
-            <div class="ident-side left">
-              <div class="ident-label">The Purist View</div>
-              <div class="ident-text">Bitcoin is Satoshi's peer-to-peer electronic cash system. Block space is scarce and precious — it exists to settle monetary transactions, not store JPEGs, memes, or emulators. Every byte of spam is a byte not available for real economic activity.</div>
-            </div>
-            <div class="ident-vs">VS</div>
-            <div class="ident-side right">
-              <div class="ident-label">The Permissionless View</div>
-              <div class="ident-text">Bitcoin is censorship-resistant blockspace. If a transaction is consensus-valid and pays fees, it belongs in a block. The network's long-term security depends on a vibrant fee market — and you don't get to pick which transactions generate that market.</div>
             </div>
           </div>
 
+          <!-- Footnote: spam wars in one line -->
+          <div class="s6-footnote">
+            <span>The ongoing debate:</span> After Core v30 removed the 80-byte OP_RETURN limit (2025), an anonymous soft fork proposal emerged to filter arbitrary data at the consensus level. Bitcoin Knots (the filter-supporting client) grew from 69 nodes to 4,200+ in a year. The question of what Bitcoin's blockspace is "for" remains open — and that's how we got here.
+          </div>
+
           <div class="s6-footer">
-            <span class="s6-footer-note">Ordinals launched Jan 20 2023 · BRC-20 Mar 2023 · Runes Apr 19 2024 (halving) · Core v30 OP_RETURN debate 2025 · Bitcoin Knots nodes: 69 (Jan 2024) → 4,200+ (late 2025)</span>
-            <span class="s6-footer-sym">₿ STILL DEBATING</span>
+            <span class="s6-footer-note">Taproot activated Nov 2021 · Ordinals Jan 2023 · BRC-20 Mar 2023 · Runes Apr 2024 · P2TR Lightning: Eclair/Phoenix 2024 · MuSig2 HW wallets 2024–2025</span>
+            <span class="s6-footer-sym">₿ STILL UNFOLDING</span>
           </div>
 
         </div>
