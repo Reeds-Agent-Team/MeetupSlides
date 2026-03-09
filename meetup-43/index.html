@@ -5,146 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WMBTCM #43 — Mar. 2026</title>
 
-  <!-- Reveal.js from CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Oswald:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ── Global overrides ── */
-    .reveal-viewport { background: #000000; }
+    /* ── Reset & base ── */
+    .reveal-viewport { background: #000; }
     .reveal { font-family: 'Inter', sans-serif; }
     .reveal .slides { text-align: left; }
+    .reveal .slides section {
+      height: 100%;
+      width: 100%;
+      padding: 0 !important;
+      top: 0 !important;
+      box-sizing: border-box;
+    }
 
-    /* ── SLIDE 1: Title ── */
-    .slide-title {
+    /* ════════════════════════════════
+       SLIDE 1 — Title
+    ════════════════════════════════ */
+    .s1 {
+      background: #000;
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100%;
-      gap: 28px;
-      background: #000000;
+      gap: 40px;
     }
-    .slide-title img { width: 55%; max-width: 680px; }
-    .slide-title .meetup-number {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: #ffffff;
+    .s1 img {
+      width: 50%;
+      max-width: 800px;
     }
-    .slide-title .meetup-date {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.3rem;
+    .s1 .s1-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+    .s1 .s1-date {
+      font-size: 1.8rem;
       font-weight: 600;
       color: #f7931a;
+      margin-top: -20px;
     }
 
-    /* ── SLIDE 2: Podcast Spotlight ── */
-    .slide-podcast {
-      display: flex;
+    /* ════════════════════════════════
+       SLIDE 2 — Podcast Spotlight
+    ════════════════════════════════ */
+    .s2 {
+      background: #000;
+      width: 100%;
       height: 100%;
-      gap: 2.5rem;
-      padding: 2.5rem 3rem;
-      align-items: center;
-      background: #000000;
+      display: flex;
+      align-items: stretch;
+      padding: 56px 72px !important;
+      gap: 60px;
+      box-sizing: border-box;
     }
-    .podcast-left {
+    .s2-left {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.2rem;
+      justify-content: center;
+      gap: 28px;
       flex-shrink: 0;
-      width: 210px;
+      width: 240px;
     }
-    .podcast-left img.cover {
-      width: 175px;
-      height: 175px;
-      border-radius: 14px;
+    .s2-left img.cover {
+      width: 220px;
+      height: 220px;
+      border-radius: 16px;
     }
-    .qr-block {
+    .s2-qr {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px;
+      gap: 8px;
     }
-    .qr-block img {
-      width: 100px;
-      height: 100px;
+    .s2-qr img {
+      width: 120px;
+      height: 120px;
       border-radius: 4px;
     }
-    .qr-block span {
-      font-size: 0.58rem;
+    .s2-qr span {
+      font-size: 0.7rem;
       color: #f7931a;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
     }
-    .podcast-right {
+    .s2-right {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      justify-content: center;
       flex: 1;
+      gap: 22px;
     }
-    .spotlight-label {
-      font-size: 0.65rem;
+    .s2-eyebrow {
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: #f7931a;
       font-family: 'Space Mono', monospace;
     }
-    .podcast-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 2.4rem;
+    .s2-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.4rem;
       font-weight: 700;
-      color: #ffffff;
-      line-height: 1.15;
+      color: #fff;
+      line-height: 1.1;
       margin: 0;
+      text-transform: uppercase;
     }
-    .podcast-hosts {
-      font-size: 0.95rem;
+    .s2-hosts {
+      font-size: 1.1rem;
       color: #f7931a;
-      font-family: 'Inter', sans-serif;
-      margin: 0;
+      margin: -8px 0 0;
     }
-    .podcast-quote {
-      border-left: 3px solid #f7931a;
-      padding-left: 1rem;
+    .s2-quote {
+      border-left: 4px solid #f7931a;
+      padding: 6px 0 6px 20px;
       font-style: italic;
-      color: #ffffff;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      font-family: 'Inter', sans-serif;
+      color: #fff;
+      font-size: 1rem;
+      line-height: 1.6;
     }
-    .podcast-bullets {
+    .s2-bullets {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
+      gap: 14px;
     }
-    .podcast-bullets li {
-      font-size: 0.82rem;
-      color: #ffffff;
-      line-height: 1.5;
-      padding-left: 1.2rem;
+    .s2-bullets li {
+      font-size: 0.95rem;
+      color: #fff;
+      line-height: 1.55;
+      padding-left: 1.4rem;
       position: relative;
-      font-family: 'Inter', sans-serif;
     }
-    .podcast-bullets li::before {
+    .s2-bullets li::before {
       content: "▸";
       position: absolute;
       left: 0;
       color: #f7931a;
     }
 
-    /* ── SLIDE 3: 21M Bitcoin ── */
-    .slide-bitcoin {
+    /* ════════════════════════════════
+       SLIDE 3 — 21 Million Bitcoin
+    ════════════════════════════════ */
+    .s3 {
       position: relative;
       width: 100%;
       height: 100%;
@@ -154,9 +170,10 @@
       color: #f7931a;
       display: flex;
       flex-direction: column;
-      padding: 32px 56px 48px;
+      padding: 44px 64px 52px !important;
+      box-sizing: border-box;
     }
-    .slide-bitcoin::before {
+    .s3::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -166,14 +183,14 @@
       background-size: 60px 60px;
       pointer-events: none;
     }
-    .slide-bitcoin::after {
+    .s3::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, rgba(247,147,26,0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse at 50% 50%, rgba(247,147,26,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
-    .btc-inner {
+    .s3-inner {
       position: relative;
       z-index: 1;
       display: flex;
@@ -181,165 +198,148 @@
       height: 100%;
       gap: 0;
     }
-    .btc-title {
+    .s3-title {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
+      flex-shrink: 0;
     }
-    .btc-eyebrow {
-      font-size: 11px;
+    .s3-eyebrow {
+      font-size: 13px;
       letter-spacing: 0.35em;
       color: rgba(247,147,26,0.55);
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
-    .btc-headline {
+    .s3-headline {
       font-family: 'Oswald', sans-serif;
-      font-size: 42px;
+      font-size: 52px;
       font-weight: 700;
       line-height: 1;
       color: #f7931a;
       text-transform: uppercase;
     }
-    .btc-headline span { color: #fff; }
-    .btc-main {
+    .s3-headline span { color: #fff; }
+
+    .s3-main {
       display: flex;
       flex: 1;
-      gap: 36px;
+      gap: 48px;
       align-items: stretch;
       min-height: 0;
     }
-    .halving-chain {
+
+    /* halving chain */
+    .halving {
       display: flex;
       flex-direction: column;
-      flex-shrink: 0;
       justify-content: center;
+      flex-shrink: 0;
+      gap: 0;
     }
-    .era-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .era-row { display: flex; align-items: center; gap: 12px; }
     .era-dot {
-      width: 10px; height: 10px;
+      width: 11px; height: 11px;
       border-radius: 50%;
       background: #f7931a;
       flex-shrink: 0;
-      box-shadow: 0 0 6px rgba(247,147,26,0.6);
+      box-shadow: 0 0 7px rgba(247,147,26,0.7);
     }
     .era-dot.dim { background: rgba(247,147,26,0.25); box-shadow: none; }
     .era-dot.dead { background: #333; box-shadow: none; }
-    .era-label { font-size: 11px; color: #f7931a; white-space: nowrap; }
-    .era-label.dim { color: rgba(247,147,26,0.4); }
-    .era-label.dead { color: #444; }
-    .era-connector {
-      width: 2px; height: 13px;
-      background: linear-gradient(to bottom, rgba(247,147,26,0.5), rgba(247,147,26,0.15));
+    .era-lbl { font-size: 13px; color: #f7931a; white-space: nowrap; line-height: 1; }
+    .era-lbl.dim { color: rgba(247,147,26,0.4); }
+    .era-lbl.dead { color: #444; }
+    .era-conn {
+      width: 2px; height: 15px;
+      background: linear-gradient(to bottom, rgba(247,147,26,0.5), rgba(247,147,26,0.1));
       margin-left: 4px;
     }
-    .chart-area {
+
+    /* chart */
+    .chart {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-width: 0;
     }
-    .chart-label {
-      font-size: 10px;
-      letter-spacing: 0.2em;
+    .chart-lbl {
+      font-size: 11px;
+      letter-spacing: 0.25em;
       color: rgba(247,147,26,0.5);
       text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .chart-area svg { width: 100%; flex: 1; }
-    .truth-panel {
+      margin-bottom: 12px;
       flex-shrink: 0;
-      width: 285px;
+    }
+    .chart svg { width: 100%; flex: 1; min-height: 0; }
+
+    /* truth panel */
+    .truth {
+      flex-shrink: 0;
+      width: 310px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
       justify-content: center;
     }
     .myth-box, .truth-box {
       border: 1px solid;
-      padding: 14px 18px;
+      padding: 18px 22px;
       border-radius: 4px;
     }
     .myth-box { border-color: rgba(247,147,26,0.2); background: rgba(247,147,26,0.04); }
     .truth-box {
       border-color: #f7931a;
       background: rgba(247,147,26,0.1);
-      box-shadow: 0 0 24px rgba(247,147,26,0.15), inset 0 0 16px rgba(247,147,26,0.05);
+      box-shadow: 0 0 28px rgba(247,147,26,0.15), inset 0 0 18px rgba(247,147,26,0.05);
     }
     .box-tag {
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
+      font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; margin-bottom: 8px;
     }
     .myth-box .box-tag { color: rgba(247,147,26,0.4); }
     .truth-box .box-tag { color: #f7931a; }
-    .box-value {
+    .box-val {
       font-family: 'Oswald', sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1.1;
+      font-size: 30px; font-weight: 700; line-height: 1.1;
     }
-    .myth-box .box-value {
+    .myth-box .box-val {
       color: rgba(247,147,26,0.3);
       text-decoration: line-through;
       text-decoration-color: rgba(247,147,26,0.5);
     }
-    .truth-box .box-value { color: #fff; }
-    .box-sub {
-      font-size: 10px;
-      color: rgba(247,147,26,0.5);
-      margin-top: 4px;
-      line-height: 1.5;
-    }
+    .truth-box .box-val { color: #fff; }
+    .box-sub { font-size: 11px; margin-top: 6px; line-height: 1.6; }
+    .myth-box .box-sub { color: rgba(247,147,26,0.5); }
     .truth-box .box-sub { color: rgba(255,255,255,0.55); }
-    .missing-btc {
-      text-align: center;
-      padding: 12px;
+    .missing {
+      text-align: center; padding: 14px 0 0;
       border-top: 1px solid rgba(247,147,26,0.2);
     }
-    .missing-label {
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: rgba(247,147,26,0.5);
-      text-transform: uppercase;
-      margin-bottom: 4px;
+    .missing-lbl {
+      font-size: 11px; letter-spacing: 0.2em;
+      color: rgba(247,147,26,0.5); text-transform: uppercase; margin-bottom: 6px;
     }
-    .missing-value {
+    .missing-val {
       font-family: 'Oswald', sans-serif;
-      font-size: 20px;
-      color: rgba(247,147,26,0.7);
-    }
-    .btc-footer {
-      position: absolute;
-      bottom: 14px;
-      left: 56px;
-      right: 56px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid rgba(247,147,26,0.12);
-      padding-top: 8px;
-      z-index: 2;
-    }
-    .btc-footer-note { font-size: 10px; color: rgba(247,147,26,0.35); letter-spacing: 0.06em; }
-    .btc-footer-symbol {
-      font-family: 'Oswald', sans-serif;
-      font-size: 16px;
-      color: rgba(247,147,26,0.25);
-      letter-spacing: 0.1em;
+      font-size: 22px; color: rgba(247,147,26,0.75);
     }
 
-    /* ── Reveal overrides ── */
-    .reveal .slides section {
-      height: 100%;
-      padding: 0;
-      top: 0 !important;
+    /* footer */
+    .s3-footer {
+      position: absolute;
+      bottom: 16px; left: 64px; right: 64px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.12);
+      padding-top: 10px; z-index: 2;
     }
+    .s3-footer-note { font-size: 11px; color: rgba(247,147,26,0.35); letter-spacing: 0.06em; }
+    .s3-footer-sym {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px; color: rgba(247,147,26,0.3); letter-spacing: 0.12em;
+    }
+
+    /* Reveal chrome */
     .reveal .progress { color: #f7931a; }
     .reveal .controls { color: #f7931a; }
   </style>
@@ -348,41 +348,41 @@
 <div class="reveal">
   <div class="slides">
 
-    <!-- ══════════════════════════════════════════
+    <!-- ══════════════════════════════
          SLIDE 1 — Title
-    ══════════════════════════════════════════ -->
+    ══════════════════════════════ -->
     <section data-background-color="#000000">
-      <div class="slide-title">
+      <div class="s1">
         <img src="WMBTCM.png" alt="Western Mass Bitcoin Meetup" />
-        <div class="meetup-number">Western Mass Bitcoin Meetup #43</div>
-        <div class="meetup-date">Mar. 2026</div>
+        <div class="s1-number">Western Mass Bitcoin Meetup #43</div>
+        <div class="s1-date">Mar. 2026</div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         SLIDE 2 — Podcast Spotlight: The Bugle Weekly
-    ══════════════════════════════════════════ -->
+    <!-- ══════════════════════════════
+         SLIDE 2 — Podcast Spotlight
+    ══════════════════════════════ -->
     <section data-background-color="#000000">
-      <div class="slide-podcast">
-        <div class="podcast-left">
+      <div class="s2">
+        <div class="s2-left">
           <img class="cover" src="https://feeds.fountain.fm/R8scBF2Wiykm0YVldsHQ/files/COVER_ART---DEFAULT---2ac47830-f82a-44aa-b3cb-b5c885519901.jpg" alt="The Bugle Weekly" />
-          <div class="qr-block">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fountain.fm/show/lxGTDDEMKkUGn2EN3YRi&bgcolor=ffffff&color=000000" alt="Fountain QR" />
+          <div class="s2-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://fountain.fm/show/lxGTDDEMKkUGn2EN3YRi&bgcolor=ffffff&color=000000" alt="Fountain" />
             <span>Listen on Fountain</span>
           </div>
-          <div class="qr-block">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://bugle.news&bgcolor=ffffff&color=000000" alt="Website QR" />
+          <div class="s2-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://bugle.news&bgcolor=ffffff&color=000000" alt="Website" />
             <span>bugle.news</span>
           </div>
         </div>
-        <div class="podcast-right">
-          <div class="spotlight-label">Podcast Spotlight</div>
-          <h2 class="podcast-title">The Bugle Weekly</h2>
-          <p class="podcast-hosts">Richard Greaser &amp; Rod Palmer</p>
-          <blockquote class="podcast-quote">
+        <div class="s2-right">
+          <div class="s2-eyebrow">Podcast Spotlight</div>
+          <h2 class="s2-title">The Bugle Weekly</h2>
+          <p class="s2-hosts">Richard Greaser &amp; Rod Palmer</p>
+          <blockquote class="s2-quote">
             "It's like the 753rd funniest account on Twitter" — @udiwertheimer
           </blockquote>
-          <ul class="podcast-bullets">
+          <ul class="s2-bullets">
             <li>Launched in Jan. 2023 by Richard Greaser — in a parallel dimension where the Bugle rivals the NYT and WSJ. A glitch in the matrix lets you glimpse it.</li>
             <li>In your dimension the stories appear absurd. In theirs, they're front-page news.</li>
             <li>Zero corporate sponsorships — by design. When you take sponsor money, the audience becomes the product. The Bugle refuses that deal.</li>
@@ -392,113 +392,118 @@
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         SLIDE 3 — There Will Never Be 21 Million Bitcoin
-    ══════════════════════════════════════════ -->
+    <!-- ══════════════════════════════
+         SLIDE 3 — 21 Million Bitcoin
+    ══════════════════════════════ -->
     <section data-background-color="#0a0a0a">
-      <div class="slide-bitcoin">
-        <div class="btc-inner">
+      <div class="s3">
+        <div class="s3-inner">
 
-          <div class="btc-title">
-            <div class="btc-eyebrow">The mathematics of scarcity</div>
-            <div class="btc-headline">There Will Never Be <span>21 Million</span> Bitcoin</div>
+          <div class="s3-title">
+            <div class="s3-eyebrow">The mathematics of scarcity</div>
+            <div class="s3-headline">There Will Never Be <span>21 Million</span> Bitcoin</div>
           </div>
 
-          <div class="btc-main">
+          <div class="s3-main">
 
-            <!-- Halving chain -->
-            <div class="halving-chain">
-              <div class="era-row"><div class="era-dot"></div><span class="era-label">Era 1 · 50 BTC/block · blocks 0–209,999</span></div>
-              <div class="era-connector"></div>
-              <div class="era-row"><div class="era-dot"></div><span class="era-label">Era 2 · 25 BTC/block</span></div>
-              <div class="era-connector"></div>
-              <div class="era-row"><div class="era-dot"></div><span class="era-label">Era 3 · 12.5 BTC/block</span></div>
-              <div class="era-connector"></div>
-              <div class="era-row"><div class="era-dot"></div><span class="era-label">Era 4 · 6.25 BTC/block</span></div>
-              <div class="era-connector"></div>
-              <div class="era-row"><div class="era-dot dim"></div><span class="era-label dim">Era 5 · 3.125 BTC/block</span></div>
-              <div class="era-connector"></div>
-              <div class="era-row"><div class="era-dot dim"></div><span class="era-label dim">··· halvings continue ···</span></div>
-              <div class="era-connector"></div>
-              <div class="era-row"><div class="era-dot dim"></div><span class="era-label dim">Era 33 · 0.00000002 BTC (2 sats)</span></div>
-              <div class="era-connector"></div>
-              <div class="era-row"><div class="era-dot dim"></div><span class="era-label dim">Era 34 · 0.00000001 BTC (1 sat)</span></div>
-              <div class="era-connector"></div>
-              <div class="era-row"><div class="era-dot dead"></div><span class="era-label dead">Era 34+ · 0.00000000 BTC · block 6,930,000+</span></div>
+            <div class="halving">
+              <div class="era-row"><div class="era-dot"></div><span class="era-lbl">Era 1 · 50 BTC/block · blocks 0–209,999</span></div>
+              <div class="era-conn"></div>
+              <div class="era-row"><div class="era-dot"></div><span class="era-lbl">Era 2 · 25 BTC/block</span></div>
+              <div class="era-conn"></div>
+              <div class="era-row"><div class="era-dot"></div><span class="era-lbl">Era 3 · 12.5 BTC/block</span></div>
+              <div class="era-conn"></div>
+              <div class="era-row"><div class="era-dot"></div><span class="era-lbl">Era 4 · 6.25 BTC/block</span></div>
+              <div class="era-conn"></div>
+              <div class="era-row"><div class="era-dot dim"></div><span class="era-lbl dim">Era 5 · 3.125 BTC/block</span></div>
+              <div class="era-conn"></div>
+              <div class="era-row"><div class="era-dot dim"></div><span class="era-lbl dim">··· halvings continue ···</span></div>
+              <div class="era-conn"></div>
+              <div class="era-row"><div class="era-dot dim"></div><span class="era-lbl dim">Era 33 · 0.00000002 BTC (2 sats)</span></div>
+              <div class="era-conn"></div>
+              <div class="era-row"><div class="era-dot dim"></div><span class="era-lbl dim">Era 34 · 0.00000001 BTC (1 sat)</span></div>
+              <div class="era-conn"></div>
+              <div class="era-row"><div class="era-dot dead"></div><span class="era-lbl dead">Era 34+ · 0.00000000 BTC · block 6,930,000+</span></div>
             </div>
 
-            <!-- Bar chart -->
-            <div class="chart-area">
-              <div class="chart-label">BTC Added Per Era (log scale)</div>
-              <svg viewBox="0 0 820 380" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <div class="chart">
+              <div class="chart-lbl">BTC Added Per Era (log scale)</div>
+              <svg viewBox="0 0 820 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="bG" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stop-color="#f7931a" stop-opacity="0.95"/>
-                    <stop offset="100%" stop-color="#f7931a" stop-opacity="0.25"/>
+                    <stop offset="100%" stop-color="#f7931a" stop-opacity="0.2"/>
                   </linearGradient>
                   <linearGradient id="bGd" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#f7931a" stop-opacity="0.3"/>
+                    <stop offset="0%" stop-color="#f7931a" stop-opacity="0.35"/>
                     <stop offset="100%" stop-color="#f7931a" stop-opacity="0.06"/>
                   </linearGradient>
                 </defs>
-                <rect x="60"  y="50"  width="70" height="290" fill="url(#bG)" rx="2"/>
-                <text x="95"  y="40"  fill="#f7931a" font-family="Space Mono,monospace" font-size="14" text-anchor="middle">10.5M</text>
-                <text x="95"  y="368" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="12" text-anchor="middle">Era 1</text>
-                <rect x="160" y="80"  width="70" height="260" fill="url(#bG)" rx="2"/>
-                <text x="195" y="70"  fill="#f7931a" font-family="Space Mono,monospace" font-size="14" text-anchor="middle">5.25M</text>
-                <text x="195" y="368" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="12" text-anchor="middle">Era 2</text>
-                <rect x="260" y="115" width="70" height="225" fill="url(#bG)" rx="2"/>
-                <text x="295" y="105" fill="#f7931a" font-family="Space Mono,monospace" font-size="14" text-anchor="middle">2.63M</text>
-                <text x="295" y="368" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="12" text-anchor="middle">Era 3</text>
-                <rect x="360" y="150" width="70" height="190" fill="url(#bG)" rx="2"/>
-                <text x="395" y="140" fill="#f7931a" font-family="Space Mono,monospace" font-size="14" text-anchor="middle">1.31M</text>
-                <text x="395" y="368" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="12" text-anchor="middle">Era 4</text>
-                <rect x="460" y="190" width="70" height="150" fill="url(#bGd)" rx="2"/>
-                <text x="495" y="180" fill="rgba(247,147,26,0.45)" font-family="Space Mono,monospace" font-size="14" text-anchor="middle">656K</text>
-                <text x="495" y="368" fill="rgba(247,147,26,0.3)" font-family="Space Mono,monospace" font-size="12" text-anchor="middle">Era 5</text>
-                <rect x="560" y="225" width="70" height="115" fill="url(#bGd)" rx="2"/>
-                <text x="595" y="215" fill="rgba(247,147,26,0.35)" font-family="Space Mono,monospace" font-size="14" text-anchor="middle">328K</text>
-                <text x="595" y="368" fill="rgba(247,147,26,0.3)" font-family="Space Mono,monospace" font-size="12" text-anchor="middle">Era 6</text>
-                <rect x="660" y="265" width="70" height="75" fill="url(#bGd)" rx="2"/>
-                <text x="695" y="255" fill="rgba(247,147,26,0.25)" font-family="Space Mono,monospace" font-size="14" text-anchor="middle">164K</text>
-                <text x="695" y="368" fill="rgba(247,147,26,0.2)" font-family="Space Mono,monospace" font-size="12" text-anchor="middle">Era 7</text>
-                <line x1="40" y1="340" x2="780" y2="340" stroke="rgba(247,147,26,0.15)" stroke-width="1"/>
-                <path d="M 95 42 Q 430 10 730 258" stroke="rgba(247,147,26,0.3)" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
-                <text x="440" y="22" fill="rgba(247,147,26,0.4)" font-family="Space Mono,monospace" font-size="13" text-anchor="middle">Each era mints exactly half the previous</text>
+                <!-- bars -->
+                <rect x="55"  y="40"  width="75" height="310" fill="url(#bG)" rx="3"/>
+                <text x="92"  y="30"  fill="#f7931a" font-family="Space Mono,monospace" font-size="15" text-anchor="middle">10.5M</text>
+                <text x="92"  y="382" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="13" text-anchor="middle">Era 1</text>
+
+                <rect x="155" y="72"  width="75" height="278" fill="url(#bG)" rx="3"/>
+                <text x="192" y="62"  fill="#f7931a" font-family="Space Mono,monospace" font-size="15" text-anchor="middle">5.25M</text>
+                <text x="192" y="382" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="13" text-anchor="middle">Era 2</text>
+
+                <rect x="255" y="108" width="75" height="242" fill="url(#bG)" rx="3"/>
+                <text x="292" y="98"  fill="#f7931a" font-family="Space Mono,monospace" font-size="15" text-anchor="middle">2.63M</text>
+                <text x="292" y="382" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="13" text-anchor="middle">Era 3</text>
+
+                <rect x="355" y="148" width="75" height="202" fill="url(#bG)" rx="3"/>
+                <text x="392" y="138" fill="#f7931a" font-family="Space Mono,monospace" font-size="15" text-anchor="middle">1.31M</text>
+                <text x="392" y="382" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="13" text-anchor="middle">Era 4</text>
+
+                <rect x="455" y="192" width="75" height="158" fill="url(#bGd)" rx="3"/>
+                <text x="492" y="182" fill="rgba(247,147,26,0.5)" font-family="Space Mono,monospace" font-size="15" text-anchor="middle">656K</text>
+                <text x="492" y="382" fill="rgba(247,147,26,0.3)" font-family="Space Mono,monospace" font-size="13" text-anchor="middle">Era 5</text>
+
+                <rect x="555" y="232" width="75" height="118" fill="url(#bGd)" rx="3"/>
+                <text x="592" y="222" fill="rgba(247,147,26,0.4)" font-family="Space Mono,monospace" font-size="15" text-anchor="middle">328K</text>
+                <text x="592" y="382" fill="rgba(247,147,26,0.3)" font-family="Space Mono,monospace" font-size="13" text-anchor="middle">Era 6</text>
+
+                <rect x="655" y="272" width="75" height="78"  fill="url(#bGd)" rx="3"/>
+                <text x="692" y="262" fill="rgba(247,147,26,0.3)" font-family="Space Mono,monospace" font-size="15" text-anchor="middle">164K</text>
+                <text x="692" y="382" fill="rgba(247,147,26,0.2)" font-family="Space Mono,monospace" font-size="13" text-anchor="middle">Era 7</text>
+
+                <line x1="35" y1="350" x2="785" y2="350" stroke="rgba(247,147,26,0.15)" stroke-width="1"/>
+                <path d="M 92 32 Q 430 5 735 265" stroke="rgba(247,147,26,0.35)" stroke-width="2" fill="none" stroke-dasharray="7,5"/>
+                <text x="440" y="22" fill="rgba(247,147,26,0.45)" font-family="Space Mono,monospace" font-size="14" text-anchor="middle">Each era mints exactly half the previous</text>
               </svg>
             </div>
 
-            <!-- Truth panel -->
-            <div class="truth-panel">
+            <div class="truth">
               <div class="myth-box">
                 <div class="box-tag">The common belief</div>
-                <div class="box-value">21,000,000</div>
-                <div class="box-sub">BTC — a hard cap that is<br>often cited but never reached</div>
+                <div class="box-val">21,000,000</div>
+                <div class="box-sub">BTC — a hard cap that is often cited but never reached</div>
               </div>
               <div class="truth-box">
                 <div class="box-tag">↳ The actual maximum</div>
-                <div class="box-value">20,999,999.976<span style="font-size:19px;opacity:0.7;">9</span></div>
-                <div class="box-sub">BTC ever mineable — because<br>integer halving truncates remainders</div>
+                <div class="box-val">20,999,999.976<span style="font-size:20px;opacity:0.7;">9</span></div>
+                <div class="box-sub">BTC ever mineable — because integer halving truncates remainders</div>
               </div>
-              <div class="missing-btc">
-                <div class="missing-label">Forever missing</div>
-                <div class="missing-value">≈ 0.023 BTC · ~2,300 sats</div>
+              <div class="missing">
+                <div class="missing-lbl">Forever missing</div>
+                <div class="missing-val">≈ 0.023 BTC · ~2,300 sats</div>
               </div>
             </div>
 
-          </div><!-- end btc-main -->
+          </div><!-- s3-main -->
 
-          <div class="btc-footer">
-            <span class="btc-footer-note">Block rewards halve every 210,000 blocks · ~4 years · Final subsidy reaches 0 at block 6,930,000</span>
-            <span class="btc-footer-symbol">₿ NOT 21M</span>
+          <div class="s3-footer">
+            <span class="s3-footer-note">Block rewards halve every 210,000 blocks · ~4 years · Final subsidy reaches 0 at block 6,930,000</span>
+            <span class="s3-footer-sym">₿ NOT 21M</span>
           </div>
 
-        </div><!-- end btc-inner -->
-      </div><!-- end slide-bitcoin -->
+        </div><!-- s3-inner -->
+      </div><!-- s3 -->
     </section>
 
-  </div><!-- end slides -->
-</div><!-- end reveal -->
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
