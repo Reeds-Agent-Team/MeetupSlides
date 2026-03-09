@@ -645,6 +645,320 @@
     }
     .s5-footer-note { font-family: 'Space Mono', monospace; font-size: 0.6vw; color: rgba(247,147,26,0.4); letter-spacing: 0.06em; }
     .s5-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 1vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
+
+    /* ════════════════════════════════
+       SLIDE 6 — Post-Taproot History
+    ════════════════════════════════ */
+    .s6 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 3vh 4.5vw 1.8vh;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .s6::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .s6::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 55%, rgba(247,147,26,0.055) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .s6-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 1.4vh;
+    }
+    .s6-header { flex-shrink: 0; }
+    .s6-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72vw;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f7931a;
+      margin-bottom: 0.4vh;
+    }
+    .s6-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.4vw;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1;
+    }
+    .s6-headline span { color: #f7931a; }
+
+    /* ── main grid: left col | right col ── */
+    .s6-grid {
+      display: flex;
+      gap: 2vw;
+      flex: 1;
+      min-height: 0;
+    }
+    .s6-left  { display: flex; flex-direction: column; gap: 1.2vh; flex: 1.05; }
+    .s6-right { display: flex; flex-direction: column; gap: 1.2vh; flex: 0.95; }
+
+    /* ── section label ── */
+    .sec-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65vw;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #f7931a;
+      opacity: 0.85;
+    }
+
+    /* ── adoption timeline strip ── */
+    .adopt-strip {
+      background: rgba(247,147,26,0.04);
+      border: 1px solid rgba(247,147,26,0.14);
+      border-radius: 0.5vw;
+      padding: 1.1vh 1.1vw;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7vh;
+    }
+    .adopt-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8vw;
+    }
+    .adopt-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6vw;
+      color: #f7931a;
+      min-width: 6vw;
+      flex-shrink: 0;
+      padding-top: 0.15vh;
+    }
+    .adopt-bar-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2vh;
+    }
+    .adopt-event {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72vw;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.4;
+    }
+    .adopt-event em {
+      color: rgba(247,147,26,0.75);
+      font-style: normal;
+    }
+    .adopt-dot-line {
+      display: flex;
+      align-items: center;
+      gap: 0.4vw;
+    }
+    .adopt-dot {
+      width: 0.5vw; height: 0.5vw;
+      border-radius: 50%;
+      background: #f7931a;
+      flex-shrink: 0;
+    }
+    .adopt-dot.dim { background: rgba(247,147,26,0.3); }
+    .adopt-vline {
+      width: 1px;
+      background: rgba(247,147,26,0.2);
+      align-self: stretch;
+      margin-left: 0.22vw;
+    }
+
+    /* ── ordinals/inscriptions card ── */
+    .ord-card {
+      background: rgba(247,147,26,0.05);
+      border: 1px solid rgba(247,147,26,0.22);
+      border-radius: 0.5vw;
+      padding: 1.2vh 1.2vw;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .ord-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #f7931a, rgba(247,147,26,0.15));
+    }
+    .ord-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.55vw;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .ord-title span { color: #f7931a; }
+    .ord-meta {
+      display: flex;
+      gap: 1vw;
+      flex-wrap: wrap;
+    }
+    .ord-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1vh;
+    }
+    .ord-stat-val {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6vw;
+      color: #f7931a;
+      line-height: 1;
+    }
+    .ord-stat-lbl {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55vw;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .ord-divider {
+      width: 1px; background: rgba(247,147,26,0.18); align-self: stretch;
+    }
+    .ord-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75vw;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+    .ord-body strong { color: rgba(247,147,26,0.85); font-weight: 600; }
+    .ord-chain {
+      display: flex;
+      gap: 0.5vw;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .ord-chip {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58vw;
+      padding: 0.25vh 0.55vw;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .chip-orange { background: rgba(247,147,26,0.18); color: #f7931a; }
+    .chip-dim    { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.4); }
+    .chip-arrow  { color: rgba(247,147,26,0.4); font-size: 0.7vw; }
+
+    /* ── debate cards ── */
+    .debate-strip {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1vh;
+    }
+    .dcard {
+      background: rgba(247,147,26,0.04);
+      border: 1px solid rgba(247,147,26,0.13);
+      border-radius: 0.5vw;
+      padding: 1vh 1.1vw;
+      flex: 1;
+    }
+    .dcard.hot {
+      border-color: rgba(247,147,26,0.38);
+      background: rgba(247,147,26,0.07);
+    }
+    .dcard-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2vw;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #f7931a;
+      margin-bottom: 0.4vh;
+    }
+    .dcard-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.73vw;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+    }
+    .dcard-body strong { color: rgba(247,147,26,0.8); font-weight: 600; }
+    .dcard-quote {
+      border-left: 2px solid rgba(247,147,26,0.4);
+      padding-left: 0.7vw;
+      margin-top: 0.5vh;
+      font-style: italic;
+      font-size: 0.68vw;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+
+    /* ── identity bar at bottom ── */
+    .s6-identity {
+      flex-shrink: 0;
+      display: flex;
+      align-items: stretch;
+      border: 1px solid rgba(247,147,26,0.18);
+      border-radius: 0.4vw;
+      overflow: hidden;
+    }
+    .ident-side {
+      flex: 1;
+      padding: 0.8vh 1.1vw;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3vh;
+    }
+    .ident-side.left  { background: rgba(247,147,26,0.07); border-right: 1px solid rgba(247,147,26,0.18); }
+    .ident-side.right { background: rgba(255,255,255,0.02); }
+    .ident-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6vw;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #f7931a;
+      opacity: 0.8;
+    }
+    .ident-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72vw;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.45;
+    }
+    .ident-vs {
+      width: 3vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2vw;
+      color: rgba(247,147,26,0.4);
+      background: rgba(247,147,26,0.04);
+      border-right: 1px solid rgba(247,147,26,0.18);
+    }
+
+    .s6-footer {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.1);
+      padding-top: 0.6vh;
+      margin-top: 0.3vh;
+    }
+    .s6-footer-note { font-family: 'Space Mono', monospace; font-size: 0.58vw; color: rgba(247,147,26,0.35); letter-spacing: 0.06em; }
+    .s6-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 0.95vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
   </style>
 </head>
 <body>
@@ -1038,6 +1352,194 @@
           <div class="s5-footer">
             <span class="s5-footer-note">BIP 340 / 341 / 342 · Merged Oct 2020 · Activated Nov 14, 2021 · Block 709,632 · First major Bitcoin upgrade since SegWit (Aug 2017)</span>
             <span class="s5-footer-sym">₿ TAPROOT</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════
+         SLIDE 6 — Post-Taproot History
+    ══════════════════════════════ -->
+    <section data-background-color="#0a0a0a">
+      <div class="s6">
+        <div class="s6-inner">
+
+          <div class="s6-header">
+            <div class="s6-eyebrow">Bitcoin History · After Taproot</div>
+            <div class="s6-headline">The Promised Benefits, <span>The Unexpected Consequences</span></div>
+          </div>
+
+          <div class="s6-grid">
+
+            <!-- ── LEFT COLUMN ── -->
+            <div class="s6-left">
+
+              <!-- Adoption slow-roll -->
+              <div class="sec-label">How long did it actually take?</div>
+              <div class="adopt-strip">
+
+                <div class="adopt-row">
+                  <div class="adopt-date">Nov 2021</div>
+                  <div class="adopt-bar-wrap">
+                    <div class="adopt-dot-line">
+                      <div class="adopt-dot"></div>
+                      <div class="adopt-event">Taproot <em>activates</em> — but almost nothing uses it. Most wallets don't support bc1p addresses yet. The protocol is live; the ecosystem is not.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="adopt-row">
+                  <div class="adopt-date">2022</div>
+                  <div class="adopt-bar-wrap">
+                    <div class="adopt-dot-line">
+                      <div class="adopt-dot"></div>
+                      <div class="adopt-event">Sparrow, BlueWallet, Ledger, Trezor add P2TR support. Hardware wallet signing <em>works</em> but multisig coordination (MuSig2) still months away. Same chicken-and-egg problem SegWit had.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="adopt-row">
+                  <div class="adopt-date">2022–2023</div>
+                  <div class="adopt-bar-wrap">
+                    <div class="adopt-dot-line">
+                      <div class="adopt-dot dim"></div>
+                      <div class="adopt-event">Lightning Taproot channels (<em>P2TR channel opens</em>) spec'd in BOLT but not deployed. Promised privacy — LN channel opens indistinguishable from regular spends — still theoretical. PTLCs still not in production.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="adopt-row">
+                  <div class="adopt-date">Oct 2023</div>
+                  <div class="adopt-bar-wrap">
+                    <div class="adopt-dot-line">
+                      <div class="adopt-dot dim"></div>
+                      <div class="adopt-event">Lightning Labs ships <em>Taproot Assets</em> mainnet v1 — stablecoins &amp; tokens on Bitcoin/Lightning. First real deployment of advanced Taproot scripting in production.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="adopt-row">
+                  <div class="adopt-date">2024–2025</div>
+                  <div class="adopt-bar-wrap">
+                    <div class="adopt-dot-line">
+                      <div class="adopt-dot dim"></div>
+                      <div class="adopt-event">MuSig2 Taproot multisig reaches hardware wallets. Taproot channel adoption on LN growing but <em>still a minority</em>. Privacy benefits depend on critical mass — not there yet.</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- adopt-strip -->
+
+              <!-- Ordinals card -->
+              <div class="ord-card">
+                <div class="ord-title">Ordinals &amp; Inscriptions — <span>Jan. 2023</span></div>
+                <div class="ord-meta">
+                  <div class="ord-stat">
+                    <div class="ord-stat-val">~80M</div>
+                    <div class="ord-stat-lbl">inscriptions by late 2023</div>
+                  </div>
+                  <div class="ord-divider"></div>
+                  <div class="ord-stat">
+                    <div class="ord-stat-val">~800 sat/vB</div>
+                    <div class="ord-stat-lbl">peak BRC-20 fee spike</div>
+                  </div>
+                  <div class="ord-divider"></div>
+                  <div class="ord-stat">
+                    <div class="ord-stat-val">3.9 MB</div>
+                    <div class="ord-stat-lbl">max inscription size</div>
+                  </div>
+                </div>
+                <div class="ord-body">
+                  Casey Rodarmor's Ordinals protocol (Jan 2023) exploited the Taproot witness discount —
+                  intended for <strong>signatures</strong> — to inscribe images, text, even games onto individual sats.
+                  Taproot had removed SegWit's size cap on witness data. <strong>Rodarmor used the door
+                  exactly as it was built</strong>, even if that wasn't the intended purpose.
+                  UTXO set doubled from ~80M to ~156M by early 2024.
+                  Binance suspended withdrawals for hours during peak congestion in May 2023.
+                </div>
+                <div class="ord-chain">
+                  <span class="ord-chip chip-orange">Ordinals</span>
+                  <span class="chip-arrow">→</span>
+                  <span class="ord-chip chip-orange">BRC-20 tokens</span>
+                  <span class="chip-arrow">→</span>
+                  <span class="ord-chip chip-orange">Runes (Apr 2024)</span>
+                  <span class="chip-arrow">→</span>
+                  <span class="ord-chip chip-dim">Stamps / SRC-20</span>
+                  <span class="chip-arrow">→</span>
+                  <span class="ord-chip chip-dim">BitVM / Citrea</span>
+                </div>
+              </div>
+
+            </div><!-- s6-left -->
+
+            <!-- ── RIGHT COLUMN ── -->
+            <div class="s6-right">
+
+              <div class="sec-label">The Spam Wars — 2023 to Present</div>
+
+              <div class="debate-strip">
+
+                <div class="dcard">
+                  <div class="dcard-title">Camp A — "Bitcoin is money. Full stop."</div>
+                  <div class="dcard-body">
+                    Ordinals and inscriptions are a <strong>spam attack</strong> on the network. Arbitrary data
+                    clogs block space, drives up fees for legitimate users, bloats the UTXO set,
+                    makes nodes more expensive to run, and degrades Bitcoin's core function as
+                    peer-to-peer electronic cash. The witness discount was a mistake to exploit.
+                    <strong>Fix the bug, don't embrace the abuse.</strong>
+                    <div class="dcard-quote">"Am I the only one left on this list who actually cares about Bitcoin's survival?" — Luke Dashjr</div>
+                  </div>
+                </div>
+
+                <div class="dcard">
+                  <div class="dcard-title">Camp B — "Bitcoin is permissionless blockspace."</div>
+                  <div class="dcard-body">
+                    You cannot and should not censor valid transactions. Filters push inscription
+                    traffic to <strong>private mempools</strong>, which centralizes mining and makes fees less
+                    predictable. Inscriptions provide <strong>fee revenue that will eventually replace the
+                    block subsidy</strong>. Bitcoin's anarchic governance means no one gets to define what
+                    blockspace is "for."
+                    <div class="dcard-quote">"The demand exists. Pushing it outside the relay network only causes greater harm." — Pieter Wuille</div>
+                  </div>
+                </div>
+
+                <div class="dcard hot">
+                  <div class="dcard-title">⚡ The Filter Soft Fork — Late 2025</div>
+                  <div class="dcard-body">
+                    After Bitcoin Core v30 <strong>removed the 80-byte OP_RETURN data limit</strong> and
+                    deprecated the -datacarrier filter flag — over fierce community objection —
+                    an anonymous mailing list post proposed a <strong>soft fork to enforce data limits
+                    at the consensus level</strong>. Meanwhile Bitcoin Knots (the filter-supporting
+                    alternative client) grew from 69 nodes in Jan 2024 to over 4,200 by late 2025.
+                    Samson Mow: <em style="color:rgba(247,147,26,0.75)">"I will not be running Bitcoin Core v30."</em>
+                    The fight over Bitcoin's identity is very much ongoing.
+                  </div>
+                </div>
+
+              </div><!-- debate-strip -->
+
+            </div><!-- s6-right -->
+
+          </div><!-- s6-grid -->
+
+          <!-- Identity bar -->
+          <div class="s6-identity">
+            <div class="ident-side left">
+              <div class="ident-label">The Purist View</div>
+              <div class="ident-text">Bitcoin is Satoshi's peer-to-peer electronic cash system. Block space is scarce and precious — it exists to settle monetary transactions, not store JPEGs, memes, or emulators. Every byte of spam is a byte not available for real economic activity.</div>
+            </div>
+            <div class="ident-vs">VS</div>
+            <div class="ident-side right">
+              <div class="ident-label">The Permissionless View</div>
+              <div class="ident-text">Bitcoin is censorship-resistant blockspace. If a transaction is consensus-valid and pays fees, it belongs in a block. The network's long-term security depends on a vibrant fee market — and you don't get to pick which transactions generate that market.</div>
+            </div>
+          </div>
+
+          <div class="s6-footer">
+            <span class="s6-footer-note">Ordinals launched Jan 20 2023 · BRC-20 Mar 2023 · Runes Apr 19 2024 (halving) · Core v30 OP_RETURN debate 2025 · Bitcoin Knots nodes: 69 (Jan 2024) → 4,200+ (late 2025)</span>
+            <span class="s6-footer-sym">₿ STILL DEBATING</span>
           </div>
 
         </div>
