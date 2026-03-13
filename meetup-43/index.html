@@ -2264,6 +2264,162 @@
       </script>
     </section>
 
+    <!-- ══════════════════════════════
+         SLIDE 11 — Short Film: Bitcoin is the Pin to the Bubble
+    ══════════════════════════════ -->
+    <section data-background-color="#000000" data-pinfilm-slide="true">
+      <style>
+        .s11 {
+          width: 100%;
+          height: 100%;
+          background: #000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 4vh 5vw 3vh;
+          gap: 2.5vh;
+        }
+        .s11-header {
+          flex-shrink: 0;
+          text-align: center;
+        }
+        .s11-eyebrow {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.75vw;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          color: rgba(247,147,26,0.55);
+          margin-bottom: 0.8vh;
+        }
+        .s11-title {
+          font-family: 'Oswald', sans-serif;
+          font-size: 3vw;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #fff;
+          line-height: 1.1;
+          letter-spacing: 0.04em;
+        }
+        .s11-title span { color: #f7931a; }
+        .s11-video-wrap {
+          width: 100%;
+          flex: 1;
+          min-height: 0;
+          position: relative;
+          border-radius: 0.8vw;
+          overflow: hidden;
+          border: 1px solid rgba(247,147,26,0.2);
+          box-shadow: 0 0 60px rgba(247,147,26,0.07);
+          background: #000;
+          aspect-ratio: 16 / 9;
+          max-height: 72vh;
+          align-self: center;
+        }
+        .s11-video-thumb {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+        .s11-video-overlay {
+          position: absolute;
+          inset: 0;
+          cursor: pointer;
+          z-index: 3;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s11-play-btn {
+          width: 6vw;
+          height: 6vw;
+          background: rgba(247,147,26,0.92);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 40px rgba(247,147,26,0.55);
+          transition: transform 0.2s, background 0.2s;
+          pointer-events: none;
+        }
+        .s11-video-overlay:hover .s11-play-btn {
+          transform: scale(1.1);
+          background: #f7931a;
+        }
+        .s11-play-triangle {
+          width: 0;
+          height: 0;
+          border-top: 1.2vw solid transparent;
+          border-bottom: 1.2vw solid transparent;
+          border-left: 2.1vw solid #000;
+          margin-left: 0.35vw;
+        }
+        .s11-video-wrap iframe {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+          display: none;
+        }
+        .s11-video-wrap.playing iframe { display: block; }
+        .s11-video-wrap.playing .s11-video-overlay,
+        .s11-video-wrap.playing .s11-video-thumb { display: none; }
+      </style>
+
+      <div class="s11">
+        <div class="s11-header">
+          <div class="s11-eyebrow">₿ Bitcoin Short Films</div>
+          <h2 class="s11-title">Bitcoin is the <span>Pin</span> to the <span>Bubble</span></h2>
+        </div>
+
+        <div class="s11-video-wrap" id="pinfilm-video">
+          <img class="s11-video-thumb"
+               src="https://img.youtube.com/vi/-khLXD484xE/maxresdefault.jpg"
+               alt="Bitcoin is the Pin to the Bubble" />
+          <div class="s11-video-overlay" onclick="playPinFilm()">
+            <div class="s11-play-btn">
+              <div class="s11-play-triangle"></div>
+            </div>
+          </div>
+          <iframe id="pinfilm-iframe"
+                  src=""
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <script>
+        function playPinFilm() {
+          var wrap = document.getElementById('pinfilm-video');
+          var iframe = document.getElementById('pinfilm-iframe');
+          iframe.src = 'https://www.youtube.com/embed/-khLXD484xE?autoplay=1&rel=0';
+          wrap.classList.add('playing');
+        }
+
+        function stopPinFilm() {
+          var wrap = document.getElementById('pinfilm-video');
+          var iframe = document.getElementById('pinfilm-iframe');
+          iframe.src = '';
+          wrap.classList.remove('playing');
+        }
+
+        if (typeof Reveal !== 'undefined') {
+          Reveal.on('slidechanged', function(event) {
+            var section = event.previousSlide;
+            if (section && section.getAttribute('data-pinfilm-slide') === 'true') {
+              stopPinFilm();
+            }
+          });
+        }
+      </script>
+    </section>
+
   </div>
 </div>
 
