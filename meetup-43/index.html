@@ -1004,9 +1004,9 @@
     <section data-background-color="#000000">
       <div class="s2">
         <div class="s2-left">
-          <img class="cover"
-               src="https://covers.openlibrary.org/b/isbn/9781544526478-L.jpg"
-               alt="The Fiat Standard" />
+          <img src="https://covers.openlibrary.org/b/isbn/9781544526478-L.jpg"
+               alt="The Fiat Standard"
+               style="width:16vw; height:24vw; object-fit:contain; border-radius:0.4vw;" />
           <div class="s2-qr">
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://thesaifhouse.com/&bgcolor=ffffff&color=000000" alt="thesaifhouse.com" />
             <span>thesaifhouse.com</span>
@@ -1602,6 +1602,134 @@
             <span class="s6-footer-sym">₿ STILL UNFOLDING</span>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 7 — News: 20M Bitcoin Mined
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s7 {
+          background: #000;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: stretch;
+          padding: 5vh 5vw;
+          gap: 4vw;
+          box-sizing: border-box;
+        }
+        .s7-left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          width: 38vw;
+          gap: 2vh;
+        }
+        .s7-graphic {
+          width: 100%;
+          border-radius: 0.8vw;
+          border: 1px solid rgba(247,147,26,0.25);
+        }
+        .s7-link {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.65vw;
+          color: rgba(247,147,26,0.55);
+          letter-spacing: 0.1em;
+          text-decoration: none;
+          word-break: break-all;
+          text-align: center;
+        }
+        .s7-right {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex: 1;
+          gap: 2.5vh;
+        }
+        .s7-eyebrow {
+          font-family: 'Space Mono', monospace;
+          font-size: 1.4vw;
+          font-weight: 700;
+          letter-spacing: 0.25em;
+          text-transform: uppercase;
+          color: #f7931a;
+        }
+        .s7-headline {
+          font-family: 'Oswald', sans-serif;
+          font-size: 5.5vw;
+          font-weight: 700;
+          color: #fff;
+          line-height: 1.0;
+          text-transform: uppercase;
+        }
+        .s7-headline span { color: #f7931a; }
+        .s7-sub {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.4vw;
+          color: rgba(255,255,255,0.6);
+          line-height: 1.6;
+        }
+        .s7-sub strong { color: #f7931a; font-weight: 600; }
+        .s7-stats {
+          display: flex;
+          gap: 2vw;
+        }
+        .s7-stat {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4vh;
+        }
+        .s7-stat-val {
+          font-family: 'Oswald', sans-serif;
+          font-size: 2.6vw;
+          font-weight: 700;
+          color: #f7931a;
+          line-height: 1;
+        }
+        .s7-stat-lbl {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.65vw;
+          color: rgba(255,255,255,0.4);
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+        }
+      </style>
+      <div class="s7">
+        <div class="s7-left">
+          <img class="s7-graphic"
+               src="https://mempool.space/resources/mempool-space-og.png"
+               alt="mempool.space block 939999" />
+          <a class="s7-link" href="https://mempool.space/block/000000000000000000007e95c9885d9eb2d67a3b7027d678376bb487323004ca">
+            mempool.space · block 939,999
+          </a>
+        </div>
+        <div class="s7-right">
+          <div class="s7-eyebrow">₿ Bitcoin News</div>
+          <h2 class="s7-headline"><span>20 Million</span><br>Bitcoin Mined</h2>
+          <p class="s7-sub">
+            On <strong>March 9, 2026</strong>, Foundry USA mined block <strong>939,999</strong> —
+            the block that pushed Bitcoin's circulating supply past 20 million coins.
+            17 years, 2 months after the genesis block.
+          </p>
+          <div class="s7-stats">
+            <div class="s7-stat">
+              <div class="s7-stat-val">95.24%</div>
+              <div class="s7-stat-lbl">of supply mined</div>
+            </div>
+            <div class="s7-stat">
+              <div class="s7-stat-val">1M</div>
+              <div class="s7-stat-lbl">coins remaining</div>
+            </div>
+            <div class="s7-stat">
+              <div class="s7-stat-val">114 yrs</div>
+              <div class="s7-stat-lbl">to mine the rest</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
