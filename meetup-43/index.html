@@ -1952,6 +1952,318 @@
       </div>
     </section>
 
+    <!-- ══════════════════════════════
+         SLIDE 10 — Tech Topic: OpenClaw
+    ══════════════════════════════ -->
+    <section data-background-color="#000000" data-openclaw-slide="true">
+      <style>
+        .s10 {
+          width: 100%;
+          height: 100%;
+          background: #000;
+          display: flex;
+          flex-direction: column;
+          box-sizing: border-box;
+          overflow: hidden;
+          position: relative;
+        }
+        /* subtle grid bg */
+        .s10::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(247,147,26,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(247,147,26,0.03) 1px, transparent 1px);
+          background-size: 60px 60px;
+          pointer-events: none;
+          z-index: 0;
+        }
+        .s10-header {
+          position: relative;
+          z-index: 1;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 3vh 5vw 2vh;
+          border-bottom: 1px solid rgba(247,147,26,0.15);
+        }
+        .s10-header-left {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4vh;
+        }
+        .s10-eyebrow {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.75vw;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          color: rgba(247,147,26,0.6);
+        }
+        .s10-title {
+          font-family: 'Oswald', sans-serif;
+          font-size: 4.2vw;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #fff;
+          line-height: 1;
+          letter-spacing: 0.03em;
+        }
+        .s10-title span {
+          color: #f7931a;
+        }
+        .s10-tagline {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.15vw;
+          color: rgba(255,255,255,0.45);
+          font-style: italic;
+        }
+        .s10-url {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.75vw;
+          color: rgba(247,147,26,0.4);
+          letter-spacing: 0.1em;
+          align-self: flex-end;
+        }
+        .s10-body {
+          position: relative;
+          z-index: 1;
+          flex: 1;
+          display: flex;
+          gap: 3vw;
+          padding: 2.5vh 5vw 3vh;
+          min-height: 0;
+        }
+        /* LEFT: feature pills */
+        .s10-left {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 1.6vh;
+          flex-shrink: 0;
+          width: 26vw;
+        }
+        .s10-feature {
+          display: flex;
+          align-items: flex-start;
+          gap: 1vw;
+        }
+        .s10-icon {
+          font-size: 1.4vw;
+          flex-shrink: 0;
+          margin-top: 0.1vh;
+          line-height: 1;
+        }
+        .s10-feature-text {}
+        .s10-feature-label {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.75vw;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #f7931a;
+          margin-bottom: 0.3vh;
+        }
+        .s10-feature-desc {
+          font-family: 'Inter', sans-serif;
+          font-size: 1vw;
+          color: rgba(255,255,255,0.55);
+          line-height: 1.5;
+        }
+        .s10-divider {
+          width: 100%;
+          height: 1px;
+          background: linear-gradient(to right, rgba(247,147,26,0.25), transparent);
+        }
+        /* RIGHT: video */
+        .s10-right {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1.5vh;
+          min-width: 0;
+        }
+        .s10-video-wrap {
+          width: 100%;
+          position: relative;
+          border-radius: 0.8vw;
+          overflow: hidden;
+          border: 1px solid rgba(247,147,26,0.2);
+          box-shadow: 0 0 40px rgba(247,147,26,0.08);
+          background: #0a0a0a;
+          /* 16:9 aspect ratio */
+          aspect-ratio: 16 / 9;
+        }
+        .s10-video-thumb {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+          transition: opacity 0.3s ease;
+        }
+        .s10-play-btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 5vw;
+          height: 5vw;
+          background: rgba(247,147,26,0.92);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background 0.2s, transform 0.2s;
+          box-shadow: 0 0 30px rgba(247,147,26,0.5);
+          z-index: 2;
+          border: none;
+          pointer-events: none;
+        }
+        .s10-play-triangle {
+          width: 0;
+          height: 0;
+          border-top: 1vw solid transparent;
+          border-bottom: 1vw solid transparent;
+          border-left: 1.8vw solid #000;
+          margin-left: 0.3vw;
+        }
+        .s10-video-overlay {
+          position: absolute;
+          inset: 0;
+          cursor: pointer;
+          z-index: 3;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s10-video-overlay:hover .s10-play-btn {
+          background: #f7931a;
+          transform: translate(-50%, -50%) scale(1.08);
+        }
+        .s10-video-wrap iframe {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+          display: none;
+        }
+        .s10-video-wrap.playing iframe { display: block; }
+        .s10-video-wrap.playing .s10-video-overlay { display: none; }
+        .s10-video-wrap.playing .s10-video-thumb { display: none; }
+        .s10-video-caption {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.65vw;
+          color: rgba(247,147,26,0.35);
+          letter-spacing: 0.1em;
+          text-align: center;
+        }
+      </style>
+
+      <div class="s10">
+        <div class="s10-header">
+          <div class="s10-header-left">
+            <div class="s10-eyebrow">₿ Bitcoin Tech Topic</div>
+            <h2 class="s10-title"><span>Open</span>Claw</h2>
+            <div class="s10-tagline">The AI that actually does things.</div>
+          </div>
+          <div class="s10-url">openclaw.ai</div>
+        </div>
+
+        <div class="s10-body">
+          <!-- LEFT: features -->
+          <div class="s10-left">
+            <div class="s10-feature">
+              <div class="s10-icon">🖥️</div>
+              <div class="s10-feature-text">
+                <div class="s10-feature-label">Runs on Your Machine</div>
+                <div class="s10-feature-desc">Mac, Windows, or Linux. Your data stays yours — private by default.</div>
+              </div>
+            </div>
+            <div class="s10-divider"></div>
+            <div class="s10-feature">
+              <div class="s10-icon">💬</div>
+              <div class="s10-feature-text">
+                <div class="s10-feature-label">Any Chat App</div>
+                <div class="s10-feature-desc">Control it from WhatsApp, Telegram, iMessage, Discord, Slack, or Signal.</div>
+              </div>
+            </div>
+            <div class="s10-divider"></div>
+            <div class="s10-feature">
+              <div class="s10-icon">🧠</div>
+              <div class="s10-feature-text">
+                <div class="s10-feature-label">Persistent Memory</div>
+                <div class="s10-feature-desc">Remembers everything. Becomes uniquely yours over time.</div>
+              </div>
+            </div>
+            <div class="s10-divider"></div>
+            <div class="s10-feature">
+              <div class="s10-icon">🔧</div>
+              <div class="s10-feature-text">
+                <div class="s10-feature-label">Skills &amp; Full System Access</div>
+                <div class="s10-feature-desc">Browse the web, run scripts, manage files. Extend with community skills — or let it write its own.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: video -->
+          <div class="s10-right">
+            <div class="s10-video-wrap" id="openclaw-video">
+              <!-- YouTube thumbnail -->
+              <img class="s10-video-thumb"
+                   src="https://img.youtube.com/vi/ewL1Mh4j4Ao/maxresdefault.jpg"
+                   alt="OpenClaw demo video" />
+              <!-- Play overlay -->
+              <div class="s10-video-overlay" onclick="playOpenclawVideo()">
+                <div class="s10-play-btn">
+                  <div class="s10-play-triangle"></div>
+                </div>
+              </div>
+              <!-- Iframe injected on play -->
+              <iframe id="openclaw-iframe"
+                      src=""
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+              </iframe>
+            </div>
+            <div class="s10-video-caption">▶ Click to play · youtube.com/watch?v=ewL1Mh4j4Ao</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function playOpenclawVideo() {
+          var wrap = document.getElementById('openclaw-video');
+          var iframe = document.getElementById('openclaw-iframe');
+          iframe.src = 'https://www.youtube.com/embed/ewL1Mh4j4Ao?autoplay=1&rel=0';
+          wrap.classList.add('playing');
+        }
+
+        function stopOpenclawVideo() {
+          var wrap = document.getElementById('openclaw-video');
+          var iframe = document.getElementById('openclaw-iframe');
+          iframe.src = '';
+          wrap.classList.remove('playing');
+        }
+
+        // Stop video whenever the slide changes away
+        if (typeof Reveal !== 'undefined') {
+          Reveal.on('slidechanged', function(event) {
+            var section = event.previousSlide;
+            if (section && section.getAttribute('data-openclaw-slide') === 'true') {
+              stopOpenclawVideo();
+            }
+          });
+        }
+      </script>
+    </section>
+
   </div>
 </div>
 
