@@ -2040,36 +2040,42 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          gap: 1.6vh;
+          gap: 1vh;
           flex-shrink: 0;
           width: 26vw;
+        }
+        .s10-clawstars {
+          width: 100%;
+          border-radius: 0.5vw;
+          border: 1px solid rgba(247,147,26,0.2);
+          margin-bottom: 0.5vh;
         }
         .s10-feature {
           display: flex;
           align-items: flex-start;
-          gap: 1vw;
+          gap: 0.8vw;
         }
         .s10-icon {
-          font-size: 1.4vw;
+          font-size: 1.1vw;
           flex-shrink: 0;
-          margin-top: 0.1vh;
+          margin-top: 0.15vh;
           line-height: 1;
         }
         .s10-feature-text {}
         .s10-feature-label {
           font-family: 'Space Mono', monospace;
-          font-size: 0.75vw;
+          font-size: 0.65vw;
           font-weight: 700;
-          letter-spacing: 0.18em;
+          letter-spacing: 0.15em;
           text-transform: uppercase;
           color: #f7931a;
-          margin-bottom: 0.3vh;
+          margin-bottom: 0.2vh;
         }
         .s10-feature-desc {
           font-family: 'Inter', sans-serif;
-          font-size: 1vw;
+          font-size: 0.85vw;
           color: rgba(255,255,255,0.55);
-          line-height: 1.5;
+          line-height: 1.45;
         }
         .s10-divider {
           width: 100%;
@@ -2167,22 +2173,10 @@
       </style>
 
       <div class="s10">
-        <div class="s10-header">
-          <div class="s10-header-left">
-            <img src="ClawStars.png"
-                 alt="OpenClaw GitHub stars"
-                 style="height:9vh; width:auto; border-radius:0.4vw; opacity:0.9; border:1px solid rgba(247,147,26,0.15);" />
-          </div>
-          <div style="display:flex; flex-direction:column; gap:0.4vh;">
-            <div class="s10-eyebrow">₿ Bitcoin Tech Topic</div>
-            <h2 class="s10-title"><span>Open</span>Claw</h2>
-            <div class="s10-tagline">The AI that actually does things. &nbsp;·&nbsp; <span style="color:rgba(247,147,26,0.55);">openclaw.ai</span></div>
-          </div>
-        </div>
-
-        <div class="s10-body">
-          <!-- LEFT: features -->
+        <div class="s10-body" style="padding-top:3vh;">
+          <!-- LEFT: ClawStars image + features -->
           <div class="s10-left">
+            <img class="s10-clawstars" src="ClawStars.png" alt="OpenClaw GitHub stars vs Linux and React" />
             <div class="s10-feature">
               <div class="s10-icon">🖥️</div>
               <div class="s10-feature-text">
@@ -2224,9 +2218,14 @@
             </div>
           </div>
 
-          <!-- RIGHT: video -->
+          <!-- RIGHT: title + video -->
           <div class="s10-right">
-            <div class="s10-video-wrap" id="openclaw-video">
+            <div style="width:100%; flex-shrink:0; padding-bottom:1vh; border-bottom:1px solid rgba(247,147,26,0.15); margin-bottom:0.5vh;">
+              <div class="s10-eyebrow" style="margin-bottom:0.3vh;">₿ Bitcoin Tech Topic</div>
+              <h2 class="s10-title"><span>Open</span>Claw</h2>
+              <div class="s10-tagline">The AI that actually does things. &nbsp;·&nbsp; <span style="color:rgba(247,147,26,0.45); font-style:normal; font-size:0.9vw; font-family:'Space Mono',monospace;">openclaw.ai</span></div>
+            </div>
+            <div class="s10-video-wrap" id="openclaw-video" style="width:90%;">
               <!-- YouTube thumbnail -->
               <img class="s10-video-thumb"
                    src="https://img.youtube.com/vi/ewL1Mh4j4Ao/maxresdefault.jpg"
