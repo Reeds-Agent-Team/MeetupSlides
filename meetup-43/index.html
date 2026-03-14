@@ -224,6 +224,10 @@
     .era-lbl { font-size: 0.85vw; color: #f7931a; white-space: nowrap; line-height: 1; }
     .era-lbl.dim { color: rgba(247,147,26,0.4); }
     .era-lbl.dead { color: #444; }
+    .era-text { display: flex; flex-direction: column; gap: 0.2vw; }
+    .era-total { font-family: 'Space Mono', monospace; font-size: 0.6vw; color: rgba(255,255,255,0.4); line-height: 1; letter-spacing: 0.01em; }
+    .era-total.dim { color: rgba(247,147,26,0.25); }
+    .era-total.dead { color: #383838; }
     .era-conn {
       width: 2px; height: 1.4vh;
       background: linear-gradient(to bottom, rgba(247,147,26,0.5), rgba(247,147,26,0.1));
@@ -1042,23 +1046,23 @@
           <div class="s3-main">
 
             <div class="halving">
-              <div class="era-row"><div class="era-dot"></div><span class="era-lbl">Era 1 · 50 BTC/block · blocks 0–209,999</span></div>
+              <div class="era-row"><div class="era-dot"></div><div class="era-text"><span class="era-lbl">Era 1 · 50 BTC/block · blocks 0–209,999</span><span class="era-total">10,500,000 BTC minted · Σ 10,500,000 total (50% of cap)</span></div></div>
               <div class="era-conn"></div>
-              <div class="era-row"><div class="era-dot"></div><span class="era-lbl">Era 2 · 25 BTC/block</span></div>
+              <div class="era-row"><div class="era-dot"></div><div class="era-text"><span class="era-lbl">Era 2 · 25 BTC/block</span><span class="era-total">5,250,000 BTC minted · Σ 15,750,000 total (75% of cap)</span></div></div>
               <div class="era-conn"></div>
-              <div class="era-row"><div class="era-dot"></div><span class="era-lbl">Era 3 · 12.5 BTC/block</span></div>
+              <div class="era-row"><div class="era-dot"></div><div class="era-text"><span class="era-lbl">Era 3 · 12.5 BTC/block</span><span class="era-total">2,625,000 BTC minted · Σ 18,375,000 total (87.5% of cap)</span></div></div>
               <div class="era-conn"></div>
-              <div class="era-row"><div class="era-dot"></div><span class="era-lbl">Era 4 · 6.25 BTC/block</span></div>
+              <div class="era-row"><div class="era-dot"></div><div class="era-text"><span class="era-lbl">Era 4 · 6.25 BTC/block</span><span class="era-total">1,312,500 BTC minted · Σ 19,687,500 total (93.75% of cap)</span></div></div>
               <div class="era-conn"></div>
-              <div class="era-row"><div class="era-dot dim"></div><span class="era-lbl dim">Era 5 · 3.125 BTC/block</span></div>
+              <div class="era-row"><div class="era-dot dim"></div><div class="era-text"><span class="era-lbl dim">Era 5 · 3.125 BTC/block</span><span class="era-total dim">656,250 BTC minted · Σ 20,343,750 total (96.875% of cap)</span></div></div>
               <div class="era-conn"></div>
-              <div class="era-row"><div class="era-dot dim"></div><span class="era-lbl dim">··· halvings continue ···</span></div>
+              <div class="era-row"><div class="era-dot dim"></div><div class="era-text"><span class="era-lbl dim">··· halvings continue ···</span><span class="era-total dim">each era mints ½ the previous · Σ → 21,000,000</span></div></div>
               <div class="era-conn"></div>
-              <div class="era-row"><div class="era-dot dim"></div><span class="era-lbl dim">Era 33 · 0.00000002 BTC (2 sats)</span></div>
+              <div class="era-row"><div class="era-dot dim"></div><div class="era-text"><span class="era-lbl dim">Era 33 · 0.00000002 BTC (2 sats)</span><span class="era-total dim">0.0042 BTC minted · Σ ≈ 20,999,999.97 total</span></div></div>
               <div class="era-conn"></div>
-              <div class="era-row"><div class="era-dot dim"></div><span class="era-lbl dim">Era 34 · 0.00000001 BTC (1 sat)</span></div>
+              <div class="era-row"><div class="era-dot dim"></div><div class="era-text"><span class="era-lbl dim">Era 34 · 0.00000001 BTC (1 sat)</span><span class="era-total dim">0.0021 BTC minted · Σ ≈ 20,999,999.977 total</span></div></div>
               <div class="era-conn"></div>
-              <div class="era-row"><div class="era-dot dead"></div><span class="era-lbl dead">Era 34+ · 0.00000000 BTC · block 6,930,000+</span></div>
+              <div class="era-row"><div class="era-dot dead"></div><div class="era-text"><span class="era-lbl dead">Era 34+ · 0.00000000 BTC · block 6,930,000+</span><span class="era-total dead">0 BTC minted · Σ ≈ 20,999,999.977 BTC — never 21M</span></div></div>
             </div>
 
             <div class="chart">
