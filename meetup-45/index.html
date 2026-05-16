@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WMBTCM #45 - May 2026</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Oswald:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Kill all Reveal defaults ── */
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+    .reveal-viewport { background: #000 !important; }
+    .reveal, .reveal .slides { width: 100% !important; height: 100% !important; }
+    .reveal .slides section {
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+      box-sizing: border-box;
+    }
+    /* hide reveal's own bullet styling */
+    .reveal ul { list-style: none; padding: 0; margin: 0; }
+    .reveal blockquote { background: none; border: none; box-shadow: none; padding: 0; margin: 0; width: 100%; }
+    .reveal h2 { margin: 0; }
+    .reveal .progress { color: #f7931a; }
+    .reveal .controls { color: #f7931a; }
+
+    /* ════════════════════════════════
+       SLIDE 1 — Title
+    ════════════════════════════════ */
+    .s1 {
+      background: #000;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3vh;
+    }
+    .s1 img { width: 42vw; max-width: 820px; }
+    .s1-number { font-family: 'Inter', sans-serif; font-size: 2.4vw; font-weight: 700; letter-spacing: 0.08em; color: #fff; }
+    .s1-date   { font-family: 'Inter', sans-serif; font-size: 1.9vw; font-weight: 600; color: #f7931a; }
+
+    /* ════════════════════════════════
+       SLIDE 2 — Podcast Spotlight
+    ════════════════════════════════ */
+    .s2 {
+      background: #000;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: stretch;
+      padding: 5vh 5vw;
+      gap: 4vw;
+      box-sizing: border-box;
+    }
+    .s2-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5vh;
+      flex-shrink: 0;
+      width: 18vw;
+    }
+    .s2-left img.cover {
+      width: 16vw;
+      height: 16vw;
+      border-radius: 1vw;
+      object-fit: cover;
+    }
+    .s2-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6vh;
+    }
+    .s2-qr img { width: 9vw; height: 9vw; border-radius: 4px; }
+    .s2-qr span {
+      font-size: 0.7vw;
+      color: #f7931a;
+      letter-spacing: 0.12em;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+    }
+    .s2-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      gap: 2.2vh;
+    }
+    .s2-eyebrow {
+      font-size: 1.4vw;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #f7931a;
+      font-family: 'Space Mono', monospace;
+    }
+    .s2-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 6.5vw;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+    .s2-hosts { font-size: 2vw; color: #f7931a; font-family: 'Inter', sans-serif; }
+    .s2-quote {
+      border-left: 0.3vw solid #f7931a;
+      padding: 0.5vh 0 0.5vh 1.2vw;
+      font-style: italic;
+      color: #fff;
+      font-size: 1.55vw;
+      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+    }
+    .s2-bullets { display: flex; flex-direction: column; gap: 1.4vh; }
+    .s2-bullets li {
+      font-size: 1.4vw;
+      color: #fff;
+      line-height: 1.55;
+      padding-left: 1.2vw;
+      position: relative;
+      font-family: 'Inter', sans-serif;
+    }
+    .s2-bullets li::before { content: "▸"; position: absolute; left: 0; color: #f7931a; }
+
+    /* ════════════════════════════════
+       SLIDE 2 — Event Advertisement
+    ════════════════════════════════ */
+    .sadv {
+      background: #000;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: stretch;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .sadv-left {
+      width: 30vw;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .sadv-left img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .sadv-center {
+      flex-shrink: 0;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+    }
+    .sadv-center img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+    .sadv-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4.5vh 3.5vw;
+      box-sizing: border-box;
+      gap: 2.2vh;
+      min-width: 0;
+    }
+    .sadv-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75vw;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #f7931a;
+    }
+    .sadv-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 5.5vw;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.0;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .sadv-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.4vw;
+      color: rgba(255,255,255,0.65);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+    .sadv-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1vh;
+      border-left: 0.25vw solid #f7931a;
+      padding-left: 1.2vw;
+    }
+    .sadv-detail {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8vw;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05vw;
+      color: rgba(255,255,255,0.85);
+    }
+    .sadv-detail .lbl {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #f7931a;
+      min-width: 4.5vw;
+      flex-shrink: 0;
+    }
+    .sadv-qr {
+      display: flex;
+      align-items: center;
+      gap: 1.2vw;
+    }
+    .sadv-qr img {
+      width: 7.5vw;
+      height: 7.5vw;
+      border-radius: 4px;
+    }
+    .sadv-qr-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4vh;
+    }
+    .sadv-qr-text .ql {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65vw;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f7931a;
+    }
+    .sadv-qr-text .qsub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85vw;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ════════════════════════════════
+       SLIDE 3 — 21 Million Bitcoin
+    ════════════════════════════════ */
+    .s3 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      font-family: 'Space Mono', monospace;
+      color: #f7931a;
+      display: flex;
+      flex-direction: column;
+      padding: 4vh 4.5vw 6vh !important;
+      box-sizing: border-box;
+    }
+    .s3::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .s3::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(247,147,26,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .s3-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .s3-title {
+      text-align: center;
+      margin-bottom: 2.5vh;
+      flex-shrink: 0;
+    }
+    .s3-eyebrow {
+      font-size: 0.75vw;
+      letter-spacing: 0.35em;
+      color: rgba(247,147,26,0.55);
+      text-transform: uppercase;
+      margin-bottom: 0.8vh;
+    }
+    .s3-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.6vw;
+      font-weight: 700;
+      line-height: 1;
+      color: #f7931a;
+      text-transform: uppercase;
+    }
+    .s3-headline span { color: #fff; }
+    .s3-main {
+      display: flex;
+      flex: 1;
+      gap: 3vw;
+      align-items: stretch;
+      min-height: 0;
+    }
+
+    /* halving chain */
+    .halving {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-shrink: 0;
+      gap: 0;
+    }
+    .era-row { display: flex; align-items: center; gap: 0.8vw; }
+    .era-dot {
+      width: 0.7vw; height: 0.7vw;
+      border-radius: 50%;
+      background: #f7931a;
+      flex-shrink: 0;
+      box-shadow: 0 0 6px rgba(247,147,26,0.6);
+    }
+    .era-dot.dim { background: rgba(247,147,26,0.25); box-shadow: none; }
+    .era-dot.dead { background: #333; box-shadow: none; }
+    .era-lbl { font-size: 0.85vw; color: #f7931a; white-space: nowrap; line-height: 1; }
+    .era-lbl.dim { color: rgba(247,147,26,0.4); }
+    .era-lbl.dead { color: #444; }
+    .era-text { display: flex; flex-direction: column; gap: 0.2vw; }
+    .era-total { font-family: 'Space Mono', monospace; font-size: 0.6vw; color: rgba(255,255,255,0.4); line-height: 1; letter-spacing: 0.01em; }
+    .era-total.dim { color: rgba(247,147,26,0.25); }
+    .era-total.dead { color: #383838; }
+    .era-conn {
+      width: 2px; height: 1.4vh;
+      background: linear-gradient(to bottom, rgba(247,147,26,0.5), rgba(247,147,26,0.1));
+      margin-left: 0.32vw;
+    }
+
+    /* chart */
+    .chart {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+    }
+    .chart-lbl {
+      font-size: 0.7vw;
+      letter-spacing: 0.25em;
+      color: rgba(247,147,26,0.5);
+      text-transform: uppercase;
+      margin-bottom: 1vh;
+      flex-shrink: 0;
+    }
+    .chart svg { width: 100%; flex: 1; min-height: 0; overflow: visible; }
+
+    /* truth panel */
+    .truth {
+      flex-shrink: 0;
+      width: 22vw;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5vh;
+      justify-content: center;
+    }
+    .myth-box, .truth-box {
+      border: 1px solid;
+      padding: 1.8vh 1.5vw;
+      border-radius: 4px;
+    }
+    .myth-box { border-color: rgba(247,147,26,0.2); background: rgba(247,147,26,0.04); }
+    .truth-box {
+      border-color: #f7931a;
+      background: rgba(247,147,26,0.1);
+      box-shadow: 0 0 28px rgba(247,147,26,0.15), inset 0 0 18px rgba(247,147,26,0.05);
+    }
+    .box-tag { font-size: 0.65vw; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 0.8vh; }
+    .myth-box .box-tag { color: rgba(247,147,26,0.4); }
+    .truth-box .box-tag { color: #f7931a; }
+    .box-val { font-family: 'Oswald', sans-serif; font-size: 2vw; font-weight: 700; line-height: 1.1; }
+    .myth-box .box-val { color: rgba(247,147,26,0.3); text-decoration: line-through; text-decoration-color: rgba(247,147,26,0.5); }
+    .truth-box .box-val { color: #fff; }
+    .box-sub { font-size: 0.7vw; margin-top: 0.5vh; line-height: 1.6; }
+    .myth-box .box-sub { color: rgba(247,147,26,0.5); }
+    .truth-box .box-sub { color: rgba(255,255,255,0.55); }
+    .missing { text-align: center; padding: 1.2vh 0 0; border-top: 1px solid rgba(247,147,26,0.2); }
+    .missing-lbl { font-size: 0.65vw; letter-spacing: 0.2em; color: rgba(247,147,26,0.5); text-transform: uppercase; margin-bottom: 0.5vh; }
+    .missing-val { font-family: 'Oswald', sans-serif; font-size: 1.4vw; color: rgba(247,147,26,0.75); }
+
+    /* footer */
+    .s3-footer {
+      position: absolute;
+      bottom: 1.5vh; left: 4.5vw; right: 4.5vw;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.12);
+      padding-top: 0.8vh; z-index: 2;
+    }
+    .s3-footer-note { font-size: 0.65vw; color: rgba(247,147,26,0.35); letter-spacing: 0.06em; }
+    .s3-footer-sym { font-family: 'Oswald', sans-serif; font-size: 1vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
+
+    /* ════════════════════════════════
+       SLIDE 4 — LocalBitcoins History
+    ════════════════════════════════ */
+    .s-lb {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      padding: 4vh 5vw; box-sizing: border-box; background: #000;
+    }
+    .slb-header {
+      display: flex; align-items: center; gap: 2vw;
+      border-bottom: 1px solid rgba(247,147,26,0.3);
+      padding-bottom: 2vh; margin-bottom: 2.5vh; flex-shrink: 0;
+    }
+    .slb-logo {
+      height: 7vh; width: auto; background: #fff;
+      border-radius: 0.4vw; padding: 0.6vh 1vw;
+    }
+    .slb-title-block { display: flex; flex-direction: column; gap: 0.3vh; }
+    .slb-eyebrow {
+      font-family: 'Space Mono', monospace; font-size: 0.75vw;
+      color: #f7931a; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .slb-headline {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 3.2vw; color: #fff; line-height: 1;
+    }
+    .slb-body {
+      display: flex; flex: 1; gap: 3vw; min-height: 0;
+    }
+    .slb-left {
+      display: flex; flex-direction: column; flex: 1; justify-content: center;
+    }
+    .slb-right {
+      width: 40vw; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    }
+    .slb-right img {
+      width: 100%; height: auto; object-fit: contain;
+      border-radius: 0.5vw; opacity: 0.85;
+    }
+    .slb-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 1.8vh;
+    }
+    .slb-list li {
+      font-family: 'Inter', sans-serif; font-size: 1.35vw;
+      color: rgba(255,255,255,0.88); line-height: 1.45;
+      padding-left: 1.6vw; position: relative;
+    }
+    .slb-list li::before {
+      content: ''; position: absolute; left: 0; top: 0.55em;
+      width: 0.45vw; height: 0.45vw; border-radius: 50%;
+      background: #f7931a;
+    }
+    .slb-list li strong { color: #f7931a; font-weight: 600; }
+
+    /* ════════════════════════════════
+       SLIDE 4 — Taproot Pt. 1
+    ════════════════════════════════ */
+    .s4 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 3.5vh 5vw 2vh;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .s4::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .s4::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, rgba(247,147,26,0.06) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .s4-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 1.8vh;
+    }
+    .s4-header { flex-shrink: 0; }
+    .s4-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75vw;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f7931a;
+      margin-bottom: 0.5vh;
+    }
+    .s4-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.8vw;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1;
+    }
+    .s4-headline span { color: #f7931a; }
+    /* timeline row */
+    .s4-timeline {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      flex-shrink: 0;
+    }
+    .tl-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      position: relative;
+    }
+    .tl-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 0.65vw;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, #f7931a 0%, rgba(247,147,26,0.25) 100%);
+    }
+    .tl-dot {
+      width: 1.3vw;
+      height: 1.3vw;
+      border-radius: 50%;
+      background: #f7931a;
+      border: 2px solid #f7931a;
+      flex-shrink: 0;
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(247,147,26,0.6);
+    }
+    .tl-dot.dim { background: rgba(247,147,26,0.25); border-color: rgba(247,147,26,0.4); box-shadow: none; }
+    .tl-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6vw;
+      color: #f7931a;
+      margin-top: 0.6vh;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .tl-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62vw;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      margin-top: 0.3vh;
+      line-height: 1.4;
+      padding: 0 0.3vw;
+    }
+    /* three pillars */
+    .s4-pillars {
+      display: flex;
+      gap: 1.5vw;
+      flex: 1;
+    }
+    .pillar {
+      flex: 1;
+      background: rgba(247,147,26,0.04);
+      border: 1px solid rgba(247,147,26,0.18);
+      border-radius: 0.6vw;
+      padding: 1.8vh 1.4vw;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #f7931a, rgba(247,147,26,0.2));
+    }
+    .pillar-bip {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82vw;
+      color: #f7931a;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .pillar-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2vw;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .pillar-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82vw;
+      color: #f7931a;
+      opacity: 0.8;
+    }
+    .pillar-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05vw;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .pillar-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4vw;
+      margin-top: auto;
+    }
+    .tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58vw;
+      padding: 0.3vh 0.6vw;
+      border-radius: 2px;
+      background: rgba(247,147,26,0.12);
+      color: #f7931a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .s4-footer {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.12);
+      padding-top: 0.8vh;
+    }
+    .s4-footer-note { font-family: 'Space Mono', monospace; font-size: 0.6vw; color: rgba(247,147,26,0.4); letter-spacing: 0.06em; }
+    .s4-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 1vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
+
+    /* ════════════════════════════════
+       SLIDE 5 — Taproot Pt. 2
+    ════════════════════════════════ */
+    .s5 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 3.5vh 5vw 2vh;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .s5::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .s5::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(247,147,26,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .s5-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 1.8vh;
+    }
+    .s5-header { flex-shrink: 0; }
+    .s5-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75vw;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f7931a;
+      margin-bottom: 0.5vh;
+    }
+    .s5-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.2vw;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1;
+    }
+    .s5-headline span { color: #f7931a; }
+    .s5-body {
+      display: flex;
+      gap: 2vw;
+      flex: 1;
+      min-height: 0;
+    }
+    /* LEFT — SVG infographic */
+    .s5-infographic {
+      flex: 1.1;
+      display: flex;
+      flex-direction: column;
+      gap: 1vh;
+    }
+    .s5-infographic-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68vw;
+      color: #f7931a;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .s5-svg-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .s5-svg-wrap svg {
+      width: 100%;
+      height: 100%;
+    }
+    /* RIGHT — consensus debate */
+    .s5-debate {
+      flex: 0.9;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2vh;
+    }
+    .debate-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68vw;
+      color: #f7931a;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .debate-card {
+      background: rgba(247,147,26,0.04);
+      border: 1px solid rgba(247,147,26,0.15);
+      border-radius: 0.5vw;
+      padding: 1.2vh 1.2vw;
+      position: relative;
+    }
+    .debate-card.highlight {
+      border-color: rgba(247,147,26,0.45);
+      background: rgba(247,147,26,0.07);
+    }
+    .debate-card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3vw;
+      font-weight: 700;
+      color: #f7931a;
+      text-transform: uppercase;
+      margin-bottom: 0.4vh;
+    }
+    .debate-card-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8vw;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.55;
+    }
+    .debate-outcome {
+      background: rgba(247,147,26,0.09);
+      border: 1px solid rgba(247,147,26,0.35);
+      border-radius: 0.5vw;
+      padding: 1.2vh 1.2vw;
+      margin-top: 0.5vh;
+    }
+    .debate-outcome-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3vw;
+      color: #f7931a;
+      text-transform: uppercase;
+      margin-bottom: 0.4vh;
+    }
+    .debate-outcome-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8vw;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.55;
+    }
+    .debate-stat {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.4vw;
+      color: #f7931a;
+      display: block;
+      margin-top: 0.5vh;
+    }
+    .s5-footer {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.12);
+      padding-top: 0.8vh;
+    }
+    .s5-footer-note { font-family: 'Space Mono', monospace; font-size: 0.6vw; color: rgba(247,147,26,0.4); letter-spacing: 0.06em; }
+    .s5-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 1vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
+
+    /* ════════════════════════════════
+       SLIDE 6 — Post-Taproot History (v2)
+    ════════════════════════════════ */
+    .s6 {
+      position: relative;
+      width: 100%; height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 3vh 4.5vw 1.8vh;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .s6::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .s6::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 45%, rgba(247,147,26,0.055) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .s6-inner {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      height: 100%; gap: 1.4vh;
+    }
+    .s6-header { flex-shrink: 0; }
+    .s6-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72vw; letter-spacing: 0.28em;
+      text-transform: uppercase; color: #f7931a;
+      margin-bottom: 0.4vh;
+    }
+    .s6-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.2vw; font-weight: 700;
+      text-transform: uppercase; color: #fff; line-height: 1;
+    }
+    .s6-headline span { color: #f7931a; }
+
+    /* ── promised vs reality row ── */
+    .s6-pvr {
+      display: flex; gap: 1.5vw; flex-shrink: 0; align-items: stretch;
+    }
+    .pvr-box {
+      flex: 1;
+      border-radius: 0.5vw;
+      padding: 1.1vh 1.2vw;
+      display: flex; flex-direction: column; gap: 0.6vh;
+      position: relative; overflow: hidden;
+    }
+    .pvr-box.promised {
+      background: rgba(247,147,26,0.06);
+      border: 1px solid rgba(247,147,26,0.25);
+    }
+    .pvr-box.reality {
+      background: rgba(180,30,30,0.08);
+      border: 1px solid rgba(220,60,60,0.3);
+    }
+    .pvr-box::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .pvr-box.promised::before { background: linear-gradient(90deg, #f7931a, rgba(247,147,26,0.15)); }
+    .pvr-box.reality::before  { background: linear-gradient(90deg, #c0392b, rgba(192,57,43,0.15)); }
+    .pvr-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw; letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .pvr-box.promised .pvr-label { color: #f7931a; }
+    .pvr-box.reality  .pvr-label { color: #e74c3c; }
+    .pvr-pills { display: flex; flex-wrap: wrap; gap: 0.5vw; }
+    .pvr-pill {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05vw; font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.3vh 0.8vw;
+      border-radius: 3px;
+    }
+    .pvr-box.promised .pvr-pill {
+      background: rgba(247,147,26,0.15); color: #f7931a;
+    }
+    .pvr-box.reality  .pvr-pill {
+      background: rgba(192,57,43,0.15); color: #e74c3c;
+    }
+    .pvr-arrow {
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2vw; color: rgba(247,147,26,0.3);
+      flex-shrink: 0; padding: 0 0.3vw;
+    }
+
+    /* ── main body: timeline left | ordinals right ── */
+    .s6-body {
+      display: flex; gap: 2vw; flex: 1; min-height: 0;
+    }
+
+    /* LEFT — adoption timeline infographic */
+    .s6-timeline-col {
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.8vh;
+    }
+    .s6-col-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65vw; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #f7931a; opacity: 0.8;
+    }
+    .tl2-wrap {
+      flex: 1;
+      display: flex; flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    /* vertical spine */
+    .tl2-wrap::before {
+      content: '';
+      position: absolute;
+      left: 4.5vw; top: 0.6vw; bottom: 0.6vw;
+      width: 1px;
+      background: linear-gradient(180deg,
+        rgba(247,147,26,0.5) 0%,
+        rgba(247,147,26,0.15) 60%,
+        rgba(247,147,26,0.05) 100%);
+    }
+    .tl2-item {
+      display: flex; align-items: flex-start;
+      gap: 0; flex: 1;
+      position: relative;
+    }
+    .tl2-date-col {
+      width: 4.5vw; flex-shrink: 0;
+      display: flex; flex-direction: column;
+      align-items: flex-end;
+      padding-right: 0.7vw;
+      padding-top: 0.15vh;
+    }
+    .tl2-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6vw; color: #f7931a;
+      white-space: nowrap; line-height: 1.3;
+    }
+    .tl2-dot-col {
+      display: flex; flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .tl2-dot {
+      width: 0.9vw; height: 0.9vw;
+      border-radius: 50%;
+      border: 2px solid;
+      flex-shrink: 0;
+      margin-top: 0.1vh;
+    }
+    .dot-live    { background: #f7931a; border-color: #f7931a; box-shadow: 0 0 8px rgba(247,147,26,0.7); }
+    .dot-partial { background: rgba(247,147,26,0.35); border-color: rgba(247,147,26,0.6); }
+    .dot-dim     { background: rgba(247,147,26,0.1); border-color: rgba(247,147,26,0.3); }
+    .dot-green   { background: #27ae60; border-color: #2ecc71; box-shadow: 0 0 6px rgba(46,204,113,0.5); }
+    .tl2-content {
+      flex: 1;
+      padding: 0 0 0 0.8vw;
+      display: flex; flex-direction: column; gap: 0.25vh;
+    }
+    .tl2-event {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95vw; font-weight: 700;
+      text-transform: uppercase; line-height: 1.1;
+    }
+    .tl2-event.live    { color: #fff; }
+    .tl2-event.partial { color: rgba(255,255,255,0.65); }
+    .tl2-event.dim     { color: rgba(255,255,255,0.35); }
+    .tl2-event.good    { color: #2ecc71; }
+    .tl2-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7vw; line-height: 1.45;
+    }
+    .tl2-desc.live    { color: rgba(255,255,255,0.6); }
+    .tl2-desc.partial { color: rgba(255,255,255,0.4); }
+    .tl2-desc.dim     { color: rgba(255,255,255,0.25); }
+    .tl2-desc.good    { color: rgba(46,204,113,0.7); }
+    .tl2-tags {
+      display: flex; flex-wrap: wrap; gap: 0.3vw; margin-top: 0.2vh;
+    }
+    .tl2-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.52vw; padding: 0.15vh 0.45vw;
+      border-radius: 2px; text-transform: uppercase;
+    }
+    .tag-yes { background: rgba(247,147,26,0.18); color: #f7931a; }
+    .tag-no  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.3); }
+    .tag-new { background: rgba(46,204,113,0.15); color: #2ecc71; }
+
+    /* RIGHT — ordinals/fee impact */
+    .s6-ord-col {
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.9vh;
+      overflow: hidden; min-height: 0;
+    }
+    .ord2-header {
+      background: rgba(192,57,43,0.08);
+      border: 1px solid rgba(192,57,43,0.3);
+      border-top: 3px solid #c0392b;
+      border-radius: 0.5vw;
+      padding: 1vh 1.2vw;
+      position: relative; overflow: hidden;
+      flex-shrink: 0;
+    }
+    
+    .ord2-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6vw; font-weight: 700;
+      text-transform: uppercase; color: #e74c3c;
+      margin-bottom: 0.5vh;
+    }
+    .ord2-stats {
+      display: flex; gap: 0.8vw; align-items: center;
+    }
+    .ord2-stat {
+      display: flex; flex-direction: column; gap: 0.1vh;
+    }
+    .ord2-val {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.9vw; color: #e74c3c; line-height: 1;
+    }
+    .ord2-lbl {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.52vw; color: rgba(255,255,255,0.35);
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .ord2-divider { width: 1px; background: rgba(192,57,43,0.2); align-self: stretch; }
+
+    /* fee chart */
+    .fee-chart-wrap {
+      background: rgba(247,147,26,0.03);
+      border: 1px solid rgba(247,147,26,0.12);
+      border-radius: 0.5vw;
+      padding: 1vh 1.2vw 0.8vh;
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.6vh;
+    }
+    .fee-chart-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw; color: #f7931a;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .fee-svg { flex: 1; }
+
+    /* block size visual */
+    .block-compare {
+      background: rgba(247,147,26,0.03);
+      border: 1px solid rgba(247,147,26,0.12);
+      border-radius: 0.5vw;
+      padding: 0.9vh 1.2vw;
+      display: flex; align-items: center; gap: 1.5vw;
+    }
+    .bc-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw; color: rgba(247,147,26,0.7);
+      text-transform: uppercase; letter-spacing: 0.15em;
+      flex-shrink: 0;
+    }
+    .bc-bars {
+      flex: 1; display: flex; align-items: flex-end; gap: 0.5vw;
+    }
+    .bc-bar-item { display: flex; flex-direction: column; align-items: center; gap: 0.2vh; flex: 1; }
+    .bc-bar {
+      width: 100%; border-radius: 2px 2px 0 0;
+      position: relative; min-height: 4px;
+    }
+    .bc-bar-label { font-family: 'Space Mono', monospace; font-size: 0.55vw; text-align: center; }
+    .bc-bar-val   { font-family: 'Oswald', sans-serif;    font-size: 0.8vw;  color: #f7931a; }
+
+    /* footnote */
+    .s6-footnote {
+      flex-shrink: 0;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6vw;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      border-top: 1px solid rgba(247,147,26,0.1);
+      padding-top: 0.6vh;
+    }
+    .s6-footnote span { color: rgba(247,147,26,0.4); }
+
+    .s6-footer {
+      flex-shrink: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.1);
+      padding-top: 0.5vh;
+    }
+    .s6-footer-note { font-family: 'Space Mono', monospace; font-size: 0.58vw; color: rgba(247,147,26,0.35); letter-spacing: 0.06em; }
+    .s6-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 0.95vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ══════════════════════════════
+         SLIDE 1 — Title
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s1">
+        <img src="WMBTCM.png" alt="Western Mass Bitcoin Meetup" />
+        <div class="s1-number">Western Mass Bitcoin Meetup #45</div>
+        <div class="s1-date">May 2026</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 2 — Podcast Spotlight
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s2">
+        <div class="s2-left">
+          <img class="cover" src="https://assets.podhome.fm/8029725b-0319-44b9-4793-08dc404e83a4/638475670208679180CITADELDISPATCH.jpeg" alt="Citadel Dispatch" />
+          <div class="s2-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://fountain.fm/show/p8WM5xdhPOB2YrKmP1Vy&bgcolor=ffffff&color=000000" alt="Fountain" />
+            <span>Listen on Fountain</span>
+          </div>
+          <div class="s2-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://primal.net/citadel&bgcolor=ffffff&color=000000" alt="Nostr" />
+            <span>Follow on Nostr</span>
+          </div>
+        </div>
+        <div class="s2-right">
+          <div class="s2-eyebrow">Podcast Spotlight</div>
+          <h2 class="s2-title">Citadel Dispatch</h2>
+          <p class="s2-hosts">Hosted by Matt Odell</p>
+          <blockquote class="s2-quote">
+            "Actionable bitcoin and freedom tech discussion. Funded by our audience. No ads or sponsors."
+          </blockquote>
+          <ul class="s2-bullets">
+            <li><strong>CD203 · May 15</strong> — Hermann Vivier &amp; Carel Van Wyk: emergency dispatch on South Africa's proposed Bitcoin restrictions — forced private-key disclosure, P2P limits, and how to push back.</li>
+            <li><strong>CD202 · May 12</strong> — Eugene Jarecki: his new Assange documentary <em>The Six Billion Dollar Man</em>, Bitcoin's role keeping WikiLeaks alive after the Visa/MC/PayPal blockade, and releasing the film through Bitcoiners first.</li>
+            <li><strong>CD201 · May 5</strong> — Matt Hill (Start9): StartOS 0.4.0, freedom computing, why "local" AI tools often aren't, and replacing big tech with open-source services at home.</li>
+            <li><strong>CD200 · Apr 21</strong> — UTXO The Webmaster: Wisp Android Nostr client, Spark wallet integration, encrypted nsec backups, and the "denominate zaps in dollars" debate.</li>
+            <li><strong>CD199 · Apr 13</strong> — Craig Raw (Sparrow): Silent Payments — a new address system that kills address reuse and the gap limit, plus GPU-accelerated scanning and BIP353.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 3 — Book Spotlight
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s2">
+        <div class="s2-left">
+          <img src="https://store.bitcoinmagazine.com/cdn/shop/files/Gladstein_HR_Book_Product_Image-1.png?v=1761660509&width=640"
+               alt="Hidden Repression"
+               style="width:16vw; height:24vw; object-fit:contain; border-radius:0.4vw;" />
+          <div class="s2-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.amazon.com/Hidden-Repression-Exploitation-Development-Gladstein-ebook/dp/B0C8L46X2G&bgcolor=ffffff&color=000000" alt="Buy on Amazon" />
+            <span>Buy on Amazon</span>
+          </div>
+        </div>
+        <div class="s2-right">
+          <div class="s2-eyebrow">Book Spotlight</div>
+          <h2 class="s2-title">Hidden Repression</h2>
+          <p class="s2-hosts">Alex Gladstein · Foreword by Jeff Booth</p>
+          <blockquote class="s2-quote">
+            "How the IMF and World Bank sell exploitation as development."
+          </blockquote>
+          <ul class="s2-bullets">
+            <li>A 75-year audit of the IMF and World Bank — institutions that promise development but, Gladstein argues, deliver debt traps and neocolonial control.</li>
+            <li>Shows how "structural adjustment" forces poor countries to grow exports for Western consumption instead of building domestic industries.</li>
+            <li>Case studies from Ghana, Brazil, Argentina, Thailand, and Papua New Guinea reveal the same pattern: loans that enrich Western finance while impoverishing the borrower.</li>
+            <li>Closes by framing Bitcoin as a potential exit — money that can't be weaponized by the institutions critiqued throughout the book.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — Silk Road Marketplace
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s-lb">
+        <div class="slb-header">
+          <div class="slb-title-block">
+            <div class="slb-eyebrow">Bitcoin History · 2011 – 2013</div>
+            <div class="slb-headline">Silk Road</div>
+          </div>
+        </div>
+        <div class="slb-body">
+          <div class="slb-left">
+            <ul class="slb-list">
+              <li><strong>Launched Feb. 2011</strong> as a Tor hidden service by "Dread Pirate Roberts" — an anonymous marketplace settling every transaction in bitcoin.</li>
+              <li><strong>Bitcoin's first breakout use case</strong> — Tor address + bitcoin escrow + vendor reputation system, all without an identity or a bank.</li>
+              <li><strong>By March 2013: ~10,000 listings</strong> — roughly 70% drugs. Child pornography, weapons, and contract killing were explicitly banned by site rules.</li>
+              <li><strong>Operating life Feb. 2011 – Oct. 2013:</strong> 1.2M+ transactions · ~9.5M BTC in total volume · ~600K BTC collected in commissions.</li>
+              <li><strong>Seized Oct. 2, 2013</strong> — FBI arrested Ross Ulbricht mid-login at a San Francisco public library, his laptop unlocked and signed in as DPR.</li>
+              <li><strong>144,000 BTC seized</strong> from Ulbricht's laptop — auctioned off by the U.S. Marshals over 2014–2018, ultimately worth billions.</li>
+            </ul>
+          </div>
+          <div class="slb-right">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Silk_Road_Marketplace_Item_Screen.jpg" alt="Silk Road marketplace item screen" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — Ross Ulbricht
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s-lb">
+        <div class="slb-header">
+          <div class="slb-title-block">
+            <div class="slb-eyebrow">Bitcoin History · The Man Behind the Marketplace</div>
+            <div class="slb-headline">Ross Ulbricht</div>
+          </div>
+        </div>
+        <div class="slb-body">
+          <div class="slb-left">
+            <ul class="slb-list">
+              <li><strong>Eagle Scout · UT physics · Penn State materials science.</strong> Joined the Penn State libertarian club, worked on Ron Paul's 2008 campaign, and went deep on Mises and Austrian economics.</li>
+              <li><strong>Convicted Feb. 2015</strong> on seven counts including continuing criminal enterprise. <strong>Sentenced May 29, 2015</strong> to two life terms + 40 years, no parole — widely cited as the longest U.S. sentence ever for a non-violent offender.</li>
+              <li><strong>11+ years in federal prison.</strong> Became a cause célèbre for Bitcoiners and libertarians — the case study for U.S. sentencing overreach.</li>
+              <li><strong>2021 — phoned into the Bitcoin Conference from prison.</strong> Punishment was swift: thrown into solitary confinement and placed under heightened surveillance for the rest of his sentence.</li>
+              <li><strong>Jan. 21, 2025 — full and unconditional pardon by President Trump.</strong> Walked out of a federal prison in Arizona that same night.</li>
+              <li><strong>May 29, 2025 — ten years to the day after his sentencing</strong> — gave his first public speech at Bitcoin 2025 in Las Vegas. Theme: <em>"Freedom, Decentralization, Unity."</em></li>
+            </ul>
+          </div>
+          <div class="slb-right" style="flex-direction:column; gap:2vh;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Ross_Ulbricht_by_Gage_Skidmore.jpg" alt="Ross Ulbricht in 2025" style="max-height:48vh; width:auto;" />
+            <div style="display:flex; flex-direction:column; align-items:center; gap:0.8vh;">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.youtube.com/watch?v=8ZZGRA-8ZMU&bgcolor=ffffff&color=000000" alt="Bitcoin 2025 speech" style="width:10vw; height:10vw; opacity:1;" />
+              <div style="font-family:'Space Mono',monospace; font-size:0.8vw; color:rgba(247,147,26,0.7); letter-spacing:0.12em; text-transform:uppercase;">Bitcoin 2025 · Full Speech</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — Silk Road Misconceptions
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s-myth {
+          width: 100%; height: 100%; display: flex; flex-direction: column;
+          padding: 4vh 5vw; box-sizing: border-box; background: #000;
+        }
+        .s-myth-header {
+          border-bottom: 1px solid rgba(247,147,26,0.3);
+          padding-bottom: 2vh; margin-bottom: 3.5vh; flex-shrink: 0;
+        }
+        .s-myth-eyebrow {
+          font-family: 'Space Mono', monospace; font-size: 1.1vw;
+          color: #f7931a; letter-spacing: 0.18em; text-transform: uppercase;
+          margin-bottom: 0.6vh;
+        }
+        .s-myth-headline {
+          font-family: 'Oswald', sans-serif; font-weight: 700;
+          font-size: 3.6vw; color: #fff; line-height: 1;
+        }
+        .s-myth-list {
+          list-style: none; padding: 0; margin: 0;
+          display: flex; flex-direction: column; gap: 3.2vh;
+          flex: 1; justify-content: center;
+        }
+        .s-myth-row {
+          display: grid; grid-template-columns: 22vw 1fr;
+          gap: 2vw; align-items: baseline;
+          padding-bottom: 3.2vh;
+          border-bottom: 1px solid rgba(247,147,26,0.18);
+        }
+        .s-myth-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .s-myth-topic {
+          font-family: 'Oswald', sans-serif; font-weight: 700;
+          font-size: 2vw; color: #f7931a;
+          text-transform: uppercase; letter-spacing: 0.02em;
+        }
+        .s-myth-truth {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.85vw; color: rgba(255,255,255,0.95);
+          line-height: 1.35;
+        }
+        .s-myth-truth strong { color: #f7931a; font-weight: 600; }
+      </style>
+      <div class="s-myth">
+        <div class="s-myth-header">
+          <div class="s-myth-eyebrow">Bitcoin History · Setting the Record Straight</div>
+          <div class="s-myth-headline">Silk Road — Myths vs. Reality</div>
+        </div>
+        <ul class="s-myth-list">
+          <li class="s-myth-row">
+            <div class="s-myth-topic">Murder-for-Hire</div>
+            <div class="s-myth-truth">Never charged at trial. Allegations came largely from <strong>corrupt federal agents</strong> who pocketed the bitcoin and faked results. Maryland indictment <strong>dismissed with prejudice in 2018</strong>. No murders occurred.</div>
+          </li>
+          <li class="s-myth-row">
+            <div class="s-myth-topic">Drug Dealer</div>
+            <div class="s-myth-truth">Convicted for <strong>running the platform</strong> — not for selling drugs. No drug victims named at trial.</div>
+          </li>
+          <li class="s-myth-row">
+            <div class="s-myth-topic">Violent Crimes</div>
+            <div class="s-myth-truth">All 7 counts were <strong>non-violent</strong>. Double life + 40 years for operating a website.</div>
+          </li>
+          <li class="s-myth-row">
+            <div class="s-myth-topic">$1B Kingpin</div>
+            <div class="s-myth-truth">That figure was <strong>total site volume</strong>, not his profit.</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 5 — News: 40M Kenyans Get Lightning Addresses
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s5sq {
+          background: #000;
+          width: 100%; height: 100%;
+          display: flex; align-items: stretch;
+          padding: 5vh 5vw; gap: 4vw;
+          box-sizing: border-box;
+        }
+        .s5sq-left {
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          flex-shrink: 0; width: 38vw; gap: 2vh;
+        }
+        .s5sq-graphic {
+          width: 100%; border-radius: 0.8vw;
+          border: 1px solid rgba(247,147,26,0.25);
+        }
+        .s5sq-link {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.85vw; color: rgba(247,147,26,0.6);
+          letter-spacing: 0.1em; text-decoration: none;
+          word-break: break-all; text-align: center;
+        }
+        .s5sq-right {
+          display: flex; flex-direction: column;
+          justify-content: center; flex: 1; gap: 2.5vh;
+        }
+        .s5sq-eyebrow {
+          font-family: 'Space Mono', monospace;
+          font-size: 1.4vw; font-weight: 700;
+          letter-spacing: 0.25em; text-transform: uppercase;
+          color: #f7931a;
+        }
+        .s5sq-headline {
+          font-family: 'Oswald', sans-serif;
+          font-size: 4.2vw; font-weight: 700;
+          color: #fff; line-height: 1.0;
+          text-transform: uppercase;
+        }
+        .s5sq-headline span { color: #f7931a; }
+        .s5sq-date {
+          font-family: 'Space Mono', monospace;
+          font-size: 1vw; color: rgba(255,255,255,0.4);
+          letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        .s5sq-bullets {
+          list-style: none; padding: 0; margin: 0;
+          display: flex; flex-direction: column; gap: 2vh;
+        }
+        .s5sq-bullets li {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.7vw; color: rgba(255,255,255,0.9);
+          line-height: 1.4; padding-left: 1.6vw; position: relative;
+        }
+        .s5sq-bullets li::before {
+          content: ''; position: absolute; left: 0; top: 0.6em;
+          width: 0.5vw; height: 0.5vw; border-radius: 50%;
+          background: #f7931a;
+        }
+        .s5sq-bullets li strong { color: #f7931a; font-weight: 600; }
+      </style>
+      <div class="s5sq">
+        <div class="s5sq-left">
+          <img class="s5sq-graphic"
+               src="https://pbs.twimg.com/media/HIIDU1cXcAAlQSZ.png"
+               alt="Tando Lightning Address demo" />
+          <a class="s5sq-link" href="https://bitcoin.co.ke/send-money-to-kenya/">
+            bitcoin.co.ke · May 12, 2026
+          </a>
+        </div>
+        <div class="s5sq-right">
+          <div class="s5sq-eyebrow">₿ Bitcoin News</div>
+          <h2 class="s5sq-headline">Every M-Pesa Number Is Now a <span>Lightning Address</span></h2>
+          <div class="s5sq-date">May 12, 2026 · Tando / Bitcoin.co.ke</div>
+          <ul class="s5sq-bullets">
+            <li><strong>40M M-Pesa users</strong> in Kenya — every phone number is now a Lightning address. No signup.</li>
+            <li>Send to <strong>0717252303@bitcoin.co.ke</strong> · arrives as Kenyan shillings via M-Pesa.</li>
+            <li><strong>$5B in annual diaspora remittances</strong> · traditional fees of 5–10% collapse to near zero.</li>
+            <li>Kenya <strong>leapfrogs again</strong> — same playbook as skipping banking for M-Pesa in 2007.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 6 — News: AI Cracks 11-Year Bitcoin Lockout
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s6ai {
+          background: #000;
+          width: 100%; height: 100%;
+          display: flex; align-items: stretch;
+          padding: 5vh 5vw; gap: 4vw;
+          box-sizing: border-box;
+        }
+        .s6ai-left {
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          flex-shrink: 0; width: 38vw; gap: 2vh;
+        }
+        .s6ai-graphic {
+          width: 100%; border-radius: 0.8vw;
+          border: 1px solid rgba(247,147,26,0.25);
+        }
+        .s6ai-link {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.85vw; color: rgba(247,147,26,0.6);
+          letter-spacing: 0.1em; text-decoration: none;
+          word-break: break-all; text-align: center;
+        }
+        .s6ai-right {
+          display: flex; flex-direction: column;
+          justify-content: center; flex: 1; gap: 2.5vh;
+        }
+        .s6ai-eyebrow {
+          font-family: 'Space Mono', monospace;
+          font-size: 1.4vw; font-weight: 700;
+          letter-spacing: 0.25em; text-transform: uppercase;
+          color: #f7931a;
+        }
+        .s6ai-headline {
+          font-family: 'Oswald', sans-serif;
+          font-size: 4.2vw; font-weight: 700;
+          color: #fff; line-height: 1.0;
+          text-transform: uppercase;
+        }
+        .s6ai-headline span { color: #f7931a; }
+        .s6ai-date {
+          font-family: 'Space Mono', monospace;
+          font-size: 1vw; color: rgba(255,255,255,0.4);
+          letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        .s6ai-bullets {
+          list-style: none; padding: 0; margin: 0;
+          display: flex; flex-direction: column; gap: 2vh;
+        }
+        .s6ai-bullets li {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.7vw; color: rgba(255,255,255,0.9);
+          line-height: 1.4; padding-left: 1.6vw; position: relative;
+        }
+        .s6ai-bullets li::before {
+          content: ''; position: absolute; left: 0; top: 0.6em;
+          width: 0.5vw; height: 0.5vw; border-radius: 50%;
+          background: #f7931a;
+        }
+        .s6ai-bullets li strong { color: #f7931a; font-weight: 600; }
+      </style>
+      <div class="s6ai">
+        <div class="s6ai-left">
+          <img class="s6ai-graphic"
+               src="https://pbs.twimg.com/media/HINbK6fWoAIKAf1.jpg"
+               alt="Bitcoin wallet recovery thread" />
+          <a class="s6ai-link" href="https://threadreaderapp.com/thread/2054586810475364536.html">
+            @cprkrn on X · May 13, 2026
+          </a>
+        </div>
+        <div class="s6ai-right">
+          <div class="s6ai-eyebrow">₿ Bitcoin News</div>
+          <h2 class="s6ai-headline"><span>AI</span> Cracks an 11-Year Bitcoin Lockout</h2>
+          <div class="s6ai-date">May 13, 2026 · Recovered with Claude</div>
+          <ul class="s6ai-bullets">
+            <li>Wallet locked <strong>11+ years</strong> — "got stoned and changed the password" in college.</li>
+            <li><strong>~3.5 trillion</strong> password combinations brute-forced. Nothing.</li>
+            <li>Dumped the old college computer into <strong>Claude</strong> · it found a matching wallet file the seed phrase could decrypt.</li>
+            <li>The password? <strong>lol420fuckthePOLICE!*:)</strong></li>
+            <li>Now holding bitcoin he originally bought at <strong>~$250 each</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 7 — News: CLARITY Act Dev Protections Diluted
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s7cl {
+          background: #000; width: 100%; height: 100%;
+          display: flex; align-items: stretch;
+          padding: 5vh 5vw; gap: 4vw; box-sizing: border-box;
+        }
+        .s7cl-left {
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          flex-shrink: 0; width: 38vw; gap: 1.8vh;
+        }
+        .s7cl-img {
+          width: 100%; height: auto; display: block;
+          border-radius: 0.6vw;
+          border: 1px solid rgba(247,147,26,0.25);
+        }
+        .s7cl-link {
+          font-family: 'Space Mono', monospace; font-size: 0.85vw;
+          color: rgba(247,147,26,0.6); letter-spacing: 0.1em;
+          text-decoration: none; text-align: center;
+        }
+        .s7cl-right {
+          display: flex; flex-direction: column;
+          justify-content: center; flex: 1; gap: 2.3vh;
+        }
+        .s7cl-eyebrow {
+          font-family: 'Space Mono', monospace; font-size: 1.4vw;
+          font-weight: 700; letter-spacing: 0.25em;
+          text-transform: uppercase; color: #f7931a;
+        }
+        .s7cl-headline {
+          font-family: 'Oswald', sans-serif; font-size: 4.2vw;
+          font-weight: 700; color: #fff; line-height: 1.0;
+          text-transform: uppercase;
+        }
+        .s7cl-headline span { color: #f7931a; }
+        .s7cl-date {
+          font-family: 'Space Mono', monospace; font-size: 1vw;
+          color: rgba(255,255,255,0.4); letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        .s7cl-bullets {
+          list-style: none; padding: 0; margin: 0;
+          display: flex; flex-direction: column; gap: 1.6vh;
+        }
+        .s7cl-bullets li {
+          font-family: 'Inter', sans-serif; font-size: 1.55vw;
+          color: rgba(255,255,255,0.92); line-height: 1.4;
+          padding-left: 1.6vw; position: relative;
+        }
+        .s7cl-bullets li::before {
+          content: ''; position: absolute; left: 0; top: 0.6em;
+          width: 0.5vw; height: 0.5vw; border-radius: 50%; background: #f7931a;
+        }
+        .s7cl-bullets li strong { color: #f7931a; font-weight: 600; }
+        .s7cl-quote {
+          border-left: 3px solid #f7931a;
+          padding-left: 1.2vw;
+          font-family: 'Inter', sans-serif; font-size: 1.25vw;
+          font-style: italic; color: rgba(255,255,255,0.78); line-height: 1.45;
+        }
+        .s7cl-quote cite {
+          display: block; margin-top: 0.6vh;
+          font-style: normal; font-family: 'Space Mono', monospace;
+          font-size: 0.85vw; color: rgba(247,147,26,0.75); letter-spacing: 0.1em;
+        }
+      </style>
+      <div class="s7cl">
+        <div class="s7cl-left">
+          <img class="s7cl-img"
+               src="https://i.nostr.build/qiLRNvJTtPCPVWQj.png"
+               alt="CLARITY Act / RHR #409" />
+          <a class="s7cl-link" href="https://www.tftc.io/tag/rabbit-hole-recap/">
+            Rabbit Hole Recap #409 · May 14, 2026
+          </a>
+        </div>
+        <div class="s7cl-right">
+          <div class="s7cl-eyebrow">₿ Bitcoin News</div>
+          <h2 class="s7cl-headline"><span>CLARITY Act</span> Advances · Dev Protections Diluted</h2>
+          <div class="s7cl-date">May 14, 2026 · Senate Banking Committee · 15–9</div>
+          <ul class="s7cl-bullets">
+            <li><strong>Last-minute closed-door deal</strong> stripped the BRCA cross-reference from Lummis's Section 301 amendment.</li>
+            <li><strong>Section 604 (BRCA) survived</strong> — safe harbor for open-source devs, node operators, and validators publishing non-custodial code.</li>
+            <li>But the <strong>"knowingly"</strong> carve-out remains — same vague language used to prosecute <strong>Sterlingov</strong> (Bitcoin Fog) and <strong>Samurai Wallet</strong>.</li>
+            <li>Car makers aren't liable for drunk drivers. Gun makers aren't liable for shooters. <strong>Bitcoin devs still are.</strong></li>
+            <li>Net win for stablecoins &amp; DeFi lobby · <strong>almost nothing for Bitcoin as freedom money.</strong></li>
+          </ul>
+          <blockquote class="s7cl-quote">
+            "Kill the bill. No bill is better than a bad bill."
+            <cite>— Matt Odell &amp; Marty Bent · RHR #409</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════
+         SLIDE 8 — Tech Topic: Nostr
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s-nos {
+          width: 100%; height: 100%; display: flex; flex-direction: column;
+          padding: 4vh 5vw 3vh; box-sizing: border-box; background: #000; gap: 2.5vh;
+        }
+        .snos-header { flex-shrink: 0; }
+        .snos-eyebrow {
+          font-family: 'Space Mono', monospace; font-size: 1.1vw;
+          color: #f7931a; letter-spacing: 0.22em; text-transform: uppercase;
+          margin-bottom: 0.5vh;
+        }
+        .snos-headline {
+          font-family: 'Oswald', sans-serif; font-weight: 700;
+          font-size: 4.6vw; color: #f7931a; line-height: 0.95;
+          text-transform: uppercase; letter-spacing: 0.02em;
+        }
+        .snos-subtitle {
+          font-family: 'Space Mono', monospace; font-size: 1.1vw;
+          color: rgba(255,255,255,0.55); margin-top: 0.5vh;
+          letter-spacing: 0.05em;
+        }
+        .snos-body {
+          display: flex; flex: 1; gap: 3.5vw; min-height: 0;
+          align-items: center;
+        }
+        .snos-graphic {
+          flex: 1; min-width: 0; height: 100%;
+          display: flex; flex-direction: column; justify-content: center; gap: 1vh;
+        }
+        .snos-graphic svg { width: 100%; height: auto; max-height: 75vh; }
+        .snos-graphic-caption {
+          font-family: 'Space Mono', monospace; font-size: 1vw;
+          color: rgba(247,147,26,0.85); text-align: center;
+          letter-spacing: 0.05em; font-style: italic;
+        }
+        .snos-bullets {
+          flex: 1; list-style: none; padding: 0; margin: 0;
+          display: flex; flex-direction: column; gap: 2vh;
+        }
+        .snos-bullets li {
+          font-family: 'Inter', sans-serif; font-size: 1.5vw;
+          color: rgba(255,255,255,0.92); line-height: 1.4;
+          padding-left: 1.4vw; position: relative;
+        }
+        .snos-bullets li::before {
+          content: ''; position: absolute; left: 0; top: 0.6em;
+          width: 0.45vw; height: 0.45vw; border-radius: 50%; background: #f7931a;
+        }
+        .snos-bullets li strong { color: #f7931a; font-weight: 600; }
+        .snos-footer {
+          flex-shrink: 0; border-top: 1px solid rgba(247,147,26,0.2);
+          padding-top: 1.5vh; text-align: center;
+          font-family: 'Space Mono', monospace; font-size: 1vw;
+          color: rgba(247,147,26,0.7); letter-spacing: 0.15em; text-transform: uppercase;
+        }
+      </style>
+      <div class="s-nos">
+        <div class="snos-header">
+          <div class="snos-eyebrow">₿ Bitcoin Tech Topic</div>
+          <div class="snos-headline">Nostr</div>
+          <div class="snos-subtitle">Notes and Other Stuff Transmitted by Relays · the infrastructure for a freer internet</div>
+        </div>
+
+        <div class="snos-body">
+          <div class="snos-graphic">
+            <svg viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#f7931a"/>
+                </marker>
+              </defs>
+
+              <!-- Alice (writer) -->
+              <g>
+                <rect x="20" y="305" width="200" height="120" rx="10" fill="rgba(247,147,26,0.1)" stroke="#f7931a" stroke-width="2.5"/>
+                <text x="120" y="348" fill="#fff" font-family="Oswald,sans-serif" font-size="40" font-weight="700" text-anchor="middle">ALICE</text>
+                <text x="120" y="383" fill="rgba(247,147,26,0.9)" font-family="Space Mono,monospace" font-size="17" text-anchor="middle" letter-spacing="2">PUBLISHES</text>
+                <text x="120" y="408" fill="rgba(255,255,255,0.55)" font-family="Inter,sans-serif" font-size="15" text-anchor="middle">to 6 relays</text>
+              </g>
+
+              <!-- Bob (reader) -->
+              <g>
+                <rect x="980" y="305" width="200" height="120" rx="10" fill="rgba(247,147,26,0.1)" stroke="#f7931a" stroke-width="2.5"/>
+                <text x="1080" y="348" fill="#fff" font-family="Oswald,sans-serif" font-size="40" font-weight="700" text-anchor="middle">BOB</text>
+                <text x="1080" y="383" fill="rgba(247,147,26,0.9)" font-family="Space Mono,monospace" font-size="17" text-anchor="middle" letter-spacing="2">READS</text>
+                <text x="1080" y="408" fill="rgba(255,255,255,0.55)" font-family="Inter,sans-serif" font-size="15" text-anchor="middle">from 6 relays</text>
+              </g>
+
+              <!-- Group label: Alice-only -->
+              <text x="500" y="62" fill="rgba(255,255,255,0.4)" font-family="Space Mono,monospace" font-size="13" letter-spacing="3" text-anchor="start">ALICE ONLY</text>
+
+              <!-- R1: damus (Alice) -->
+              <rect x="500" y="75" width="220" height="55" rx="6" fill="rgba(247,147,26,0.06)" stroke="rgba(247,147,26,0.5)" stroke-width="2"/>
+              <text x="610" y="110" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">relay.damus.io</text>
+
+              <!-- R2: nos.lol (Alice) -->
+              <rect x="500" y="140" width="220" height="55" rx="6" fill="rgba(247,147,26,0.06)" stroke="rgba(247,147,26,0.5)" stroke-width="2"/>
+              <text x="610" y="175" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">nos.lol</text>
+
+              <!-- R3: nostr.wine (Alice) -->
+              <rect x="500" y="205" width="220" height="55" rx="6" fill="rgba(247,147,26,0.06)" stroke="rgba(247,147,26,0.5)" stroke-width="2"/>
+              <text x="610" y="240" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">nostr.wine</text>
+
+              <!-- Group label: SHARED -->
+              <text x="500" y="287" fill="#f7931a" font-family="Space Mono,monospace" font-size="14" letter-spacing="3" text-anchor="start" font-weight="700">SHARED · MESSAGE FLOWS HERE</text>
+
+              <!-- R4: primal (shared, highlighted) -->
+              <rect x="500" y="300" width="220" height="55" rx="6" fill="rgba(247,147,26,0.2)" stroke="#f7931a" stroke-width="3.5"/>
+              <text x="610" y="335" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">relay.primal.net</text>
+
+              <!-- R5: snort (shared) -->
+              <rect x="500" y="365" width="220" height="55" rx="6" fill="rgba(247,147,26,0.2)" stroke="#f7931a" stroke-width="3.5"/>
+              <text x="610" y="400" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">relay.snort.social</text>
+
+              <!-- R6: nostr.band (shared) -->
+              <rect x="500" y="430" width="220" height="55" rx="6" fill="rgba(247,147,26,0.2)" stroke="#f7931a" stroke-width="3.5"/>
+              <text x="610" y="465" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">nostr.band</text>
+
+              <!-- Group label: Bob-only -->
+              <text x="500" y="512" fill="rgba(255,255,255,0.4)" font-family="Space Mono,monospace" font-size="13" letter-spacing="3" text-anchor="start">BOB ONLY</text>
+
+              <!-- R7: 0xchat (Bob) -->
+              <rect x="500" y="525" width="220" height="55" rx="6" fill="rgba(247,147,26,0.06)" stroke="rgba(247,147,26,0.5)" stroke-width="2"/>
+              <text x="610" y="560" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">relay.0xchat.com</text>
+
+              <!-- R8: purplerelay (Bob) -->
+              <rect x="500" y="590" width="220" height="55" rx="6" fill="rgba(247,147,26,0.06)" stroke="rgba(247,147,26,0.5)" stroke-width="2"/>
+              <text x="610" y="625" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">purplerelay.com</text>
+
+              <!-- R9: nostr.bg (Bob) -->
+              <rect x="500" y="655" width="220" height="55" rx="6" fill="rgba(247,147,26,0.06)" stroke="rgba(247,147,26,0.5)" stroke-width="2"/>
+              <text x="610" y="690" fill="#fff" font-family="Space Mono,monospace" font-size="18" font-weight="700" text-anchor="middle">relay.nostr.bg</text>
+
+              <!-- Alice → 6 relays (R1-R6) -->
+              <path d="M 220 340 C 360 340, 380 102, 500 102" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 220 350 C 360 350, 380 167, 500 167" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 220 360 C 360 360, 380 232, 500 232" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 220 370 C 360 370, 380 327, 500 327" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 220 380 C 360 380, 380 392, 500 392" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 220 390 C 360 390, 380 457, 500 457" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+
+              <!-- 6 relays (R4-R9) → Bob -->
+              <path d="M 720 327 C 850 327, 860 350, 980 350" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 720 392 C 850 392, 860 360, 980 360" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 720 457 C 850 457, 860 370, 980 370" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 720 552 C 850 552, 860 380, 980 380" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 720 617 C 850 617, 860 390, 980 390" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+              <path d="M 720 682 C 850 682, 860 400, 980 400" stroke="#f7931a" stroke-width="2.5" fill="none" marker-end="url(#arr)" opacity="0.85"/>
+            </svg>
+            <div class="snos-graphic-caption">Alice writes to 6 · Bob reads from 6 · only the 3 in common carry the message</div>
+          </div>
+
+          <ul class="snos-bullets">
+            <li><strong>Open protocol, not a product.</strong> Your identity is a keypair. Your posts ("events") live on whatever relays you choose.</li>
+            <li><strong>Censorship-resistant by design.</strong> Publish to many relays · readers pull from many relays. No single point of failure or shutoff.</li>
+            <li><strong>Web of trust replaces the algorithm.</strong> Your follows curate your feed. No black-box engine deciding what you see.</li>
+            <li><strong>Already more than Twitter.</strong> Long-form, shopping, bookmarks, communities, NWC wallet payments — all on one identity.</li>
+            <li><strong>Why it's so early:</strong> the stack is being built right now. The next decade of social, identity, and commerce is being prototyped on Nostr.</li>
+          </ul>
+        </div>
+
+        <div class="snos-footer">→ Short film next</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 9 — Short Film: Why Nostr Matters in 10 Minutes
+    ══════════════════════════════ -->
+    <section data-background-color="#000000" data-pinfilm-slide="true">
+      <style>
+        .s11 {
+          width: 100%;
+          height: 100%;
+          background: #000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 4vh 5vw 3vh;
+          gap: 2.5vh;
+        }
+        .s11-header {
+          flex-shrink: 0;
+          text-align: center;
+        }
+        .s11-eyebrow {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.75vw;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          color: rgba(247,147,26,0.55);
+          margin-bottom: 0.8vh;
+        }
+        .s11-title {
+          font-family: 'Oswald', sans-serif;
+          font-size: 3vw;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #fff;
+          line-height: 1.1;
+          letter-spacing: 0.04em;
+        }
+        .s11-title span { color: #f7931a; }
+        .s11-video-wrap {
+          width: 100%;
+          flex: 1;
+          min-height: 0;
+          position: relative;
+          border-radius: 0.8vw;
+          overflow: hidden;
+          border: 1px solid rgba(247,147,26,0.2);
+          box-shadow: 0 0 60px rgba(247,147,26,0.07);
+          background: #000;
+          aspect-ratio: 16 / 9;
+          max-height: 72vh;
+          align-self: center;
+        }
+        .s11-video-thumb {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+        .s11-video-overlay {
+          position: absolute;
+          inset: 0;
+          cursor: pointer;
+          z-index: 3;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s11-play-btn {
+          width: 6vw;
+          height: 6vw;
+          background: rgba(247,147,26,0.92);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 40px rgba(247,147,26,0.55);
+          transition: transform 0.2s, background 0.2s;
+          pointer-events: none;
+        }
+        .s11-video-overlay:hover .s11-play-btn {
+          transform: scale(1.1);
+          background: #f7931a;
+        }
+        .s11-play-triangle {
+          width: 0;
+          height: 0;
+          border-top: 1.2vw solid transparent;
+          border-bottom: 1.2vw solid transparent;
+          border-left: 2.1vw solid #000;
+          margin-left: 0.35vw;
+        }
+        .s11-video-wrap iframe {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+          display: none;
+        }
+        .s11-video-wrap.playing iframe { display: block; }
+        .s11-video-wrap.playing .s11-video-overlay,
+        .s11-video-wrap.playing .s11-video-thumb { display: none; }
+      </style>
+
+      <div class="s11">
+        <div class="s11-header">
+          <div class="s11-eyebrow">₿ Bitcoin Short Films</div>
+          <h2 class="s11-title">Why <span>Nostr</span> Matters in 10 Minutes</h2>
+        </div>
+
+        <div class="s11-video-wrap" id="pinfilm-video">
+          <img class="s11-video-thumb"
+               src="https://img.youtube.com/vi/4EpmGyr4e78/maxresdefault.jpg"
+               alt="Why Nostr Matters in 10 Minutes" />
+          <div class="s11-video-overlay" onclick="playPinFilm()">
+            <div class="s11-play-btn">
+              <div class="s11-play-triangle"></div>
+            </div>
+          </div>
+          <iframe id="pinfilm-iframe"
+                  src=""
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <script>
+        function playPinFilm() {
+          var wrap = document.getElementById('pinfilm-video');
+          var iframe = document.getElementById('pinfilm-iframe');
+          iframe.src = 'https://www.youtube.com/embed/4EpmGyr4e78?autoplay=1&rel=0';
+          wrap.classList.add('playing');
+        }
+
+        function stopPinFilm() {
+          var wrap = document.getElementById('pinfilm-video');
+          var iframe = document.getElementById('pinfilm-iframe');
+          iframe.src = '';
+          wrap.classList.remove('playing');
+        }
+
+        // Listener moved to global Reveal init script
+      </script>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 10 — Workshop: Nostr Onboarding
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s-wks {
+          width: 100%; height: 100%; display: flex; flex-direction: column;
+          padding: 4vh 5vw 3vh; box-sizing: border-box; background: #000; gap: 3vh;
+        }
+        .swks-header { flex-shrink: 0; }
+        .swks-eyebrow {
+          font-family: 'Space Mono', monospace; font-size: 1.1vw;
+          color: #f7931a; letter-spacing: 0.22em; text-transform: uppercase;
+          margin-bottom: 0.4vh;
+        }
+        .swks-headline {
+          font-family: 'Oswald', sans-serif; font-weight: 700;
+          font-size: 4.4vw; color: #fff; line-height: 1; text-transform: uppercase;
+        }
+        .swks-headline span { color: #f7931a; }
+        .swks-section-lbl {
+          font-family: 'Space Mono', monospace; font-size: 1.1vw;
+          color: #f7931a; letter-spacing: 0.22em; text-transform: uppercase;
+          margin-bottom: 1.4vh;
+        }
+        .swks-demos {
+          flex-shrink: 0;
+          border-top: 1px solid rgba(247,147,26,0.3);
+          padding-top: 2vh;
+        }
+        .swks-demo-row {
+          display: grid; grid-template-columns: repeat(5, 1fr);
+          gap: 1.2vw;
+        }
+        .swks-demo {
+          background: rgba(247,147,26,0.06);
+          border: 1px solid rgba(247,147,26,0.35);
+          border-radius: 0.5vw;
+          padding: 1.8vh 1vw;
+          text-align: center;
+          font-family: 'Space Mono', monospace;
+          font-size: 1.4vw; font-weight: 700;
+          color: #fff; letter-spacing: 0.04em;
+        }
+        .swks-options {
+          flex: 1; display: flex; flex-direction: column;
+          border-top: 1px solid rgba(247,147,26,0.3); padding-top: 2vh;
+          min-height: 0;
+        }
+        .swks-options-grid {
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: 2.5vw; flex: 1;
+        }
+        .swks-opt {
+          display: flex; flex-direction: column;
+          background: rgba(247,147,26,0.05);
+          border: 2px solid rgba(247,147,26,0.45);
+          border-radius: 0.7vw;
+          padding: 2.5vh 2vw;
+          gap: 1.2vh;
+        }
+        .swks-opt-tag {
+          font-family: 'Space Mono', monospace;
+          font-size: 1vw; color: #f7931a;
+          letter-spacing: 0.25em; text-transform: uppercase;
+        }
+        .swks-opt-title {
+          font-family: 'Oswald', sans-serif; font-weight: 700;
+          font-size: 2.4vw; color: #fff; line-height: 1.05;
+          text-transform: uppercase;
+        }
+        .swks-opt-body {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.55vw; color: rgba(255,255,255,0.85);
+          line-height: 1.4;
+        }
+        .swks-opt-cta {
+          margin-top: auto;
+          font-family: 'Space Mono', monospace;
+          font-size: 1.55vw; color: #f7931a; font-weight: 700;
+          letter-spacing: 0.05em;
+          padding-top: 1vh;
+          border-top: 1px solid rgba(247,147,26,0.25);
+        }
+      </style>
+      <div class="s-wks">
+        <div class="swks-header">
+          <div class="swks-eyebrow">₿ Live Workshop</div>
+          <div class="swks-headline">Onboard to <span>Nostr</span></div>
+        </div>
+
+        <div class="swks-demos">
+          <div class="swks-section-lbl">Nostr Client Demos</div>
+          <div class="swks-demo-row">
+            <div class="swks-demo">Primal</div>
+            <div class="swks-demo">plektos</div>
+            <div class="swks-demo">plebian.market</div>
+            <div class="swks-demo">localbitcoiners.com</div>
+            <div class="swks-demo">mynostr.app</div>
+          </div>
+        </div>
+
+        <div class="swks-options">
+          <div class="swks-section-lbl">Pick Your Onboarding Path</div>
+          <div class="swks-options-grid">
+            <div class="swks-opt">
+              <div class="swks-opt-tag">Option 1 · Quick Path</div>
+              <div class="swks-opt-title">Just buying or selling?</div>
+              <div class="swks-opt-body">Onboard straight at our site. Skip the social tools, just transact.</div>
+              <div class="swks-opt-cta">→ westernmassbitcoin.com</div>
+            </div>
+            <div class="swks-opt">
+              <div class="swks-opt-tag">Option 2 · Full Nostr</div>
+              <div class="swks-opt-title">Want the social tools too?</div>
+              <div class="swks-opt-body">Web of trust, social feed, discovering new people and connections.</div>
+              <div class="swks-opt-cta">→ Primal app · iOS / Android</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════
+         SLIDE 12 — Value 4 Value
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s12 {
+          width: 100%;
+          height: 100%;
+          background: #000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 5vh 8vw;
+          gap: 3.5vh;
+        }
+        .s12-title {
+          font-family: 'Oswald', sans-serif;
+          font-size: 5vw;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #f7931a;
+          letter-spacing: 0.06em;
+          text-align: center;
+        }
+        .s12-bullets {
+          display: flex;
+          flex-direction: column;
+          gap: 1vh;
+          text-align: center;
+        }
+        .s12-bullet {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.5vw;
+          color: rgba(255,255,255,0.8);
+          line-height: 1.5;
+        }
+        .s12-bullet::before {
+          content: '▸ ';
+          color: #f7931a;
+        }
+        .s12-cta {
+          font-family: 'Oswald', sans-serif;
+          font-size: 2vw;
+          font-weight: 700;
+          color: #f7931a;
+          text-align: center;
+          line-height: 1.3;
+        }
+        .s12-qrs {
+          display: flex;
+          gap: 6vw;
+          align-items: flex-end;
+          justify-content: center;
+        }
+        .s12-qr {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.2vh;
+        }
+        .s12-qr img {
+          width: 14vw;
+          height: 14vw;
+          border-radius: 4px;
+          display: block;
+        }
+        .s12-qr-label {
+          font-family: 'Space Mono', monospace;
+          font-size: 1vw;
+          color: #f7931a;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+        }
+      </style>
+      <div class="s12">
+        <div class="s12-title">Value 4 Value</div>
+        <div class="s12-bullets">
+          <div class="s12-bullet">Open Source Tech is Powered by Value 4 Value Donations</div>
+          <div class="s12-bullet">Have you donated to your favorite open source projects?</div>
+        </div>
+        <div class="s12-cta">If you found this meetup valuable,<br>consider a donation to keep us growing!</div>
+        <div class="s12-qrs">
+          <div class="s12-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=WMBTCM%40getalby.com&bgcolor=ffffff&color=000000" alt="Lightning" />
+            <div class="s12-qr-label">Lightning</div>
+          </div>
+          <div class="s12-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fvenmo.com%2Fcode%3Fuser_id%3D2030664027209728783%26created%3D1773442681&bgcolor=ffffff&color=000000" alt="Venmo" />
+            <div class="s12-qr-label">Venmo</div>
+          </div>
+          <div class="s12-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fcash.app%2F%24ReedBTC21&bgcolor=ffffff&color=000000" alt="CashApp" />
+            <div class="s12-qr-label">CashApp</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: false,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    // No fixed width/height — let it use 100% of the viewport
+    width: '100%',
+    height: '100%',
+    margin: 0,
+    minScale: 1,
+    maxScale: 1,
+  });
+
+  // Stop embedded videos when navigating away from their slides
+  Reveal.on('slidechanged', function(event) {
+    var prev = event.previousSlide;
+    if (!prev) return;
+
+    if (prev.getAttribute('data-openclaw-slide') === 'true') {
+      var iframe = document.getElementById('openclaw-iframe');
+      var wrap = document.getElementById('openclaw-video');
+      if (iframe) iframe.src = '';
+      if (wrap) wrap.classList.remove('playing');
+    }
+
+    if (prev.getAttribute('data-pinfilm-slide') === 'true') {
+      var iframe = document.getElementById('pinfilm-iframe');
+      var wrap = document.getElementById('pinfilm-video');
+      if (iframe) iframe.src = '';
+      if (wrap) wrap.classList.remove('playing');
+    }
+  });
+</script>
+</body>
+</html>
