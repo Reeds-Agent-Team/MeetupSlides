@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WMBTCM #46 - June 2026</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Oswald:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Kill all Reveal defaults ── */
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+    .reveal-viewport { background: #000 !important; }
+    .reveal, .reveal .slides { width: 100% !important; height: 100% !important; }
+    .reveal .slides section {
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+      box-sizing: border-box;
+    }
+    /* hide reveal's own bullet styling */
+    .reveal ul { list-style: none; padding: 0; margin: 0; }
+    .reveal blockquote { background: none; border: none; box-shadow: none; padding: 0; margin: 0; width: 100%; }
+    .reveal h2 { margin: 0; }
+    .reveal .progress { color: #f7931a; }
+    .reveal .controls { color: #f7931a; }
+
+    /* ════════════════════════════════
+       SLIDE 1 — Title
+    ════════════════════════════════ */
+    .s1 {
+      background: #000;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3vh;
+    }
+    .s1 img { width: 42vw; max-width: 820px; }
+    .s1-number { font-family: 'Inter', sans-serif; font-size: 2.4vw; font-weight: 700; letter-spacing: 0.08em; color: #fff; }
+    .s1-date   { font-family: 'Inter', sans-serif; font-size: 1.9vw; font-weight: 600; color: #f7931a; }
+
+    /* ════════════════════════════════
+       SLIDE 2 — Podcast Spotlight
+    ════════════════════════════════ */
+    .s2 {
+      background: #000;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: stretch;
+      padding: 5vh 5vw;
+      gap: 4vw;
+      box-sizing: border-box;
+    }
+    .s2-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5vh;
+      flex-shrink: 0;
+      width: 18vw;
+    }
+    .s2-left img.cover {
+      width: 16vw;
+      height: 16vw;
+      border-radius: 1vw;
+      object-fit: cover;
+    }
+    .s2-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6vh;
+    }
+    .s2-qr img { width: 9vw; height: 9vw; border-radius: 4px; }
+    .s2-qr span {
+      font-size: 0.7vw;
+      color: #f7931a;
+      letter-spacing: 0.12em;
+      font-family: 'Space Mono', monospace;
+      text-transform: uppercase;
+    }
+    .s2-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      gap: 2.2vh;
+    }
+    .s2-eyebrow {
+      font-size: 1.4vw;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #f7931a;
+      font-family: 'Space Mono', monospace;
+    }
+    .s2-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 6.5vw;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+    .s2-hosts { font-size: 2vw; color: #f7931a; font-family: 'Inter', sans-serif; }
+    .s2-quote {
+      border-left: 0.3vw solid #f7931a;
+      padding: 0.5vh 0 0.5vh 1.6vw;
+      color: #fff;
+      font-size: 2.6vw;
+      line-height: 1.5;
+      font-family: 'Inter', sans-serif;
+    }
+    .s2-quote strong { color: #f7931a; font-weight: 700; }
+    .s2-tagline {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-size: 2vw;
+      color: rgba(255,255,255,0.6);
+    }
+    .s2-bullets { display: flex; flex-direction: column; gap: 1.4vh; }
+    .s2-bullets li {
+      font-size: 1.4vw;
+      color: #fff;
+      line-height: 1.55;
+      padding-left: 1.2vw;
+      position: relative;
+      font-family: 'Inter', sans-serif;
+    }
+    .s2-bullets li::before { content: "▸"; position: absolute; left: 0; color: #f7931a; }
+
+    /* ════════════════════════════════
+       SLIDE 4 — LocalBitcoins History
+    ════════════════════════════════ */
+    .s-lb {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      padding: 4vh 5vw; box-sizing: border-box; background: #000;
+    }
+    .slb-header {
+      display: flex; align-items: center; gap: 2vw;
+      border-bottom: 1px solid rgba(247,147,26,0.3);
+      padding-bottom: 2vh; margin-bottom: 2.5vh; flex-shrink: 0;
+    }
+    .slb-logo {
+      height: 7vh; width: auto; background: #fff;
+      border-radius: 0.4vw; padding: 0.6vh 1vw;
+    }
+    .slb-title-block { display: flex; flex-direction: column; gap: 0.3vh; }
+    .slb-eyebrow {
+      font-family: 'Space Mono', monospace; font-size: 0.75vw;
+      color: #f7931a; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .slb-headline {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 3.2vw; color: #fff; line-height: 1;
+    }
+    .slb-body {
+      display: flex; flex: 1; gap: 3vw; min-height: 0;
+    }
+    .slb-left {
+      display: flex; flex-direction: column; flex: 1; justify-content: center;
+    }
+    .slb-right {
+      width: 40vw; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    }
+    .slb-right img {
+      width: 100%; height: auto; object-fit: contain;
+      border-radius: 0.5vw; opacity: 0.85;
+    }
+    .slb-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 1.8vh;
+    }
+    .slb-list li {
+      font-family: 'Inter', sans-serif; font-size: 1.35vw;
+      color: rgba(255,255,255,0.88); line-height: 1.45;
+      padding-left: 1.6vw; position: relative;
+    }
+    .slb-list li::before {
+      content: ''; position: absolute; left: 0; top: 0.55em;
+      width: 0.45vw; height: 0.45vw; border-radius: 50%;
+      background: #f7931a;
+    }
+    .slb-list li strong { color: #f7931a; font-weight: 600; }
+
+    /* ════════════════════════════════
+       SLIDE 4 — Taproot Pt. 1
+    ════════════════════════════════ */
+    .s4 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 3.5vh 5vw 2vh;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .s4::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .s4::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, rgba(247,147,26,0.06) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .s4-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 1.8vh;
+    }
+    .s4-header { flex-shrink: 0; }
+    .s4-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75vw;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f7931a;
+      margin-bottom: 0.5vh;
+    }
+    .s4-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.8vw;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1;
+    }
+    .s4-headline span { color: #f7931a; }
+    /* timeline row */
+    .s4-timeline {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      flex-shrink: 0;
+    }
+    .tl-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      position: relative;
+    }
+    .tl-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 0.65vw;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, #f7931a 0%, rgba(247,147,26,0.25) 100%);
+    }
+    .tl-dot {
+      width: 1.3vw;
+      height: 1.3vw;
+      border-radius: 50%;
+      background: #f7931a;
+      border: 2px solid #f7931a;
+      flex-shrink: 0;
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(247,147,26,0.6);
+    }
+    .tl-dot.dim { background: rgba(247,147,26,0.25); border-color: rgba(247,147,26,0.4); box-shadow: none; }
+    .tl-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6vw;
+      color: #f7931a;
+      margin-top: 0.6vh;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .tl-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62vw;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      margin-top: 0.3vh;
+      line-height: 1.4;
+      padding: 0 0.3vw;
+    }
+    /* three pillars */
+    .s4-pillars {
+      display: flex;
+      gap: 1.5vw;
+      flex: 1;
+    }
+    .pillar {
+      flex: 1;
+      background: rgba(247,147,26,0.04);
+      border: 1px solid rgba(247,147,26,0.18);
+      border-radius: 0.6vw;
+      padding: 1.8vh 1.4vw;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #f7931a, rgba(247,147,26,0.2));
+    }
+    .pillar-bip {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82vw;
+      color: #f7931a;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .pillar-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2vw;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .pillar-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82vw;
+      color: #f7931a;
+      opacity: 0.8;
+    }
+    .pillar-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05vw;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .pillar-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4vw;
+      margin-top: auto;
+    }
+    .tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58vw;
+      padding: 0.3vh 0.6vw;
+      border-radius: 2px;
+      background: rgba(247,147,26,0.12);
+      color: #f7931a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .s4-footer {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.12);
+      padding-top: 0.8vh;
+    }
+    .s4-footer-note { font-family: 'Space Mono', monospace; font-size: 0.6vw; color: rgba(247,147,26,0.4); letter-spacing: 0.06em; }
+    .s4-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 1vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
+
+    /* ════════════════════════════════
+       SLIDE 5 — Taproot Pt. 2
+    ════════════════════════════════ */
+    .s5 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 3.5vh 5vw 2vh;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .s5::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .s5::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(247,147,26,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .s5-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      gap: 1.8vh;
+    }
+    .s5-header { flex-shrink: 0; }
+    .s5-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75vw;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f7931a;
+      margin-bottom: 0.5vh;
+    }
+    .s5-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.2vw;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1;
+    }
+    .s5-headline span { color: #f7931a; }
+    .s5-body {
+      display: flex;
+      gap: 2vw;
+      flex: 1;
+      min-height: 0;
+    }
+    /* LEFT — SVG infographic */
+    .s5-infographic {
+      flex: 1.1;
+      display: flex;
+      flex-direction: column;
+      gap: 1vh;
+    }
+    .s5-infographic-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68vw;
+      color: #f7931a;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .s5-svg-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .s5-svg-wrap svg {
+      width: 100%;
+      height: 100%;
+    }
+    /* RIGHT — consensus debate */
+    .s5-debate {
+      flex: 0.9;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2vh;
+    }
+    .debate-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68vw;
+      color: #f7931a;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .debate-card {
+      background: rgba(247,147,26,0.04);
+      border: 1px solid rgba(247,147,26,0.15);
+      border-radius: 0.5vw;
+      padding: 1.2vh 1.2vw;
+      position: relative;
+    }
+    .debate-card.highlight {
+      border-color: rgba(247,147,26,0.45);
+      background: rgba(247,147,26,0.07);
+    }
+    .debate-card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3vw;
+      font-weight: 700;
+      color: #f7931a;
+      text-transform: uppercase;
+      margin-bottom: 0.4vh;
+    }
+    .debate-card-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8vw;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.55;
+    }
+    .debate-outcome {
+      background: rgba(247,147,26,0.09);
+      border: 1px solid rgba(247,147,26,0.35);
+      border-radius: 0.5vw;
+      padding: 1.2vh 1.2vw;
+      margin-top: 0.5vh;
+    }
+    .debate-outcome-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3vw;
+      color: #f7931a;
+      text-transform: uppercase;
+      margin-bottom: 0.4vh;
+    }
+    .debate-outcome-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8vw;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.55;
+    }
+    .debate-stat {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.4vw;
+      color: #f7931a;
+      display: block;
+      margin-top: 0.5vh;
+    }
+    .s5-footer {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.12);
+      padding-top: 0.8vh;
+    }
+    .s5-footer-note { font-family: 'Space Mono', monospace; font-size: 0.6vw; color: rgba(247,147,26,0.4); letter-spacing: 0.06em; }
+    .s5-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 1vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
+
+    /* ════════════════════════════════
+       SLIDE 6 — Post-Taproot History (v2)
+    ════════════════════════════════ */
+    .s6 {
+      position: relative;
+      width: 100%; height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 3vh 4.5vw 1.8vh;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .s6::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .s6::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 45%, rgba(247,147,26,0.055) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .s6-inner {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      height: 100%; gap: 1.4vh;
+    }
+    .s6-header { flex-shrink: 0; }
+    .s6-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72vw; letter-spacing: 0.28em;
+      text-transform: uppercase; color: #f7931a;
+      margin-bottom: 0.4vh;
+    }
+    .s6-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.2vw; font-weight: 700;
+      text-transform: uppercase; color: #fff; line-height: 1;
+    }
+    .s6-headline span { color: #f7931a; }
+
+    /* ── promised vs reality row ── */
+    .s6-pvr {
+      display: flex; gap: 1.5vw; flex-shrink: 0; align-items: stretch;
+    }
+    .pvr-box {
+      flex: 1;
+      border-radius: 0.5vw;
+      padding: 1.1vh 1.2vw;
+      display: flex; flex-direction: column; gap: 0.6vh;
+      position: relative; overflow: hidden;
+    }
+    .pvr-box.promised {
+      background: rgba(247,147,26,0.06);
+      border: 1px solid rgba(247,147,26,0.25);
+    }
+    .pvr-box.reality {
+      background: rgba(180,30,30,0.08);
+      border: 1px solid rgba(220,60,60,0.3);
+    }
+    .pvr-box::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .pvr-box.promised::before { background: linear-gradient(90deg, #f7931a, rgba(247,147,26,0.15)); }
+    .pvr-box.reality::before  { background: linear-gradient(90deg, #c0392b, rgba(192,57,43,0.15)); }
+    .pvr-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw; letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .pvr-box.promised .pvr-label { color: #f7931a; }
+    .pvr-box.reality  .pvr-label { color: #e74c3c; }
+    .pvr-pills { display: flex; flex-wrap: wrap; gap: 0.5vw; }
+    .pvr-pill {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05vw; font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.3vh 0.8vw;
+      border-radius: 3px;
+    }
+    .pvr-box.promised .pvr-pill {
+      background: rgba(247,147,26,0.15); color: #f7931a;
+    }
+    .pvr-box.reality  .pvr-pill {
+      background: rgba(192,57,43,0.15); color: #e74c3c;
+    }
+    .pvr-arrow {
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2vw; color: rgba(247,147,26,0.3);
+      flex-shrink: 0; padding: 0 0.3vw;
+    }
+
+    /* ── main body: timeline left | ordinals right ── */
+    .s6-body {
+      display: flex; gap: 2vw; flex: 1; min-height: 0;
+    }
+
+    /* LEFT — adoption timeline infographic */
+    .s6-timeline-col {
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.8vh;
+    }
+    .s6-col-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65vw; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #f7931a; opacity: 0.8;
+    }
+    .tl2-wrap {
+      flex: 1;
+      display: flex; flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    /* vertical spine */
+    .tl2-wrap::before {
+      content: '';
+      position: absolute;
+      left: 4.5vw; top: 0.6vw; bottom: 0.6vw;
+      width: 1px;
+      background: linear-gradient(180deg,
+        rgba(247,147,26,0.5) 0%,
+        rgba(247,147,26,0.15) 60%,
+        rgba(247,147,26,0.05) 100%);
+    }
+    .tl2-item {
+      display: flex; align-items: flex-start;
+      gap: 0; flex: 1;
+      position: relative;
+    }
+    .tl2-date-col {
+      width: 4.5vw; flex-shrink: 0;
+      display: flex; flex-direction: column;
+      align-items: flex-end;
+      padding-right: 0.7vw;
+      padding-top: 0.15vh;
+    }
+    .tl2-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6vw; color: #f7931a;
+      white-space: nowrap; line-height: 1.3;
+    }
+    .tl2-dot-col {
+      display: flex; flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .tl2-dot {
+      width: 0.9vw; height: 0.9vw;
+      border-radius: 50%;
+      border: 2px solid;
+      flex-shrink: 0;
+      margin-top: 0.1vh;
+    }
+    .dot-live    { background: #f7931a; border-color: #f7931a; box-shadow: 0 0 8px rgba(247,147,26,0.7); }
+    .dot-partial { background: rgba(247,147,26,0.35); border-color: rgba(247,147,26,0.6); }
+    .dot-dim     { background: rgba(247,147,26,0.1); border-color: rgba(247,147,26,0.3); }
+    .dot-green   { background: #27ae60; border-color: #2ecc71; box-shadow: 0 0 6px rgba(46,204,113,0.5); }
+    .tl2-content {
+      flex: 1;
+      padding: 0 0 0 0.8vw;
+      display: flex; flex-direction: column; gap: 0.25vh;
+    }
+    .tl2-event {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95vw; font-weight: 700;
+      text-transform: uppercase; line-height: 1.1;
+    }
+    .tl2-event.live    { color: #fff; }
+    .tl2-event.partial { color: rgba(255,255,255,0.65); }
+    .tl2-event.dim     { color: rgba(255,255,255,0.35); }
+    .tl2-event.good    { color: #2ecc71; }
+    .tl2-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7vw; line-height: 1.45;
+    }
+    .tl2-desc.live    { color: rgba(255,255,255,0.6); }
+    .tl2-desc.partial { color: rgba(255,255,255,0.4); }
+    .tl2-desc.dim     { color: rgba(255,255,255,0.25); }
+    .tl2-desc.good    { color: rgba(46,204,113,0.7); }
+    .tl2-tags {
+      display: flex; flex-wrap: wrap; gap: 0.3vw; margin-top: 0.2vh;
+    }
+    .tl2-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.52vw; padding: 0.15vh 0.45vw;
+      border-radius: 2px; text-transform: uppercase;
+    }
+    .tag-yes { background: rgba(247,147,26,0.18); color: #f7931a; }
+    .tag-no  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.3); }
+    .tag-new { background: rgba(46,204,113,0.15); color: #2ecc71; }
+
+    /* RIGHT — ordinals/fee impact */
+    .s6-ord-col {
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.9vh;
+      overflow: hidden; min-height: 0;
+    }
+    .ord2-header {
+      background: rgba(192,57,43,0.08);
+      border: 1px solid rgba(192,57,43,0.3);
+      border-top: 3px solid #c0392b;
+      border-radius: 0.5vw;
+      padding: 1vh 1.2vw;
+      position: relative; overflow: hidden;
+      flex-shrink: 0;
+    }
+    
+    .ord2-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6vw; font-weight: 700;
+      text-transform: uppercase; color: #e74c3c;
+      margin-bottom: 0.5vh;
+    }
+    .ord2-stats {
+      display: flex; gap: 0.8vw; align-items: center;
+    }
+    .ord2-stat {
+      display: flex; flex-direction: column; gap: 0.1vh;
+    }
+    .ord2-val {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.9vw; color: #e74c3c; line-height: 1;
+    }
+    .ord2-lbl {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.52vw; color: rgba(255,255,255,0.35);
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .ord2-divider { width: 1px; background: rgba(192,57,43,0.2); align-self: stretch; }
+
+    /* fee chart */
+    .fee-chart-wrap {
+      background: rgba(247,147,26,0.03);
+      border: 1px solid rgba(247,147,26,0.12);
+      border-radius: 0.5vw;
+      padding: 1vh 1.2vw 0.8vh;
+      flex: 1;
+      display: flex; flex-direction: column; gap: 0.6vh;
+    }
+    .fee-chart-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw; color: #f7931a;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .fee-svg { flex: 1; }
+
+    /* block size visual */
+    .block-compare {
+      background: rgba(247,147,26,0.03);
+      border: 1px solid rgba(247,147,26,0.12);
+      border-radius: 0.5vw;
+      padding: 0.9vh 1.2vw;
+      display: flex; align-items: center; gap: 1.5vw;
+    }
+    .bc-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62vw; color: rgba(247,147,26,0.7);
+      text-transform: uppercase; letter-spacing: 0.15em;
+      flex-shrink: 0;
+    }
+    .bc-bars {
+      flex: 1; display: flex; align-items: flex-end; gap: 0.5vw;
+    }
+    .bc-bar-item { display: flex; flex-direction: column; align-items: center; gap: 0.2vh; flex: 1; }
+    .bc-bar {
+      width: 100%; border-radius: 2px 2px 0 0;
+      position: relative; min-height: 4px;
+    }
+    .bc-bar-label { font-family: 'Space Mono', monospace; font-size: 0.55vw; text-align: center; }
+    .bc-bar-val   { font-family: 'Oswald', sans-serif;    font-size: 0.8vw;  color: #f7931a; }
+
+    /* footnote */
+    .s6-footnote {
+      flex-shrink: 0;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6vw;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      border-top: 1px solid rgba(247,147,26,0.1);
+      padding-top: 0.6vh;
+    }
+    .s6-footnote span { color: rgba(247,147,26,0.4); }
+
+    .s6-footer {
+      flex-shrink: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.1);
+      padding-top: 0.5vh;
+    }
+    .s6-footer-note { font-family: 'Space Mono', monospace; font-size: 0.58vw; color: rgba(247,147,26,0.35); letter-spacing: 0.06em; }
+    .s6-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 0.95vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ══════════════════════════════
+         SLIDE 1 — Title
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s1">
+        <img src="WMBTCM.png" alt="Western Mass Bitcoin Meetup" />
+        <div class="s1-number">Western Mass Bitcoin Meetup #46</div>
+        <div class="s1-date">June 2026</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 2 — Podcast Spotlight
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s2">
+        <div class="s2-left">
+          <img class="cover" src="https://haven.sovereignengineering.io/29995d6f3c18f5cd881519e08a34292ccbd2f0996df288e9b125dea69d259eee.jpg" alt="No Solutions" />
+          <div class="s2-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://fountain.fm/show/1jdehAGo1tgBdKZXIo8K&bgcolor=ffffff&color=000000" alt="Fountain" />
+            <span>Listen on Fountain</span>
+          </div>
+          <div class="s2-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://sovereignengineering.io/&bgcolor=ffffff&color=000000" alt="Sovereign Engineering" />
+            <span>sovereignengineering.io</span>
+          </div>
+        </div>
+        <div class="s2-right">
+          <div class="s2-eyebrow">Podcast Spotlight</div>
+          <h2 class="s2-title">No Solutions</h2>
+          <p class="s2-hosts">Hosted by Gigi</p>
+          <blockquote class="s2-quote">
+            Gigi grabs a voice recorder and walks the mountains of Madeira, Portugal — recording his conversations with the builders of <strong>Sovereign Engineering</strong>: a 6-week, 21-person residency where Bitcoiners ship permissionless apps on Nostr, Lightning, Cashu &amp; AI.
+          </blockquote>
+          <div class="s2-tagline">"No solutions, only trade-offs."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 3 — Book Spotlight
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s2">
+        <div class="s2-left">
+          <img src="https://store.bitcoinmagazine.com/cdn/shop/files/Cason_Book_Product_Image-1.png?v=1761599809&width=640"
+               alt="Cryptosovereignty"
+               style="width:16vw; height:24vw; object-fit:contain; border-radius:0.4vw;" />
+          <div class="s2-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://store.bitcoinmagazine.com/products/cryptosovereignty&bgcolor=ffffff&color=000000" alt="Get the book" />
+            <span>store.bitcoinmagazine.com</span>
+          </div>
+        </div>
+        <div class="s2-right">
+          <div class="s2-eyebrow">Book Spotlight</div>
+          <h2 class="s2-title">Cryptosovereignty</h2>
+          <p class="s2-hosts">Erik Cason · The Encrypted Political Philosophy of Bitcoin</p>
+          <blockquote class="s2-quote">
+            A collection of essays reading Bitcoin through <strong>continental philosophy</strong> and the <strong>cypherpunk</strong> tradition — treating it not as money, but as a personal instrument of self-sovereignty built from cryptography, privacy &amp; code.
+          </blockquote>
+          <div class="s2-tagline">"A masterclass in the philosophical and socio-political implications of Bitcoin." — Pete Rizzo, Bitcoin Magazine</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — NGU Technology (intro)
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s-ngu {
+          width: 100%; height: 100%; display: flex; flex-direction: column;
+          padding: 4vh 5vw; box-sizing: border-box; background: #000;
+        }
+        .s-ngu-header {
+          border-bottom: 1px solid rgba(247,147,26,0.3);
+          padding-bottom: 2vh; margin-bottom: 4vh; flex-shrink: 0;
+        }
+        .s-ngu-eyebrow {
+          font-family: 'Space Mono', monospace; font-size: 1.1vw;
+          color: #f7931a; letter-spacing: 0.18em; text-transform: uppercase;
+          margin-bottom: 0.8vh;
+        }
+        .s-ngu-headline {
+          font-family: 'Oswald', sans-serif; font-weight: 700;
+          font-size: 4.6vw; color: #fff; line-height: 1;
+        }
+        .s-ngu-body {
+          display: flex; flex: 1; gap: 4vw; align-items: center; min-height: 0;
+        }
+        .s-ngu-img {
+          flex-shrink: 0; width: 34vw;
+          display: flex; align-items: center; justify-content: center;
+        }
+        .s-ngu-img img {
+          width: 100%; height: auto; max-height: 64vh; object-fit: contain;
+          border-radius: 0.6vw;
+        }
+        .s-ngu-text {
+          display: flex; flex-direction: column; gap: 3vh; flex: 1;
+          font-family: 'Inter', sans-serif;
+        }
+        .s-ngu-text p {
+          margin: 0; font-size: 2.3vw; line-height: 1.4; color: #fff;
+        }
+        .s-ngu-text strong { color: #f7931a; font-weight: 700; }
+        .s-ngu-wink {
+          font-style: italic; font-size: 1.9vw; line-height: 1.4;
+          color: rgba(255,255,255,0.6);
+          border-left: 0.3vw solid #f7931a; padding-left: 1.4vw;
+        }
+      </style>
+      <div class="s-ngu">
+        <div class="s-ngu-header">
+          <div class="s-ngu-eyebrow">Bitcoin History · The Meme That's Actually True</div>
+          <div class="s-ngu-headline">NGU Technology</div>
+        </div>
+        <div class="s-ngu-body">
+          <div class="s-ngu-img">
+            <img src="NGU.png" alt="Number Go Up" />
+          </div>
+          <div class="s-ngu-text">
+            <p><strong>"Number Go Up"</strong> — the half-joking name for Bitcoin's tendency to rise in price over time.</p>
+            <p>Supply is capped at <strong>21 million</strong> forever. As more people save in it, the same fixed pie gets divided among more demand — so the number goes up.</p>
+            <p class="s-ngu-wink">It's a meme, sure. But it's still fundamentally true — it just doesn't <em>feel</em> true while the price is dipping.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River Report (intro)
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:4vh 5vw; box-sizing:border-box;">
+        <div style="border-bottom:1px solid rgba(247,147,26,0.3); padding-bottom:2vh; margin-bottom:4vh; flex-shrink:0;">
+          <div style="font-family:'Space Mono',monospace; font-size:1.1vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.8vh;">Adoption Data · Feb 24, 2026</div>
+          <div style="font-family:'Oswald',sans-serif; font-weight:700; font-size:4.2vw; color:#fff; line-height:1;">River's 2026 Bitcoin Adoption Report</div>
+        </div>
+        <div style="display:flex; flex:1; gap:4vw; align-items:center; min-height:0;">
+          <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+            <img src="river0.png" alt="What's driving Bitcoin adoption in 2026?" style="max-width:100%; max-height:62vh; width:auto; height:auto; object-fit:contain; border-radius:0.6vw;" />
+          </div>
+          <div style="flex-shrink:0; width:30vw; display:flex; flex-direction:column; gap:3vh; font-family:'Inter',sans-serif;">
+            <p style="margin:0; font-size:2.1vw; line-height:1.4; color:#fff;">River's annual, data-driven look at <strong style="color:#f7931a;">who is adopting Bitcoin and why</strong> — individuals, businesses, and institutions.</p>
+            <div style="display:flex; align-items:center; gap:1.5vw;">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://river.com/learn/files/river-bitcoin-adoption-report-2026.pdf&bgcolor=ffffff&color=000000" alt="Download the report" style="width:11vw; height:11vw; border-radius:4px;" />
+              <div style="font-family:'Space Mono',monospace; font-size:1.1vw; color:#f7931a; letter-spacing:0.12em; text-transform:uppercase; line-height:1.5;">Scan to<br>download<br>the report</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River 1
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:3vh 4vw; box-sizing:border-box;">
+        <div style="font-family:'Space Mono',monospace; font-size:0.95vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; padding-bottom:1.2vh; margin-bottom:1.8vh; border-bottom:1px solid rgba(247,147,26,0.3); flex-shrink:0;">River · 2026 Bitcoin Adoption Report</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+          <img src="river1.png" alt="River 2026 Bitcoin Adoption Report" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River 2
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:3vh 4vw; box-sizing:border-box;">
+        <div style="font-family:'Space Mono',monospace; font-size:0.95vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; padding-bottom:1.2vh; margin-bottom:1.8vh; border-bottom:1px solid rgba(247,147,26,0.3); flex-shrink:0;">River · 2026 Bitcoin Adoption Report</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+          <img src="river2.png" alt="River 2026 Bitcoin Adoption Report" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River 3
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:3vh 4vw; box-sizing:border-box;">
+        <div style="font-family:'Space Mono',monospace; font-size:0.95vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; padding-bottom:1.2vh; margin-bottom:1.8vh; border-bottom:1px solid rgba(247,147,26,0.3); flex-shrink:0;">River · 2026 Bitcoin Adoption Report</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+          <img src="river3.png" alt="River 2026 Bitcoin Adoption Report" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River 4
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:3vh 4vw; box-sizing:border-box;">
+        <div style="font-family:'Space Mono',monospace; font-size:0.95vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; padding-bottom:1.2vh; margin-bottom:1.8vh; border-bottom:1px solid rgba(247,147,26,0.3); flex-shrink:0;">River · 2026 Bitcoin Adoption Report</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+          <img src="river4.png" alt="River 2026 Bitcoin Adoption Report" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River 5
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:3vh 4vw; box-sizing:border-box;">
+        <div style="font-family:'Space Mono',monospace; font-size:0.95vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; padding-bottom:1.2vh; margin-bottom:1.8vh; border-bottom:1px solid rgba(247,147,26,0.3); flex-shrink:0;">River · 2026 Bitcoin Adoption Report</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+          <img src="river5.png" alt="River 2026 Bitcoin Adoption Report" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River 6
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:3vh 4vw; box-sizing:border-box;">
+        <div style="font-family:'Space Mono',monospace; font-size:0.95vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; padding-bottom:1.2vh; margin-bottom:1.8vh; border-bottom:1px solid rgba(247,147,26,0.3); flex-shrink:0;">River · 2026 Bitcoin Adoption Report</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+          <img src="river6.png" alt="River 2026 Bitcoin Adoption Report" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River 7
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:3vh 4vw; box-sizing:border-box;">
+        <div style="font-family:'Space Mono',monospace; font-size:0.95vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; padding-bottom:1.2vh; margin-bottom:1.8vh; border-bottom:1px solid rgba(247,147,26,0.3); flex-shrink:0;">River · 2026 Bitcoin Adoption Report</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+          <img src="river7.png" alt="River 2026 Bitcoin Adoption Report" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE — River 8
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; background:#000; padding:3vh 4vw; box-sizing:border-box;">
+        <div style="font-family:'Space Mono',monospace; font-size:0.95vw; color:#f7931a; letter-spacing:0.18em; text-transform:uppercase; padding-bottom:1.2vh; margin-bottom:1.8vh; border-bottom:1px solid rgba(247,147,26,0.3); flex-shrink:0;">River · 2026 Bitcoin Adoption Report</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center; min-height:0;">
+          <img src="river8.png" alt="River 2026 Bitcoin Adoption Report" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;" />
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════
+         SLIDE — Bitcoin Discussion Topic
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:#000; padding:5vh 6vw; box-sizing:border-box; gap:4vh;">
+        <div style="font-family:'Space Mono',monospace; font-size:1.3vw; color:#f7931a; letter-spacing:0.22em; text-transform:uppercase;">₿ Bitcoin Discussion Topic</div>
+        <div style="font-family:'Oswald',sans-serif; font-weight:700; font-size:5.5vw; color:#fff; line-height:1.05; text-transform:uppercase;">Bear Market Vibe Check</div>
+        <div style="font-family:'Inter',sans-serif; font-size:2.6vw; color:rgba(255,255,255,0.75);">Where are you at?</div>
+        <div style="font-family:'Oswald',sans-serif; font-weight:700; font-size:3.4vw; color:#f7931a; text-transform:uppercase; letter-spacing:0.04em; margin-top:2vh;">Circle up!</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 12 — Value 4 Value
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <style>
+        .s12 {
+          width: 100%;
+          height: 100%;
+          background: #000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 5vh 8vw;
+          gap: 3.5vh;
+        }
+        .s12-title {
+          font-family: 'Oswald', sans-serif;
+          font-size: 5vw;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #f7931a;
+          letter-spacing: 0.06em;
+          text-align: center;
+        }
+        .s12-bullets {
+          display: flex;
+          flex-direction: column;
+          gap: 1vh;
+          text-align: center;
+        }
+        .s12-bullet {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.5vw;
+          color: rgba(255,255,255,0.8);
+          line-height: 1.5;
+        }
+        .s12-bullet::before {
+          content: '▸ ';
+          color: #f7931a;
+        }
+        .s12-cta {
+          font-family: 'Oswald', sans-serif;
+          font-size: 2vw;
+          font-weight: 700;
+          color: #f7931a;
+          text-align: center;
+          line-height: 1.3;
+        }
+        .s12-qrs {
+          display: flex;
+          gap: 6vw;
+          align-items: flex-end;
+          justify-content: center;
+        }
+        .s12-qr {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.2vh;
+        }
+        .s12-qr img {
+          width: 14vw;
+          height: 14vw;
+          border-radius: 4px;
+          display: block;
+        }
+        .s12-qr-label {
+          font-family: 'Space Mono', monospace;
+          font-size: 1vw;
+          color: #f7931a;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+        }
+      </style>
+      <div class="s12">
+        <div class="s12-title">Value 4 Value</div>
+        <div class="s12-bullets">
+          <div class="s12-bullet">Open Source Tech is Powered by Value 4 Value Donations</div>
+          <div class="s12-bullet">Have you donated to your favorite open source projects?</div>
+        </div>
+        <div class="s12-cta">If you found this meetup valuable,<br>consider a donation to keep us growing!</div>
+        <div class="s12-qrs">
+          <div class="s12-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=WMBTCM%40getalby.com&bgcolor=ffffff&color=000000" alt="Lightning" />
+            <div class="s12-qr-label">Lightning</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: false,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    // No fixed width/height — let it use 100% of the viewport
+    width: '100%',
+    height: '100%',
+    margin: 0,
+    minScale: 1,
+    maxScale: 1,
+  });
+</script>
+</body>
+</html>
