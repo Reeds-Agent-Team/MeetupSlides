@@ -201,6 +201,14 @@
     .tbl td.bad  { color: #e74c3c; }
     .tbl td.muted { color: rgba(255,255,255,0.45); font-size: 0.72vw; }
     .tbl tr.hl td { background: rgba(247,147,26,0.07); }
+    /* savings table */
+    .tbl.sav th { font-size: 0.8vw; line-height: 1.5; padding-bottom: 1vh; }
+    .tbl.sav th .muted { display: block; font-size: 0.6vw; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; }
+    .tbl.sav td { font-size: 1.25vw; padding: 1.3vh 0.6vw; }
+    .tbl.sav td small { display: block; font-family: 'Space Mono', monospace; font-size: 0.62vw; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; margin-top: 0.2vh; }
+    .tbl.sav td b { font-family: 'Oswald', sans-serif; font-size: 2.3vw; font-weight: 700; line-height: 1; }
+    .tbl.sav td.good small { color: rgba(46,204,113,0.6); }
+    .tbl.sav td.bad small  { color: rgba(231,76,60,0.6); }
   </style>
 </head>
 <body>
@@ -316,73 +324,80 @@
     </section>
 
     <!-- ══════════════════════════════
-         SLIDE 3 — The mining subsidy
+         SLIDE 3 — What one miner saves on heating
     ══════════════════════════════ -->
     <section data-background-color="#000000">
       <div class="st">
         <div class="st-inner">
           <div class="st-header">
-            <div class="st-eyebrow">Case Study · Part 2 of 3 · Antminer S19j Pro on a 120 V outlet</div>
-            <div class="st-headline">The miner is a space heater that <span>pays you in sats</span></div>
+            <div class="st-eyebrow">Case Study · Part 2 of 3 · One Antminer S19j Pro on a 120 V outlet · 18 h/day · 180-day winter</div>
+            <div class="st-headline">Heat the house first. <span>The sats are the by-product.</span></div>
           </div>
 
-          <!-- equation strip -->
-          <div class="eq">
-            <div class="eq-item"><div class="eq-val white">1,200 W</div><div class="eq-lbl">120 VAC · 15 A circuit</div></div>
-            <div class="eq-op">→</div>
-            <div class="eq-item"><div class="eq-val white">~48 TH/s</div><div class="eq-lbl">underclocked · ~25 J/TH</div></div>
-            <div class="eq-op">×</div>
-            <div class="eq-item"><div class="eq-val">47.6 sats</div><div class="eq-lbl">hashprice / TH / day</div></div>
+          <!-- premise strip -->
+          <div class="eq" style="gap: 2.5vw;">
+            <div class="eq-item"><div class="eq-val white">3,900 kWh</div><div class="eq-lbl">of heat per winter · 1,200 W space heater</div></div>
             <div class="eq-op">=</div>
-            <div class="eq-item"><div class="eq-val">2,284 sats</div><div class="eq-lbl">per day · $1.92 @ $83,904</div></div>
-            <div class="eq-op">÷</div>
-            <div class="eq-item"><div class="eq-val white">28.8 kWh</div><div class="eq-lbl">per day of heat</div></div>
-            <div class="eq-op">=</div>
-            <div class="eq-item"><div class="eq-val good">79 sats / kWh</div><div class="eq-lbl">≈ $0.067 subsidy per kWh</div></div>
+            <div class="eq-item"><div class="eq-val">$740 of oil</div><div class="eq-lbl">or $430 of natural gas · same heat</div></div>
+            <div class="eq-op">+</div>
+            <div class="eq-item"><div class="eq-val good">307k sats back</div><div class="eq-lbl">≈ $259 · mined while it heats</div></div>
           </div>
 
           <div class="st-body">
-            <!-- LEFT: effective heat cost table -->
-            <div style="flex: 1.15; display: flex; flex-direction: column; min-height: 0;">
-              <div class="st-col-label">Heat cost after the subsidy · electricity price − $0.067</div>
+            <!-- LEFT: savings table -->
+            <div style="flex: 1.35; display: flex; flex-direction: column; min-height: 0;">
+              <div class="st-col-label">What you save on heating per winter · heat cost with the fuel − heat cost with the miner</div>
               <div class="card" style="flex: 1; justify-content: center;">
-                <table class="tbl">
-                  <tr><th>Where the 28.8 kWh/day comes from</th><th class="r">Power $/kWh</th><th class="r">Net heat $/kWh</th><th class="r">vs oil $0.19</th><th class="r">vs gas $0.11</th></tr>
-                  <tr><td>Grid, Eversource WMA</td><td class="num r">0.314</td><td class="num r bad">0.247</td><td class="r bad">loses</td><td class="r bad">loses</td></tr>
-                  <tr><td>Own panels, financed, inside annual production</td><td class="num r">0.14</td><td class="num r good">0.075</td><td class="r good">wins</td><td class="r good">wins</td></tr>
-                  <tr><td>Own panels, cash, inside annual production</td><td class="num r">0.11</td><td class="num r good">0.047</td><td class="r good">wins</td><td class="r good">wins</td></tr>
-                  <tr class="hl"><td>Surplus net-metering credits (bank already positive)</td><td class="num r">0.00</td><td class="num r good">−0.067</td><td class="r good">paid to heat</td><td class="r good">paid to heat</td></tr>
+                <table class="tbl sav">
+                  <tr>
+                    <th>Where the miner's power comes from</th>
+                    <th class="r">If you heat with oil<br><span class="muted">$740 / winter today</span></th>
+                    <th class="r">If you heat with gas<br><span class="muted">$430 / winter today</span></th>
+                  </tr>
+                  <tr>
+                    <td>Grid power<br><small>Eversource · $0.314/kWh</small></td>
+                    <td class="r bad"><b>−$224</b><small>−266k sats</small></td>
+                    <td class="r bad"><b>−$535</b><small>−637k sats</small></td>
+                  </tr>
+                  <tr>
+                    <td>Your own panels, financed<br><small>$0.14/kWh · inside annual production</small></td>
+                    <td class="r good"><b>$445</b><small>531k sats</small></td>
+                    <td class="r good"><b>$134</b><small>160k sats</small></td>
+                  </tr>
+                  <tr>
+                    <td>Your own panels, paid cash<br><small>$0.11/kWh · inside annual production</small></td>
+                    <td class="r good"><b>$554</b><small>660k sats</small></td>
+                    <td class="r good"><b>$243</b><small>290k sats</small></td>
+                  </tr>
+                  <tr class="hl">
+                    <td>Surplus solar credits<br><small>$0.00/kWh · credits you'd never use</small></td>
+                    <td class="r good"><b>$997</b><small>1.19M sats</small></td>
+                    <td class="r good"><b>$686</b><small>818k sats</small></td>
+                  </tr>
                 </table>
-                <div class="card-body" style="margin-top: 1.4vh; font-size: 1.1vw;">
-                  <strong>Break-evens:</strong> mining alone pays for power below <em>$0.067/kWh</em>. The miner beats oil heat when power costs under <em>$0.26/kWh</em> and beats gas heat under <em>$0.18/kWh</em>. Western Mass grid power is $0.31+, so on the grid it loses to both. On your own roof it beats both.
-                </div>
               </div>
             </div>
 
-            <!-- RIGHT: season + no-KYC -->
-            <div style="flex: 0.85; display: flex; flex-direction: column; gap: 0.9vh; min-height: 0;">
-              <div class="st-col-label">One heating season · 180 days</div>
-              <div class="card" style="flex: 1; justify-content: center;">
-                <table class="tbl">
-                  <tr><th>Runtime</th><th class="r">kWh</th><th class="r">Sats</th><th class="r">USD</th></tr>
-                  <tr><td>24 h/day</td><td class="num r">5,180</td><td class="num r">411k</td><td class="num r">$345</td></tr>
-                  <tr><td>18 h/day</td><td class="num r">3,890</td><td class="num r">308k</td><td class="num r">$259</td></tr>
-                </table>
-                <div class="card-body">Plus the heat: at oil prices that 3,890 kWh is <em>~$740</em> of oil you didn't burn (~130 gal).</div>
-              </div>
+            <!-- RIGHT: the point -->
+            <div style="flex: 0.75; display: flex; flex-direction: column; gap: 0.9vh; min-height: 0;">
+              <div class="st-col-label">How to read it</div>
               <div class="card good" style="flex: 1; justify-content: center;">
-                <div class="card-kicker">These are no-KYC sats</div>
-                <div class="card-body">Buying bitcoin without ID (Bisq, RoboSats, Hodl Hodl, meetup trades) runs a <strong>5–10% premium</strong> over exchange spot. Mined sats arrive with no premium and no paper trail, so replacing them would cost <strong>$2.02–2.11/day</strong>: the subsidy is really <em>$0.070–0.073/kWh</em>.</div>
+                <div class="card-kicker">The goal is a warm house</div>
+                <div class="card-body">You were going to buy that heat anyway. The miner is a resistance heater that turns electricity into heat 1:1, and on your own power it makes the heat <strong>cheaper than oil</strong>. The sats it returns are the discount, not the business.</div>
               </div>
               <div class="card" style="flex: 1; justify-content: center;">
-                <div class="card-kicker">What moves the number</div>
-                <div class="card-body"><strong>Halving ~Apr 2028</strong> cuts sats/kWh in half unless price or fees double. Hashprice swings $0.02–0.06/TH/day; the miner still beats oil on $0 surplus power across that whole range.</div>
+                <div class="card-kicker">Sats column</div>
+                <div class="card-body">The savings converted at today's price ($83,904). Only the <strong>307k sats</strong> are actually mined. The rest is oil or gas money that stays in your pocket, which you can stack if you like.</div>
+              </div>
+              <div class="card" style="flex: 1; justify-content: center;">
+                <div class="card-kicker">Bonus · no-KYC</div>
+                <div class="card-body">The mined sats carry <strong>no ID and no premium</strong>. Buying them without KYC would cost 5–10% over spot, about $275 for the same 307k sats.</div>
               </div>
             </div>
           </div>
 
           <div class="st-footer">
-            <div class="st-footer-note">Live from a home Bitcoin Core node, 2026-10-11: block 970,962 · difficulty 1.33e14 · implied 950 EH/s · 3.125 BTC subsidy + 0.014 BTC fees · BTC/USD $83,904 (Coinbase). S19j Pro needs Braiins / LuxOS firmware and an APW12 120 V mod; never run stock firmware on 120 V. Keep it ≤1,200 W continuous on a dedicated 15 A circuit.</div>
+            <div class="st-footer-note">1,200 W × 18 h × 180 days = 3,888 kWh. Oil heat $0.19/kWh (1997 boiler, $5.80/gal), gas heat $0.11/kWh (90% furnace, ~$2.90/therm). Mining: ~48 TH/s at 47.6 sats/TH/day = 79 sats/kWh (block 970,962, 2026-10-11, home node). Halving ~Apr 2028 roughly halves the sats line unless price or fees double; the heating savings on solar survive it.</div>
             <div class="st-footer-sym">₿ WMBTCM</div>
           </div>
         </div>
