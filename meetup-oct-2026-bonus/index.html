@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WMBTCM Bonus Deck - Oct. 2026 - Mining as Heat</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Oswald:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Kill all Reveal defaults ── */
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+    .reveal-viewport { background: #000 !important; }
+    .reveal, .reveal .slides { width: 100% !important; height: 100% !important; }
+    .reveal .slides section {
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      top: 0 !important;
+      left: 0 !important;
+      transform: none !important;
+      box-sizing: border-box;
+    }
+    .reveal ul { list-style: none; padding: 0; margin: 0; }
+    .reveal h2 { margin: 0; }
+    .reveal .progress { color: #f7931a; }
+    .reveal .controls { color: #f7931a; }
+
+    /* ════════════════════════════════
+       SLIDE 1 — Title
+    ════════════════════════════════ */
+    .s1 {
+      background: #000;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3vh;
+    }
+    .s1 img { width: 42vw; max-width: 820px; }
+    .s1-number { font-family: 'Inter', sans-serif; font-size: 2.4vw; font-weight: 700; letter-spacing: 0.08em; color: #fff; }
+    .s1-date   { font-family: 'Inter', sans-serif; font-size: 1.9vw; font-weight: 600; color: #f7931a; }
+    .s1-sub    { font-family: 'Space Mono', monospace; font-size: 1vw; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(247,147,26,0.5); }
+
+    /* ════════════════════════════════
+       Shared — topic slides
+    ════════════════════════════════ */
+    .st {
+      position: relative;
+      width: 100%; height: 100%;
+      background: #0a0a0a;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      padding: 3vh 4.5vw 1.8vh;
+      box-sizing: border-box;
+      color: #fff;
+    }
+    .st::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .st::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 45%, rgba(247,147,26,0.055) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .st-inner { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; gap: 1.4vh; text-align: left; }
+    .st-header { flex-shrink: 0; }
+    .st-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72vw; text-align: center; letter-spacing: 0.28em;
+      text-transform: uppercase; color: #f7931a;
+      margin-bottom: 0.4vh;
+    }
+    .st-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 3.2vw; text-align: center; font-weight: 700;
+      text-transform: uppercase; color: #fff; line-height: 1;
+    }
+    .st-headline span { color: #f7931a; }
+    .st-body { display: flex; gap: 1.8vw; flex: 1; min-height: 0; }
+    .st-col-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65vw; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #f7931a; opacity: 0.8;
+      margin-bottom: 0.6vh;
+    }
+    .st-footer {
+      flex-shrink: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(247,147,26,0.12);
+      padding-top: 0.6vh; padding-right: 6vw;
+    }
+    .st-footer-note { font-family: 'Space Mono', monospace; font-size: 0.58vw; color: rgba(247,147,26,0.4); letter-spacing: 0.04em; line-height: 1.5; }
+    .st-footer-sym  { font-family: 'Oswald', sans-serif; font-size: 0.95vw; color: rgba(247,147,26,0.3); letter-spacing: 0.12em; flex-shrink: 0; margin-left: 2vw; }
+
+    /* cards (pillar style) */
+    .card {
+      background: rgba(247,147,26,0.04);
+      border: 1px solid rgba(247,147,26,0.18);
+      border-radius: 0.6vw;
+      padding: 1.4vh 1.3vw;
+      display: flex; flex-direction: column; gap: 0.7vh;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #f7931a, rgba(247,147,26,0.2));
+    }
+    .card.highlight { border-color: rgba(247,147,26,0.45); background: rgba(247,147,26,0.07); }
+    .card.good { border-color: rgba(46,204,113,0.4); background: rgba(46,204,113,0.05); }
+    .card.good::before { background: linear-gradient(90deg, #2ecc71, rgba(46,204,113,0.15)); }
+    .card.bad { border-color: rgba(220,60,60,0.35); background: rgba(180,30,30,0.06); }
+    .card.bad::before { background: linear-gradient(90deg, #c0392b, rgba(192,57,43,0.15)); }
+    .card-kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68vw; color: #f7931a; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    .card.good .card-kicker { color: #2ecc71; }
+    .card.bad  .card-kicker { color: #e74c3c; }
+    .card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.7vw; font-weight: 700; color: #fff; text-transform: uppercase; line-height: 1.1;
+    }
+    .card-val {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.6vw; font-weight: 700; color: #f7931a; line-height: 1;
+    }
+    .card-val small { font-family: 'Space Mono', monospace; font-size: 0.6vw; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; margin-left: 0.4vw; }
+    .card.good .card-val { color: #2ecc71; }
+    .card.bad  .card-val { color: #e74c3c; }
+    .card-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.02vw; color: rgba(255,255,255,0.72); line-height: 1.5;
+    }
+    .card-body strong { color: #fff; font-weight: 600; }
+    .card-body em { color: #f7931a; font-style: normal; }
+
+    /* generic bullet list */
+    .st-list { display: flex; flex-direction: column; gap: 0.9vh; }
+    .st-list li {
+      font-family: 'Inter', sans-serif; font-size: 1.02vw;
+      color: rgba(255,255,255,0.85); line-height: 1.45;
+      padding-left: 1.3vw; position: relative;
+    }
+    .st-list li::before {
+      content: ''; position: absolute; left: 0; top: 0.55em;
+      width: 0.42vw; height: 0.42vw; border-radius: 50%; background: #f7931a;
+    }
+    .st-list li strong { color: #f7931a; font-weight: 600; }
+
+    /* ── horizontal bar chart (CSS) ── */
+    .bars { display: flex; flex-direction: column; gap: 1.6vh; }
+    .bar-row { display: grid; grid-template-columns: 12.5vw 1fr 5.2vw; align-items: center; gap: 0.8vw; }
+    .bar-lbl { font-family: 'Inter', sans-serif; font-size: 1vw; color: rgba(255,255,255,0.85); line-height: 1.2; }
+    .bar-lbl small { display: block; font-family: 'Space Mono', monospace; font-size: 0.62vw; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; margin-top: 0.15vh; }
+    .bar-track { position: relative; height: 2.8vh; background: rgba(255,255,255,0.04); border-radius: 2px; }
+    .bar-fill { position: absolute; top: 0; bottom: 0; left: 0; background: #f7931a; border-radius: 0 4px 4px 0; }
+    .bar-fill.dim { background: rgba(247,147,26,0.4); }
+    .bar-fill.good { background: #2ecc71; }
+    .bar-fill.bad  { background: #e74c3c; }
+    .bar-val { font-family: 'Oswald', sans-serif; font-size: 1.5vw; color: #fff; text-align: right; white-space: nowrap; }
+    .bar-val.good { color: #2ecc71; }
+    .bar-val.bad  { color: #e74c3c; }
+    /* reference line */
+    .bar-track .ref { position: absolute; top: -0.4vh; bottom: -0.4vh; width: 1px; background: rgba(255,255,255,0.35); }
+    .bar-track .ref::after { content: attr(data-l); position: absolute; top: -1.6vh; left: 0.3vw; font-family: 'Space Mono', monospace; font-size: 0.5vw; color: rgba(255,255,255,0.45); white-space: nowrap; letter-spacing: 0.05em; }
+
+    /* ── equation strip ── */
+    .eq {
+      display: flex; align-items: center; justify-content: center; gap: 1.2vw;
+      background: rgba(247,147,26,0.06); border: 1px solid rgba(247,147,26,0.3);
+      border-radius: 0.5vw; padding: 1vh 1.5vw; flex-shrink: 0;
+    }
+    .eq-item { display: flex; flex-direction: column; align-items: center; gap: 0.2vh; }
+    .eq-val { font-family: 'Oswald', sans-serif; font-size: 2.1vw; font-weight: 700; color: #f7931a; line-height: 1; white-space: nowrap; }
+    .eq-val.white { color: #fff; }
+    .eq-val.good { color: #2ecc71; }
+    .eq-lbl { font-family: 'Space Mono', monospace; font-size: 0.52vw; color: rgba(255,255,255,0.45); letter-spacing: 0.12em; text-transform: uppercase; text-align: center; white-space: nowrap; }
+    .eq-op { font-family: 'Oswald', sans-serif; font-size: 2vw; color: rgba(247,147,26,0.45); }
+
+    /* ── mini table ── */
+    .tbl { width: 100%; border-collapse: collapse; }
+    .tbl th { font-family: 'Space Mono', monospace; font-size: 0.66vw; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(247,147,26,0.8); text-align: left; padding: 0.4vh 0.5vw; border-bottom: 1px solid rgba(247,147,26,0.25); }
+    .tbl th.r, .tbl td.r { text-align: right; }
+    .tbl td { font-family: 'Inter', sans-serif; font-size: 1.05vw; color: rgba(255,255,255,0.85); padding: 0.9vh 0.5vw; border-bottom: 1px solid rgba(255,255,255,0.06); line-height: 1.3; }
+    .tbl td.num { font-family: 'Oswald', sans-serif; font-size: 1.4vw; color: #fff; }
+    .tbl td.good { color: #2ecc71; }
+    .tbl td.bad  { color: #e74c3c; }
+    .tbl td.muted { color: rgba(255,255,255,0.45); font-size: 0.72vw; }
+    .tbl tr.hl td { background: rgba(247,147,26,0.07); }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ══════════════════════════════
+         SLIDE 1 — Title
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="s1">
+        <img src="WMBTCM.png" alt="Western Mass Bitcoin Meetup" />
+        <div class="s1-number">Western Mass Bitcoin Meetup</div>
+        <div class="s1-date">October 2026</div>
+        <div class="s1-sub">Bonus Deck · Heating Your House With Hashrate</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 2 — Inputs: what a kWh of heat costs
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="st">
+        <div class="st-inner">
+          <div class="st-header">
+            <div class="st-eyebrow">Case Study · Hadley, MA · Oct. 2026 · Part 1 of 3</div>
+            <div class="st-headline">What does a kWh of <span>heat</span> cost in Western Mass?</div>
+          </div>
+
+          <div class="st-body">
+            <!-- LEFT: input cards -->
+            <div style="flex: 1.05; display: flex; flex-direction: column; gap: 0.9vh; min-height: 0;">
+              <div class="st-col-label">The inputs · today's local prices</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.9vh 0.9vw; flex: 1;">
+                <div class="card" style="justify-content: center;">
+                  <div class="card-kicker">Heating oil</div>
+                  <div class="card-val">$5.80–6.12<small>/ gal</small></div>
+                  <div class="card-body">MA survey avg <strong>$6.12</strong> (wk of Oct 5), up ~75% y/y. 40.6 kWh/gal; a 1997 boiler delivers ~75% → <em>$0.19/kWh</em>. A new 85% boiler → $0.17.</div>
+                </div>
+                <div class="card" style="justify-content: center;">
+                  <div class="card-kicker">Natural gas · Berkshire Gas</div>
+                  <div class="card-val">~$2.50–3.25<small>/ therm</small></div>
+                  <div class="card-body">Gas cost $0.32/therm now (summer rate; ~$1.29 last winter) + ~$2.05 delivery adders. 29.3 kWh/therm at 90% → <em>~$0.11/kWh</em>. DPU 25-170 asks +23% on delivery Nov 1.</div>
+                </div>
+                <div class="card" style="justify-content: center;">
+                  <div class="card-kicker">Grid electricity · Eversource WMA</div>
+                  <div class="card-val">$0.314<small>/ kWh</small></div>
+                  <div class="card-body">R-1 marginal rate with Hadley aggregation supply ($0.128). Eversource Basic Service ($0.173 supply, Aug–Jan) → ~$0.36. Resistance heat is 100% → <em>$0.31–0.36/kWh</em>.</div>
+                </div>
+                <div class="card highlight" style="justify-content: center;">
+                  <div class="card-kicker">Your own panels · real quote</div>
+                  <div class="card-val">$0.11<small>/ kWh cash</small></div>
+                  <div class="card-body">14.08 kW, 32 panels: <strong>$40,420</strong> − $1,000 MA credit (no federal credit after 2025) = $39,420. 14,722 kWh/yr, −0.5%/yr, 25 yr ≈ 347 MWh. Financed 4.99%/10 yr → <em>$0.14/kWh</em>.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: chart -->
+            <div style="flex: 1; display: flex; flex-direction: column; min-height: 0;">
+              <div class="st-col-label">Cost per kWh of delivered heat · $/kWh</div>
+              <div class="card" style="flex: 1; justify-content: center; gap: 1.2vh;">
+                <div class="bars">
+                  <!-- scale: 0.36 = 100% -->
+                  <div class="bar-row">
+                    <div class="bar-lbl">Electric resistance<small>grid · $0.314–0.36</small></div>
+                    <div class="bar-track"><div class="bar-fill bad" style="width: 87%;"></div></div>
+                    <div class="bar-val bad">$0.31</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-lbl">Heating oil<small>1997 boiler · $5.80/gal</small></div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 53%;"></div></div>
+                    <div class="bar-val">$0.19</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-lbl">Electric resistance<small>own solar · financed</small></div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 39%;"></div></div>
+                    <div class="bar-val">$0.14</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-lbl">Heat pump<small>grid · COP 2.5</small></div>
+                    <div class="bar-track"><div class="bar-fill dim" style="width: 36%;"></div></div>
+                    <div class="bar-val">$0.13</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-lbl">Natural gas<small>90% furnace · ~$2.90/therm</small></div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 31%;"></div></div>
+                    <div class="bar-val">$0.11</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-lbl">Electric resistance<small>own solar · cash</small></div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 31%;"></div></div>
+                    <div class="bar-val">$0.11</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-lbl">Surplus solar credits<small>net-metered export you never use</small></div>
+                    <div class="bar-track"><div class="bar-fill good" style="width: 1.5%;"></div></div>
+                    <div class="bar-val good">$0.00</div>
+                  </div>
+                </div>
+                <div class="card-body" style="border-top: 1px solid rgba(247,147,26,0.15); padding-top: 0.8vh;">
+                  <strong>Why surplus credits are worth ~$0:</strong> Eversource nets 1:1 (export credit $0.309 vs import $0.314). Credits bank forever and are <em>never paid out</em>, so once your bank is positive the next exported kWh buys you nothing. Schedule Z lets you gift them to another Eversource account, but nobody buys credits at $0.30.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="st-footer">
+            <div class="st-footer-note">Sources: mass.gov heating fuels survey (Oct 5, 2026); Berkshire Gas / DPU gas charges (Oct 2026); EIA MA residential gas 2025 avg $25.06/Mcf ≈ $2.42/therm; Eversource R-1 bill, Hadley; Northeast Solar quote (14.08 kW). 1 kWh = 3,412 BTU. Boiler efficiency is the big swing on oil.</div>
+            <div class="st-footer-sym">₿ WMBTCM</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 3 — The mining subsidy
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="st">
+        <div class="st-inner">
+          <div class="st-header">
+            <div class="st-eyebrow">Case Study · Part 2 of 3 · Antminer S19j Pro on a 120 V outlet</div>
+            <div class="st-headline">The miner is a space heater that <span>pays you in sats</span></div>
+          </div>
+
+          <!-- equation strip -->
+          <div class="eq">
+            <div class="eq-item"><div class="eq-val white">1,200 W</div><div class="eq-lbl">120 VAC · 15 A circuit</div></div>
+            <div class="eq-op">→</div>
+            <div class="eq-item"><div class="eq-val white">~48 TH/s</div><div class="eq-lbl">underclocked · ~25 J/TH</div></div>
+            <div class="eq-op">×</div>
+            <div class="eq-item"><div class="eq-val">47.6 sats</div><div class="eq-lbl">hashprice / TH / day</div></div>
+            <div class="eq-op">=</div>
+            <div class="eq-item"><div class="eq-val">2,284 sats</div><div class="eq-lbl">per day · $1.92 @ $83,904</div></div>
+            <div class="eq-op">÷</div>
+            <div class="eq-item"><div class="eq-val white">28.8 kWh</div><div class="eq-lbl">per day of heat</div></div>
+            <div class="eq-op">=</div>
+            <div class="eq-item"><div class="eq-val good">79 sats / kWh</div><div class="eq-lbl">≈ $0.067 subsidy per kWh</div></div>
+          </div>
+
+          <div class="st-body">
+            <!-- LEFT: effective heat cost table -->
+            <div style="flex: 1.15; display: flex; flex-direction: column; min-height: 0;">
+              <div class="st-col-label">Heat cost after the subsidy · electricity price − $0.067</div>
+              <div class="card" style="flex: 1; justify-content: center;">
+                <table class="tbl">
+                  <tr><th>Where the 28.8 kWh/day comes from</th><th class="r">Power $/kWh</th><th class="r">Net heat $/kWh</th><th class="r">vs oil $0.19</th><th class="r">vs gas $0.11</th></tr>
+                  <tr><td>Grid, Eversource WMA</td><td class="num r">0.314</td><td class="num r bad">0.247</td><td class="r bad">loses</td><td class="r bad">loses</td></tr>
+                  <tr><td>Own panels, financed, inside annual production</td><td class="num r">0.14</td><td class="num r good">0.075</td><td class="r good">wins</td><td class="r good">wins</td></tr>
+                  <tr><td>Own panels, cash, inside annual production</td><td class="num r">0.11</td><td class="num r good">0.047</td><td class="r good">wins</td><td class="r good">wins</td></tr>
+                  <tr class="hl"><td>Surplus net-metering credits (bank already positive)</td><td class="num r">0.00</td><td class="num r good">−0.067</td><td class="r good">paid to heat</td><td class="r good">paid to heat</td></tr>
+                </table>
+                <div class="card-body" style="margin-top: 1.4vh; font-size: 1.1vw;">
+                  <strong>Break-evens:</strong> mining alone pays for power below <em>$0.067/kWh</em>. The miner beats oil heat when power costs under <em>$0.26/kWh</em> and beats gas heat under <em>$0.18/kWh</em>. Western Mass grid power is $0.31+, so on the grid it loses to both. On your own roof it beats both.
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: season + no-KYC -->
+            <div style="flex: 0.85; display: flex; flex-direction: column; gap: 0.9vh; min-height: 0;">
+              <div class="st-col-label">One heating season · 180 days</div>
+              <div class="card" style="flex: 1; justify-content: center;">
+                <table class="tbl">
+                  <tr><th>Runtime</th><th class="r">kWh</th><th class="r">Sats</th><th class="r">USD</th></tr>
+                  <tr><td>24 h/day</td><td class="num r">5,180</td><td class="num r">411k</td><td class="num r">$345</td></tr>
+                  <tr><td>18 h/day</td><td class="num r">3,890</td><td class="num r">308k</td><td class="num r">$259</td></tr>
+                </table>
+                <div class="card-body">Plus the heat: at oil prices that 3,890 kWh is <em>~$740</em> of oil you didn't burn (~130 gal).</div>
+              </div>
+              <div class="card good" style="flex: 1; justify-content: center;">
+                <div class="card-kicker">These are no-KYC sats</div>
+                <div class="card-body">Buying bitcoin without ID (Bisq, RoboSats, Hodl Hodl, meetup trades) runs a <strong>5–10% premium</strong> over exchange spot. Mined sats arrive with no premium and no paper trail, so replacing them would cost <strong>$2.02–2.11/day</strong>: the subsidy is really <em>$0.070–0.073/kWh</em>.</div>
+              </div>
+              <div class="card" style="flex: 1; justify-content: center;">
+                <div class="card-kicker">What moves the number</div>
+                <div class="card-body"><strong>Halving ~Apr 2028</strong> cuts sats/kWh in half unless price or fees double. Hashprice swings $0.02–0.06/TH/day; the miner still beats oil on $0 surplus power across that whole range.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="st-footer">
+            <div class="st-footer-note">Live from a home Bitcoin Core node, 2026-10-11: block 970,962 · difficulty 1.33e14 · implied 950 EH/s · 3.125 BTC subsidy + 0.014 BTC fees · BTC/USD $83,904 (Coinbase). S19j Pro needs Braiins / LuxOS firmware and an APW12 120 V mod; never run stock firmware on 120 V. Keep it ≤1,200 W continuous on a dedicated 15 A circuit.</div>
+            <div class="st-footer-sym">₿ WMBTCM</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         SLIDE 4 — When it makes sense for you
+    ══════════════════════════════ -->
+    <section data-background-color="#000000">
+      <div class="st">
+        <div class="st-inner">
+          <div class="st-header">
+            <div class="st-eyebrow">Case Study · Part 3 of 3 · Decision guide for Western Mass bitcoiners</div>
+            <div class="st-headline">When does <span>mining for heat</span> make sense for you?</div>
+          </div>
+
+          <div class="st-body" style="gap: 1.2vw;">
+            <div class="card bad" style="flex: 1; justify-content: center; gap: 1.2vh;">
+              <div class="card-kicker">No</div>
+              <div class="card-title">Grid power, any fuel</div>
+              <div class="card-val">$0.247<small>/ kWh heat</small></div>
+              <div class="card-body">At $0.31–0.36 power the sats cover a fifth of the bill. You're paying <strong>$1.65/day more than oil</strong> and $3.95 more than gas to heat with hashrate. Fine as a hobby or a cold-snap backup, not as a heating plan.</div>
+            </div>
+            <div class="card" style="flex: 1; justify-content: center; gap: 1.2vh;">
+              <div class="card-kicker">Only on solar</div>
+              <div class="card-title">You heat with natural gas</div>
+              <div class="card-val">$0.11<small>/ kWh to beat</small></div>
+              <div class="card-body">Gas is the cheapest heat in the valley. The miner only wins below ~$0.18 power, i.e. on your own panels or surplus credits. The upside is smaller (~$0.03–0.06/kWh saved) but the sats are the same.</div>
+            </div>
+            <div class="card good" style="flex: 1; justify-content: center; gap: 1.2vh;">
+              <div class="card-kicker">Yes</div>
+              <div class="card-title">Oil or propane + solar surplus</div>
+              <div class="card-val">−$0.067<small>/ kWh heat</small></div>
+              <div class="card-body">Credits you'd never use become <strong>79 sats and 1 kWh of heat each</strong>. Beats oil at any price down to ~$3.50/gal. This is the sweet spot for most of the hilltowns and the valley: oil boiler, south-facing roof, long winter.</div>
+            </div>
+            <div class="card highlight" style="flex: 1; justify-content: center; gap: 1.2vh;">
+              <div class="card-kicker">Yes, with a cap</div>
+              <div class="card-title">Buying panels for it</div>
+              <div class="card-val">$0.047<small>/ kWh heat</small></div>
+              <div class="card-body">Own-roof power at $0.11–0.14 minus the subsidy beats oil <strong>and</strong> gas. But only for kWh <strong>inside your annual production</strong>. Every kWh past that is bought from Eversource at $0.314 and the case flips.</div>
+            </div>
+          </div>
+
+          <div class="card" style="flex-shrink: 0;">
+            <div class="card-kicker">The one rule · size the miner to your credit bank, not your sunshine</div>
+            <div style="display: flex; gap: 2vw; align-items: flex-start;">
+              <ul class="st-list" style="flex: 1.2;">
+                <li><strong>Net metering is 1:1</strong>, so it doesn't matter whether the miner runs at noon or midnight. Only the annual balance matters: production − house load = the kWh you can mine for free.</li>
+                <li><strong>Worked example:</strong> 14 kW roof, ~15,000 kWh/yr, house uses ~10,400 → ~4,300 kWh surplus. One S19j Pro at 1.2 kW × 18 h × 180 days = 3,900 kWh. Fits, with ~400 kWh to spare. A second miner, or a heat-pump water heater, does not.</li>
+                <li><strong>Overshoot</strong> and the miner is suddenly on $0.314 grid power, losing $1.65/day vs oil. Watch the Eversource credit balance each bill and throttle runtime with the firmware power target, not the breaker.</li>
+              </ul>
+              <ul class="st-list" style="flex: 1;">
+                <li><strong>Hardware:</strong> used S19j Pro ~$100–150, APW12 120 V mod (two resistors), Braiins or LuxOS, 14 AWG cords, dedicated 15 A circuit, smart plug with overcurrent cutoff. Point the exhaust into open basement, not a wall.</li>
+                <li><strong>The optimistic case:</strong> a cold winter stacks ~300k sats of no-KYC bitcoin per miner while the oil truck comes less often. If bitcoin does what we think it does, the heat was free and the sats were the cheapest you'll ever get.</li>
+                <li><strong>Get a baseline first:</strong> oil fill history, a clamp on the boiler circuit, a temp sensor near the miner. Measure, then decide.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="st-footer">
+            <div class="st-footer-note">All figures Oct. 2026, Hadley MA. Assumes a $0 value for surplus credits, $0.19/kWh oil heat, $0.11/kWh gas heat, 47.6 sats/TH/day hashprice, 25 yr panel life with the $1,000 MA credit and no federal credit. Not financial advice; your roof, your boiler, your sats.</div>
+            <div class="st-footer-sym">₿ WMBTCM</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: false,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    width: '100%',
+    height: '100%',
+    margin: 0,
+    minScale: 1,
+    maxScale: 1,
+  });
+</script>
+</body>
+</html>
